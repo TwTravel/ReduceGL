@@ -1,0 +1,155 @@
+﻿生成启动时间为 2019/1/3 9:31:03。
+项目“E:\graphdev\robodraw\ReduceGL\DevR1\dev.vcxproj”在节点 2 上(build 个目标)。
+InitializeBuildStatus:
+  正在对“Debug\dev.unsuccessfulbuild”执行 Touch 任务。
+ClCompile:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt api.cpp
+  api.cpp
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(210): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(210): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(210): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(210): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(211): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(211): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(211): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(211): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(212): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(212): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(212): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(212): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(213): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(213): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(213): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(213): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(405): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(406): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(409): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(409): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(416): warning C4244: “=”: 从“double”转换到“BYTE”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(417): warning C4244: “=”: 从“double”转换到“BYTE”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(418): warning C4244: “=”: 从“double”转换到“BYTE”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(426): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(427): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(430): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(430): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(509): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+e:\graphdev\robodraw\reducegl\devr1\c24bitmap.h(521): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+e:\graphdev\robodraw\reducegl\devr1\c256bitmap.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\graphdev\robodraw\reducegl\devr1\c256bitmap.h(96): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+e:\graphdev\robodraw\reducegl\devr1\c256bitmap.h(107): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(78): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(79): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(81): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(82): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(87): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(95): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(96): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(100): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(101): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(105): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(106): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(110): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(111): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(367): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(368): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(370): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(371): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(376): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(384): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(385): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(525): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(541): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(335): warning C4101: “drdy”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(341): warning C4101: “dtdl_min”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(340): warning C4101: “dsdy”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(336): warning C4101: “dgdx”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(341): warning C4101: “dtdy”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(335): warning C4101: “r1”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(336): warning C4101: “dgdy”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(340): warning C4101: “dsdl_max”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(335): warning C4101: “drdl_min”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(336): warning C4101: “dgdl_min”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(340): warning C4101: “dsdl_min”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(337): warning C4101: “dbdl_min”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(337): warning C4101: “dbdx”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(336): warning C4101: “dgdl_max”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(341): warning C4101: “dtdl_max”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(340): warning C4101: “s1”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(337): warning C4101: “dbdl_max”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(336): warning C4101: “g1”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(341): warning C4101: “t1”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(335): warning C4101: “drdx”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(340): warning C4101: “dsdx”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(337): warning C4101: “dbdy”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(341): warning C4101: “dtdx”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(335): warning C4101: “drdl_max”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\ztriangle.h(337): warning C4101: “b1”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\light.h(47): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\light.h(175): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(62): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(66): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(67): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(68): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(70): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(71): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(72): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(80): warning C4101: “i”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(353): warning C4065: switch 语句包含“default”但是未包含“case”标签
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(360): warning C4065: switch 语句包含“default”但是未包含“case”标签
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(457): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(524): warning C4101: “m”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(541): warning C4101: “m”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(608): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(609): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(610): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(611): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(612): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(613): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(683): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(744): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(828): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\devr1\api.cpp(923): warning C4101: “p”: 未引用的局部变量
+Link:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\graphdev\robodraw\ReduceGL\DevR1\Debug\dev.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\dev.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\graphdev\robodraw\ReduceGL\DevR1\Debug\dev.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\graphdev\robodraw\ReduceGL\DevR1\Debug\dev.lib" /MACHINE:X86 Debug\3DS.obj
+  Debug\api.obj
+  Debug\clip.obj
+  Debug\image_util.obj
+  Debug\init.obj
+  Debug\kh_project.obj
+  Debug\main.obj
+init.obj : error LNK2019: 无法解析的外部符号 "struct GLTexture * __cdecl alloc_texture(class GLContext *,int)" (?alloc_texture@@YAPAUGLTexture@@PAVGLContext@@H@Z)，该符号在函数 "void __cdecl initSharedState(class GLContext *)" (?initSharedState@@YAXPAVGLContext@@@Z) 中被引用
+init.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glLoadIdentity(void)" (?glLoadIdentity@@YAXXZ)，该符号在函数 "void __cdecl glInit(int,int)" (?glInit@@YAXHH@Z) 中被引用
+main.obj : error LNK2001: 无法解析的外部符号 "void __cdecl glLoadIdentity(void)" (?glLoadIdentity@@YAXXZ)
+init.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glMatrixMode(int)" (?glMatrixMode@@YAXH@Z)，该符号在函数 "void __cdecl glInit(int,int)" (?glInit@@YAXHH@Z) 中被引用
+main.obj : error LNK2001: 无法解析的外部符号 "void __cdecl glMatrixMode(int)" (?glMatrixMode@@YAXH@Z)
+init.obj : error LNK2019: 无法解析的外部符号 "struct GLTexture * __cdecl find_texture(class GLContext *,int)" (?find_texture@@YAPAUGLTexture@@PAVGLContext@@H@Z)，该符号在函数 "void __cdecl glInitTextures(class GLContext *)" (?glInitTextures@@YAXPAVGLContext@@@Z) 中被引用
+kh_project.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glTranslatef(float,float,float)" (?glTranslatef@@YAXMMM@Z)，该符号在函数 "void __cdecl glTranslated(double,double,double)" (?glTranslated@@YAXNNN@Z) 中被引用
+kh_project.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glMultMatrixf(float const *)" (?glMultMatrixf@@YAXPBM@Z)，该符号在函数 "void __cdecl gluLookAt(double,double,double,double,double,double,double,double,double)" (?gluLookAt@@YAXNNNNNNNNN@Z) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glViewport(int,int,int,int)" (?glViewport@@YAXHHHH@Z)，该符号在函数 "bool __cdecl glXMakeDrawOk(int,int)" (?glXMakeDrawOk@@YA_NHH@Z) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glTexImage2D(int,int,int,int,int,int,int,int,void *)" (?glTexImage2D@@YAXHHHHHHHHPAX@Z)，该符号在函数 "void __cdecl CreateTexture(unsigned int * const,char *,int)" (?CreateTexture@@YAXQAIPADH@Z) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glBindTexture(int,int)" (?glBindTexture@@YAXHH@Z)，该符号在函数 "void __cdecl CreateTexture(unsigned int * const,char *,int)" (?CreateTexture@@YAXQAIPADH@Z) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glEnd(void)" (?glEnd@@YAXXZ)，该符号在函数 "void __cdecl RenderScene(void)" (?RenderScene@@YAXXZ) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glVertex3f(float,float,float)" (?glVertex3f@@YAXMMM@Z)，该符号在函数 "void __cdecl RenderScene(void)" (?RenderScene@@YAXXZ) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glTexCoord2f(float,float)" (?glTexCoord2f@@YAXMM@Z)，该符号在函数 "void __cdecl RenderScene(void)" (?RenderScene@@YAXXZ) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glNormal3f(float,float,float)" (?glNormal3f@@YAXMMM@Z)，该符号在函数 "void __cdecl RenderScene(void)" (?RenderScene@@YAXXZ) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glBegin(int)" (?glBegin@@YAXH@Z)，该符号在函数 "void __cdecl RenderScene(void)" (?RenderScene@@YAXXZ) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glDisable(int)" (?glDisable@@YAXH@Z)，该符号在函数 "void __cdecl RenderScene(void)" (?RenderScene@@YAXXZ) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glColor3f(float,float,float)" (?glColor3f@@YAXMMM@Z)，该符号在函数 "void __cdecl RenderScene(void)" (?RenderScene@@YAXXZ) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glEnable(int)" (?glEnable@@YAXH@Z)，该符号在函数 "void __cdecl RenderScene(void)" (?RenderScene@@YAXXZ) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl gluPerspective(double,double,double,double)" (?gluPerspective@@YAXNNNN@Z)，该符号在函数 "void __cdecl reshape(int,int)" (?reshape@@YAXHH@Z) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glVertex3fv(float *)" (?glVertex3fv@@YAXPAM@Z)，该符号在函数 "void __cdecl drawPolygon(float (* const)[3])" (?drawPolygon@@YAXQAY02M@Z) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glMaterialf(int,int,float)" (?glMaterialf@@YAXHHM@Z)，该符号在函数 "void __cdecl SurfSetColor(float,float,float)" (?SurfSetColor@@YAXMMM@Z) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glMaterialfv(int,int,float *)" (?glMaterialfv@@YAXHHPAM@Z)，该符号在函数 "void __cdecl SurfSetColor(float,float,float)" (?SurfSetColor@@YAXMMM@Z) 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glScalef(float,float,float)" (?glScalef@@YAXMMM@Z)，该符号在函数 _main 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 "void __cdecl glLightfv(int,int,float *)" (?glLightfv@@YAXHHPAM@Z)，该符号在函数 _main 中被引用
+E:\graphdev\robodraw\ReduceGL\DevR1\Debug\dev.exe : fatal error LNK1120: 23 个无法解析的外部命令
+已完成生成项目“E:\graphdev\robodraw\ReduceGL\DevR1\dev.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:40.97
