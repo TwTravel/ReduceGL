@@ -61,11 +61,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="3DS.cpp" />
-    <ClCompile Include="api.cpp" />
-    <ClCompile Include="clip.cpp" />
-    <ClCompile Include="image_util.cpp" />
-    <ClCompile Include="init.cpp" />
-    <ClCompile Include="kh_project.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -73,14 +68,11 @@
     <ClInclude Include="c24bitmap.h" />
     <ClInclude Include="c256bitmap.h" />
     <ClInclude Include="gl.h" />
-    <ClInclude Include="light.h" />
     <ClInclude Include="readstl.h" />
-    <ClInclude Include="texture.h" />
     <ClInclude Include="x11imp.h" />
     <ClInclude Include="zbuffer.h" />
     <ClInclude Include="zgl.h" />
     <ClInclude Include="zmath.h" />
-    <ClInclude Include="ztriangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

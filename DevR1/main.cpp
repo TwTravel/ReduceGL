@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 #include "gl.h"										
 //#include "glut.h"
 #include <math.h>
@@ -9,7 +10,6 @@
 #define FILE_NAME  "FACE.3DS"
 #include "x11imp.h"
 #include "readstl.h"
-#include "texture.h"
 
 typedef unsigned int UINT;
 unsigned int g_Texture[MAX_TEXTURES] = {0};
@@ -24,11 +24,8 @@ float g_RotateX		  = 0.0f;
 float g_RotationSpeed = 0.5f;
 C24BitMap pBitmap;
 
-void  
-gluLookAt(GLdouble eyex, GLdouble eyey, GLdouble eyez, GLdouble centerx,
-	  GLdouble centery, GLdouble centerz, GLdouble upx, GLdouble upy,
-	  GLdouble upz);
-	  
+GLContext *gl_ctx(0); 
+GraphDrawLib TkGDrawLib;
 //  从文件中创建纹理
 void CreateTexture(UINT textureArray[], char* strFileName, int textureID)
 {
@@ -39,12 +36,12 @@ void CreateTexture(UINT textureArray[], char* strFileName, int textureID)
 	pBitmap.Load(strFileName);				// 装入位图，并保存数据
 	
 	// 生成纹理
-	glGenTextures(1, &textureArray[textureID]);
+	TkGDrawLib.glGenTextures(1, &textureArray[textureID]);
  
-	glBindTexture(GL_TEXTURE_2D, textureArray[textureID]);
+	TkGDrawLib.glBindTexture(GL_TEXTURE_2D, textureArray[textureID]);
 
 
-	glTexImage2D(GL_TEXTURE_2D,0,3,
+	TkGDrawLib.glTexImage2D(GL_TEXTURE_2D,0,3,
 		pBitmap.Width, pBitmap.Height,0,
 		GL_RGB, GL_UNSIGNED_BYTE, pBitmap.Buffer);
 		 
@@ -74,18 +71,18 @@ void RenderScene()
 		if(pObject->bHasTexture) {
 
 			// 打开纹理映射
-			glEnable(GL_TEXTURE_2D);
-			glColor3f(1.0, 1.0, 1.0);
+			TkGDrawLib.glEnable(GL_TEXTURE_2D);
+			TkGDrawLib.glColor3f(1.0, 1.0, 1.0);
 			printf("matid:%i\n",pObject->materialID);
-			glBindTexture(GL_TEXTURE_2D, g_Texture[pObject->materialID]);
+			TkGDrawLib.glBindTexture(GL_TEXTURE_2D, g_Texture[pObject->materialID]);
 		} else {
 
 			// 关闭纹理映射
-			glDisable(GL_TEXTURE_2D);
-			glColor3f(1.0, 1.0, 1.0);
+			TkGDrawLib.glDisable(GL_TEXTURE_2D);
+			TkGDrawLib.glColor3f(1.0, 1.0, 1.0);
 		}
 		// 开始以g_ViewMode模式绘制
-		glBegin(g_ViewMode);					
+		TkGDrawLib.glBegin(g_ViewMode);					
 			// 遍历所有的面
 			for(int j = 0; j < pObject->numOfFaces; j++)
 			{
@@ -96,35 +93,33 @@ void RenderScene()
 					int index = pObject->pFaces[j].vertIndex[whichVertex];
 			
 					// 给出法向量
-					glNormal3f(pObject->pNormals[ index ].x, pObject->pNormals[ index ].y, pObject->pNormals[ index ].z);
+					TkGDrawLib.glNormal3f(pObject->pNormals[ index ].x, pObject->pNormals[ index ].y, pObject->pNormals[ index ].z);
 				
 					// 如果对象具有纹理
 					if(pObject->bHasTexture) {
 
 						// 确定是否有UVW纹理坐标
 						if(pObject->pTexVerts) {
-							glTexCoord2f(pObject->pTexVerts[ index ].x, pObject->pTexVerts[ index ].y);
+							TkGDrawLib.glTexCoord2f(pObject->pTexVerts[ index ].x, pObject->pTexVerts[ index ].y);
 						}
 					} else {
 
 						if(g_3DModel.pMaterials.size() && pObject->materialID >= 0) 
 						{
 							BYTE *pColor = g_3DModel.pMaterials[pObject->materialID].color;
-							glColor3f(float(pColor[0])/255.0, float(pColor[1])/255.0, float(pColor[2])/255.0);
+							TkGDrawLib.glColor3f(float(pColor[0])/255.0, float(pColor[1])/255.0, float(pColor[2])/255.0);
 						}
 					}
-					glVertex3f(pObject->pVerts[ index ].x/4+1.2, pObject->pVerts[ index ].y/4, pObject->pVerts[ index ].z/4);
+					TkGDrawLib.glVertex3f(pObject->pVerts[ index ].x/4+1.2, pObject->pVerts[ index ].y/4, pObject->pVerts[ index ].z/4);
 				}
 			}
 
-		glEnd();								// 绘制结束
+		TkGDrawLib.glEnd();								// 绘制结束
 	}
 
  
 }
-
-void gluPerspective( GLdouble fovy, GLdouble aspect,
-		     GLdouble zNear, GLdouble zFar );
+ 
 
 void reshape(int width, int height)		
 {
@@ -133,14 +128,14 @@ void reshape(int width, int height)
 		height=1;										
 	}
 
-	glViewport(0,0,width,height);						
+	TkGDrawLib.glViewport(0,0,width,height);						
 
-	glMatrixMode(GL_PROJECTION);		
-	glLoadIdentity();						
-	gluPerspective(45.0f,(GLfloat)width/(GLfloat)height, .5f ,150.0f);
+	TkGDrawLib.glMatrixMode(GL_PROJECTION);		
+	TkGDrawLib.glLoadIdentity();						
+	TkGDrawLib.gluPerspective(45.0f,(GLfloat)width/(GLfloat)height, .5f ,150.0f);
 
-	glMatrixMode(GL_MODELVIEW);						
-	glLoadIdentity();									
+	TkGDrawLib.glMatrixMode(GL_MODELVIEW);						
+	TkGDrawLib.glLoadIdentity();									
 }
 
 #define WindowWidth  1600
@@ -168,9 +163,9 @@ void init()
 		g_3DModel.pMaterials[i].texureId = i;
 	}
 
-	glEnable(GL_LIGHT0);								
-	glEnable(GL_LIGHTING);								
-	glEnable(GL_COLOR_MATERIAL);					
+	TkGDrawLib.glEnable(GL_LIGHT0);								
+	TkGDrawLib.glEnable(GL_LIGHTING);								
+	TkGDrawLib.glEnable(GL_COLOR_MATERIAL);					
 
 }
 int ui_loop(int argc, char **argv, const char *name);
@@ -190,11 +185,11 @@ void drawPolygon(float Vertices[][3])
 {
   int i;
   int Size =4;
-  glBegin(GL_POLYGON);
+  TkGDrawLib.glBegin(GL_POLYGON);
   
   for(i=0; i<Size; i++)
-    glVertex3fv(Vertices[i]);
-  glEnd();
+    TkGDrawLib.glVertex3fv(Vertices[i]);
+  TkGDrawLib.glEnd();
 
 }				
 
@@ -214,11 +209,11 @@ void SurfSetColor(float rr,float gg, float bb)
   
     Ambient[0] = rr; Ambient[1] = gg; Ambient[2] = bb; Ambient[3] = 1;  
 	Diffuse[0] = rr; Diffuse[1] = gg; Diffuse[2] = bb; Diffuse[3] = 1;  
-    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, Ambient);
-    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, Diffuse);
-    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, Specular);
+    TkGDrawLib.glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, Ambient);
+    TkGDrawLib.glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, Diffuse);
+    TkGDrawLib.glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, Specular);
     //glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, Emission);
-    glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, Shininess);
+    TkGDrawLib.glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, Shininess);
 
 }
 
@@ -229,16 +224,16 @@ void StlShape_Render(std::vector<triangle>&facet)
   //glPushAttrib(GL_ALL_ATTRIB_BITS);
 
   
-  glBegin(GL_TRIANGLES);
+  TkGDrawLib.glBegin(GL_TRIANGLES);
   for(int i = 0; i < facet.size(); i++)
   {
         // 遍历三角形的所有点
       for(int whichVertex = 0; whichVertex < 3; whichVertex++ )
        {
         // 给出法向量
-        glNormal3f(facet[i].normal.x, facet[i].normal.y, facet[i].normal.z);
+        TkGDrawLib.glNormal3f(facet[i].normal.x, facet[i].normal.y, facet[i].normal.z);
         // 如果对象具有纹理
-        glVertex3f( facet[i].point[whichVertex].x , 
+        TkGDrawLib.glVertex3f( facet[i].point[whichVertex].x , 
 		            facet[i].point[whichVertex].y , 
 				    facet[i].point[whichVertex].z ); /* */
 		/*glNormal3f(facet[i].normal.z,facet[i].normal.x, facet[i].normal.y);
@@ -249,7 +244,7 @@ void StlShape_Render(std::vector<triangle>&facet)
 				     );*/
        }
    }
-  glEnd();
+  TkGDrawLib.glEnd();
   
  //glPopAttrib(); 
 }
@@ -260,7 +255,7 @@ void Test_TRIANGLES( )
    
   //glPushAttrib(GL_ALL_ATTRIB_BITS);
 
-  glBegin(GL_TRIANGLES);
+  TkGDrawLib.glBegin(GL_TRIANGLES);
  // for(int i = 0; i < facet.size(); i++)
  // {
         // 遍历三角形的所有点
@@ -270,11 +265,11 @@ void Test_TRIANGLES( )
         //glNormal3f(facet[i].normal.x, facet[i].normal.y, facet[i].normal.z);
         // 如果对象具有纹理
 		//glNormal3f(1, 1, 1);
-        glVertex3f(-1.5,0,0); /* */
+        TkGDrawLib.glVertex3f(-1.5,0,0); /* */
 		//glNormal3f(1, 1, 1);
-		glVertex3f(-1,0,1);
+		TkGDrawLib.glVertex3f(-1,0,1);
 		//glNormal3f(1, 1, 1);
-		glVertex3f(0,0.3,0);
+		TkGDrawLib.glVertex3f(0,0.3,0);
 		
 		/*glNormal3f(facet[i].normal.z,facet[i].normal.x, facet[i].normal.y);
         // 如果对象具有纹理
@@ -284,21 +279,21 @@ void Test_TRIANGLES( )
 				     );*/
        //}
   // }
-  glEnd();
+  TkGDrawLib.glEnd();
   
  //glPopAttrib(); 
 }
 void SetCamera()
 {
-	gluPerspective(90.0, 1, 0.01, 50);
-    glMatrixMode(GL_MODELVIEW);
+	TkGDrawLib.gluPerspective(90.0, 1, 0.01, 50);
+    TkGDrawLib.glMatrixMode(GL_MODELVIEW);
     
-    glLoadIdentity();
-    gluLookAt( 0, 1.5f, 4, 0, -1.5f, -4,
+    TkGDrawLib.glLoadIdentity();
+    TkGDrawLib.gluLookAt( 0, 1.5f, 4, 0, -1.5f, -4,
 	             0, 1, 0);
-	glEnable(GL_LIGHT0);								
-	glEnable(GL_LIGHTING);								
-	glEnable(GL_COLOR_MATERIAL);				 
+	TkGDrawLib.glEnable(GL_LIGHT0);								
+	TkGDrawLib.glEnable(GL_LIGHTING);								
+	TkGDrawLib.glEnable(GL_COLOR_MATERIAL);				 
      
 }
 
@@ -312,8 +307,8 @@ int main(int argc,char* argv[])
 	glutInitWindowPosition(100, 100);
 	glutInitWindowSize(WindowWidth, WindowHeight);
 	glutCreateWindow(WindowTitle);*/	
-	glEnable(GL_DEPTH_TEST);    
-	glEnable(GL_TEXTURE_2D);    // 启用纹理
+	TkGDrawLib.glEnable(GL_DEPTH_TEST);    
+	TkGDrawLib.glEnable(GL_TEXTURE_2D);    // 启用纹理
 	//model_init();
 	//init();
 	reshape(WindowWidth, WindowHeight);
@@ -340,13 +335,13 @@ int main(int argc,char* argv[])
 	SpotDirection[1] =  -1;
 	SpotDirection[2] =  -1;
 	SpotDirection[3] =   1;
-	glLightfv(GL_LIGHT1, GL_POSITION, Position);
-	glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, SpotDirection);
+	TkGDrawLib.glLightfv(GL_LIGHT1, GL_POSITION, Position);
+	TkGDrawLib.glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, SpotDirection);
 	
 	//glLightfv(LightName, GL_AMBIENT, Ambient);
     //glLightfv(LightName, GL_DIFFUSE, Diffuse);
     //glLightfv(LightName, GL_SPECULAR, Specular);
-	glEnable(GL_LIGHT1);
+	TkGDrawLib.glEnable(GL_LIGHT1);
 	
     Position[0] = -2;  
 	Position[1] =  3 ;
@@ -356,11 +351,11 @@ int main(int argc,char* argv[])
 	SpotDirection[1] =  -3;
 	SpotDirection[2] =  -1.5;
 	
-    glLightfv(GL_LIGHT2, GL_POSITION, Position);
-	glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, SpotDirection);
+    TkGDrawLib.glLightfv(GL_LIGHT2, GL_POSITION, Position);
+	TkGDrawLib.glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, SpotDirection);
 	
 	
-	glEnable(GL_LIGHT2);
+	TkGDrawLib.glEnable(GL_LIGHT2);
 	
 	
 	Position[0] =0;  
@@ -371,11 +366,11 @@ int main(int argc,char* argv[])
 	SpotDirection[1] =  -5;
 	SpotDirection[2] =  -3;
 	
-    glLightfv(GL_LIGHT3, GL_POSITION, Position);
-	glLightfv(GL_LIGHT3, GL_SPOT_DIRECTION, SpotDirection);
+    TkGDrawLib.glLightfv(GL_LIGHT3, GL_POSITION, Position);
+	TkGDrawLib.glLightfv(GL_LIGHT3, GL_SPOT_DIRECTION, SpotDirection);
 	
 	
-	glEnable(GL_LIGHT3);
+	TkGDrawLib.glEnable(GL_LIGHT3);
 	
 	
 	int i,j;
@@ -386,7 +381,7 @@ int main(int argc,char* argv[])
    x_min,   x_max,  y_min,   y_max,  z_min,   z_max);
 	
    printf("%.2lf,%.2lf\n",x_min,   x_max);	
-   glDisable(GL_TEXTURE_2D);
+   TkGDrawLib.glDisable(GL_TEXTURE_2D);
    SurfSetColor(1.0, 0, 0);
    drawPolygon(vx);
    for(i=0;i<10;i++)
@@ -419,12 +414,12 @@ int main(int argc,char* argv[])
 	   drawPolygon(vz);
    }/**/
     Test_TRIANGLES( );
-    glScalef(5, 5, 5);
+    TkGDrawLib.glScalef(5, 5, 5);
   
     StlShape_Render(bunny_facet);
    // glXSwapBuffers();
 
 	gl_get_context()->glXSaveRenderImg("imgok.bmp");
-	glClose();
+	TkGDrawLib.glClose();
     return 1;
 }
