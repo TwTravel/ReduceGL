@@ -44,9 +44,6 @@
     <ClInclude Include="zbuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="zgl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="zmath.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -49,9 +49,7 @@ enum {
 
 	/* Matrix Mode */
 	GL_MATRIX_MODE		 = 0x0BA0,
-	GL_MODELVIEW		 = 0x1700,
-	GL_PROJECTION		 = 0x1701,
-	GL_TEXTURE			 = 0x1702,
+
 
 	/* Points */
 	GL_POINT_SMOOTH			= 0x0B10,
@@ -352,7 +350,8 @@ typedef void (*gl_draw_triangle_func)( GLContext *c,
 /* display context */
 ///###################################################################
 ///###################################################################
-enum GDMatrixTye{KH_ModelView,KH_PROJECTION,KH_TEXTURE};
+enum GDMatModel{GL_MODELVIEW, GL_PROJECTION	, GL_TEXTURE };
+enum GDMatrixTye{KH_ModelView,KH_PROJECTION ,KH_TEXTURE};
  
 //MatrixStack TkGLMat[3];
 class MatrixStack
@@ -548,21 +547,7 @@ inline void  GLContext::glInitTextures(GLContext *c)
 inline void GLContext::glMatrixMode(int mode)
 {
   GLContext *c = gl_get_context(); 
-  //==================================
-   //int mode=p[1].i;
-  switch(mode) {
-  case GL_MODELVIEW:
-    c->matrix_mode=0;
-    break;
-  case GL_PROJECTION:
-    c->matrix_mode=1;
-    break;
-  case GL_TEXTURE:
-    c->matrix_mode=2;
-    break;
-  default:
-    assert(0);
-  }
+  c->matrix_mode = mode;
 }
 
 void inline GLContext::glInit(int xsize,int ysize)
@@ -1340,28 +1325,11 @@ inline void GraphDrawLib::glEnd(void)
 
 /* matrix */
  
-
 inline void GraphDrawLib::glMatrixMode(int mode)
 {
   GLContext *c=gl_get_context(); 
-  //==================================
-   //int mode=p[1].i;
-  switch(mode) {
-  case GL_MODELVIEW:
-    c->matrix_mode=0;
-    break;
-  case GL_PROJECTION:
-    c->matrix_mode=1;
-    break;
-  case GL_TEXTURE:
-    c->matrix_mode=2;
-    break;
-  default:
-    assert(0);
-  }
+  c->matrix_mode = mode;
 }
-
- 
 
 inline void GraphDrawLib::glLoadIdentity(void)
 {

@@ -325,8 +325,6 @@ int main(int argc,char* argv[])
 	
 	RenderScene();
 	
-	
-	
     Position[0] = -1; 
 	Position[1] =1 ;
 	Position[2] =1; 

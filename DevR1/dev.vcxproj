@@ -71,7 +71,6 @@
     <ClInclude Include="readstl.h" />
     <ClInclude Include="x11imp.h" />
     <ClInclude Include="zbuffer.h" />
-    <ClInclude Include="zgl.h" />
     <ClInclude Include="zmath.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -5,8 +5,7 @@
 
  
 #include "gl.h"
-//#include "ui.h"
-#include "zgl.h"
+ 
 
 //void glInit(void *zbuffer1);
 void glInit(int xsize,int ysize);
