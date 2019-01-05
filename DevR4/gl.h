@@ -1768,27 +1768,10 @@ void inline gl_transform_to_viewport(GLContext *c,GLVertex *v)
 	v->normal.Y = (n->X * m[4] + n->Y * m[5] + n->Z * m[6]);
 	v->normal.Z = (n->X * m[8] + n->Y * m[9] + n->Z * m[10]);
 
-	if (c->normalize_enabled) {
-	    gl_V3_Norm(&v->normal);
-	}
-    } else {
-	/* no eye coordinates needed, no normal */
-	/* NOTE: W = 1 is assumed */
-	m = &c->matrix_model_projection.m[0][0];
-
-	v->pc.X = (v->coord.X * m[0] + v->coord.Y * m[1] +
-		   v->coord.Z * m[2] + m[3]);
-	v->pc.Y = (v->coord.X * m[4] + v->coord.Y * m[5] +
-		   v->coord.Z * m[6] + m[7]);
-	v->pc.Z = (v->coord.X * m[8] + v->coord.Y * m[9] +
-		   v->coord.Z * m[10] + m[11]);
-	if (c->matrix_model_projection_no_w_transform) {
-	    v->pc.W = m[15];
-	} else {
-	    v->pc.W = (v->coord.X * m[12] + v->coord.Y * m[13] +
-		       v->coord.Z * m[14] + m[15]);
-	}
-    }
+	  if (c->normalize_enabled) 
+	       gl_V3_Norm(&v->normal);
+	 
+    }  
 
     v->clip_code = gl_clipcode(v->pc.X, v->pc.Y, v->pc.Z, v->pc.W);
 }
@@ -1940,9 +1923,7 @@ inline void GraphDrawLib::gl_draw_triangle_clip(GLContext *c,
   GLVertex tmp1,tmp2,*q[3];
   float tt;
   
-  cc[0]=p0->clip_code;
-  cc[1]=p1->clip_code;
-  cc[2]=p2->clip_code;
+  cc[0]=p0->clip_code; cc[1]=p1->clip_code; cc[2]=p2->clip_code;
   
   co=cc[0] | cc[1] | cc[2];
   if (co == 0) {
@@ -1958,15 +1939,8 @@ inline void GraphDrawLib::gl_draw_triangle_clip(GLContext *c,
     }
 
     /* this test can be true only in case of rounding errors */
-    if (clip_bit == 6) {
-#if 0
-      printf("Error:\n");
-      printf("%f %f %f %f\n",p0->pc.X,p0->pc.Y,p0->pc.Z,p0->pc.W);
-      printf("%f %f %f %f\n",p1->pc.X,p1->pc.Y,p1->pc.Z,p1->pc.W);
-      printf("%f %f %f %f\n",p2->pc.X,p2->pc.Y,p2->pc.Z,p2->pc.W);
-#endif
-      return;
-    }
+    if (clip_bit == 6)    return;
+     
   
     clip_mask = 1 << clip_bit;
     co1=(cc[0] ^ cc[1] ^ cc[2]) & clip_mask;
