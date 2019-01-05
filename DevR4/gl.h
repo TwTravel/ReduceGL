@@ -507,7 +507,6 @@ void inline GLContext::glInit(int xsize,int ysize)
   int i;
  
   this->zb.ZB_open(xsize, ysize, 0,0,NULL,NULL,NULL);
-  
   this->vertex_max = POLYGON_MAX_VERTEX;
   this->vertex.resize( vertex_max );
 
@@ -1927,7 +1926,7 @@ inline void GraphDrawLib::gl_draw_triangle_clip(GLContext *c,
   
   co=cc[0] | cc[1] | cc[2];
   if (co == 0) {
-    gl_draw_triangle(c,p0,p1,p2);
+    gl_draw_triangle(c,p0,p1,p2);//do triangle drawing
   } else {
     c_and=cc[0] & cc[1] & cc[2];
     /* the triangle is completely outside */
