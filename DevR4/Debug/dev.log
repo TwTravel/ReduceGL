@@ -1,0 +1,196 @@
+﻿Build started 2019/1/5 星期六 15:14:19.
+Project "F:\tzwang\graphics\ReduceGL\DevR4\dev.vcxproj" on node 2 (rebuild target(s)).
+_PrepareForClean:
+  Deleting file "Debug\dev.lastbuildstate".
+InitializeBuildStatus:
+  Touching "Debug\dev.unsuccessfulbuild".
+ClCompile:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt 3DS.cpp main.cpp
+  main.cpp
+f:\tzwang\graphics\reducegl\devr4\main.cpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(210): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(210): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(210): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(210): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(211): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(211): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(211): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(211): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(212): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(212): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(212): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(212): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(213): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(213): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(213): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(213): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(405): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(406): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(409): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(409): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(416): warning C4244: '=' : conversion from 'double' to 'BYTE', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(417): warning C4244: '=' : conversion from 'double' to 'BYTE', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(418): warning C4244: '=' : conversion from 'double' to 'BYTE', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(426): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(427): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(430): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(430): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(509): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h(521): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\devr4\c256bitmap.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\tzwang\graphics\reducegl\devr4\c256bitmap.h(96): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\devr4\c256bitmap.h(107): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(218): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(219): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(221): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(222): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(227): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(235): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(236): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(240): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(241): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(245): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(246): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(250): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(251): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(507): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(508): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(510): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(511): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(516): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(524): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(525): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(665): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(681): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(475): warning C4101: 'drdy' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(481): warning C4101: 'dtdl_min' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(480): warning C4101: 'dsdy' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(476): warning C4101: 'dgdx' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(481): warning C4101: 'dtdy' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(475): warning C4101: 'r1' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(476): warning C4101: 'dgdy' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(480): warning C4101: 'dsdl_max' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(475): warning C4101: 'drdl_min' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(476): warning C4101: 'dgdl_min' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(480): warning C4101: 'dsdl_min' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(477): warning C4101: 'dbdl_min' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(477): warning C4101: 'dbdx' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(476): warning C4101: 'dgdl_max' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(481): warning C4101: 'dtdl_max' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(480): warning C4101: 's1' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(477): warning C4101: 'dbdl_max' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(476): warning C4101: 'g1' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(481): warning C4101: 't1' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(475): warning C4101: 'drdx' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(480): warning C4101: 'dsdx' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(477): warning C4101: 'dbdy' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(481): warning C4101: 'dtdx' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(475): warning C4101: 'drdl_max' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\zbuffer.h(477): warning C4101: 'b1' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\gl.h(311): warning C4099: 'GLTexture' : type name first seen using 'class' now seen using 'struct'
+          f:\tzwang\graphics\reducegl\devr4\gl.h(306) : see declaration of 'GLTexture'
+f:\tzwang\graphics\reducegl\devr4\gl.h(548): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\gl.h(548): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\gl.h(548): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\gl.h(557): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\gl.h(557): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\gl.h(557): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\gl.h(558): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\gl.h(558): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\gl.h(558): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\gl.h(914): warning C4244: '=' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(915): warning C4244: '=' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(916): warning C4244: '=' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(918): warning C4244: '=' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(919): warning C4244: '=' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(920): warning C4244: '=' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(945): warning C4244: 'argument' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(945): warning C4244: 'argument' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(945): warning C4244: 'argument' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(976): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(980): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(981): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(982): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(984): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(985): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(986): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(994): warning C4101: 'i' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\gl.h(1337): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(1404): warning C4101: 'm' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\gl.h(1421): warning C4101: 'm' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\gl.h(1488): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(1489): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(1490): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(1491): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(1492): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(1493): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(1563): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(1624): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(1708): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(1777): warning C4101: 'p' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\gl.h(1806): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(1820): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(2237): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\gl.h(2363): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\c24bitmap.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\tzwang\graphics\reducegl\devr4\x11imp.h(39): warning C4101: 'buf' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\x11imp.h(38): warning C4101: 'k' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\readstl.h(282): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(110): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\main.cpp(110): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\main.cpp(110): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\main.cpp(113): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\main.cpp(174): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(174): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(175): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(175): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(177): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(177): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(178): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(178): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(180): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(180): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(181): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(181): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(207): warning C4101: 'Emission' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\main.cpp(228): warning C4018: '<' : signed/unsigned mismatch
+f:\tzwang\graphics\reducegl\devr4\main.cpp(234): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\main.cpp(234): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\main.cpp(234): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\main.cpp(238): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\main.cpp(238): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\main.cpp(238): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\devr4\main.cpp(222): warning C4101: 'i' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\main.cpp(272): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(254): warning C4101: 'i' : unreferenced local variable
+f:\tzwang\graphics\reducegl\devr4\main.cpp(389): warning C4305: '+=' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(399): warning C4305: '+=' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(410): warning C4305: '+=' : truncation from 'double' to 'float'
+  3DS.cpp
+f:\tzwang\graphics\reducegl\devr4\3ds.cpp(24): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\devr4\3ds.cpp(29): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+f:\tzwang\graphics\reducegl\devr4\3ds.cpp(43): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+  Generating Code...
+Link:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\tzwang\graphics\ReduceGL\DevR4\Debug\dev.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\dev.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\tzwang\graphics\ReduceGL\DevR4\Debug\dev.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\tzwang\graphics\ReduceGL\DevR4\Debug\dev.lib" /MACHINE:X86 Debug\3DS.obj
+  Debug\main.obj
+  dev.vcxproj -> F:\tzwang\graphics\ReduceGL\DevR4\Debug\dev.exe
+Manifest:
+  c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"F:\tzwang\graphics\ReduceGL\DevR4\Debug\dev.exe;#1" /manifest Debug\dev.exe.intermediate.manifest
+FinalizeBuildStatus:
+  Deleting file "Debug\dev.unsuccessfulbuild".
+  Touching "Debug\dev.lastbuildstate".
+Done Building Project "F:\tzwang\graphics\ReduceGL\DevR4\dev.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.56

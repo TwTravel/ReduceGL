@@ -312,10 +312,10 @@ public:
 //###################################################
  
 
- inline GLContext*gl_get_context(void)
+ /*inline GLContext*gl_get_context(void)
 {
   return &gl_ctx;
-}
+}*/
 
 
  void inline gl_free(void *p)
