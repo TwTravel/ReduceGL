@@ -36,6 +36,13 @@ typedef unsigned char PIXEL;
 #define PSZB 3
 #define PSZSH 5
 
+struct ZBufferPoint{
+  int x,y,z;     /* integer coordinates in the zbuffer */
+  int s,t;       /* coordinates for the mapping */
+  int r,g,b;     /* color indexes */
+  
+  float sz,tz;   /* temporary coordinates for mapping */
+} ;
 
 class ZBuffer{
 public:
@@ -58,19 +65,17 @@ public:
 		 void *frame_buffer);
 	void inline  ZB_close( );
 	void inline  ZB_setTexture( PIXEL *texture);
+	void inline ZB_fillTriangleMappingPerspective(
+                            ZBufferPoint *p0,ZBufferPoint *p1,ZBufferPoint *p2);
+	void inline ZB_fillTriangleSmooth( 
+			   ZBufferPoint *p0,ZBufferPoint *p1,ZBufferPoint *p2);
 };// ZBuffer;
 
 void gl_free(void *p);
 void *gl_malloc(int size);
 void *gl_zalloc(int size);
 
-typedef struct {
-  int x,y,z;     /* integer coordinates in the zbuffer */
-  int s,t;       /* coordinates for the mapping */
-  int r,g,b;     /* color indexes */
-  
-  float sz,tz;   /* temporary coordinates for mapping */
-} ZBufferPoint;
+
 
 /* zbuffer.c */
 inline ZBuffer * ZBuffer::ZB_open(int xsize, int ysize, int mode,
@@ -168,11 +173,11 @@ void inline PUT_PIXELK(int _a, double &z, double &zz, register PIXEL *pp,double 
     ob1+=dbdx;					 
 }
 
-void inline ZB_fillTriangleSmooth(ZBuffer *zb,
+void inline ZBuffer::ZB_fillTriangleSmooth(
 			   ZBufferPoint *p0,ZBufferPoint *p1,ZBufferPoint *p2)
 {
 
-
+ZBuffer *zb = this;
 
 ZBufferPoint *t,*pr1,*pr2,*l1,*l2;
   float fdx1, fdx2, fdy1, fdy2, fz, d1, d2;
@@ -441,9 +446,10 @@ ZBufferPoint *t,*pr1,*pr2,*l1,*l2;
 }
 
 
-void inline ZB_fillTriangleMappingPerspective(ZBuffer *zb,
+void inline ZBuffer::ZB_fillTriangleMappingPerspective(
                             ZBufferPoint *p0,ZBufferPoint *p1,ZBufferPoint *p2)
 {
+	ZBuffer *zb = this;
     PIXEL *texture;
     float fdzdx,fndzdx,ndszdx,ndtzdx;
 

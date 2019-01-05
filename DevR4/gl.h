@@ -314,8 +314,7 @@ public:
  
 
 //###################################################
-  
-
+ 
 
  void inline gl_free(void *p)
 {
@@ -453,11 +452,8 @@ public:
   /* glBegin / glEnd */
   int in_begin;
   int begin_type;
-  int vertex_n,vertex_cnt;
-  int vertex_max;
-  GLVertex *vertex;
- 
- 
+  int vertex_n,vertex_cnt,vertex_max;
+  vector<GLVertex> vertex;
   /* specular buffer. could probably be shared between contexts, 
     but that wouldn't be 100% thread safe */
   GLSpecBuf *specbuf_first;
@@ -511,12 +507,10 @@ void inline GLContext::glInit(int xsize,int ysize)
   int i;
  
   this->zb.ZB_open(xsize, ysize, 0,0,NULL,NULL,NULL);
-  //this->zb=zbuffer;
-
-  /* allocate GLVertex array */
-  this->vertex_max = POLYGON_MAX_VERTEX;
-  this->vertex = (GLVertex *)gl_malloc(POLYGON_MAX_VERTEX*sizeof(GLVertex));
   
+  this->vertex_max = POLYGON_MAX_VERTEX;
+  this->vertex.resize( vertex_max );
+
   /* viewport */
   v=&this->viewport;
   v->xmin=0;
@@ -588,7 +582,7 @@ void inline GLContext::glInit(int xsize,int ysize)
   this->current_tex_coord.W=1;
 
   this->polygon_mode_front=GL_FILL;
-  this->polygon_mode_back=GL_FILL;
+  this->polygon_mode_back =GL_FILL;
 
   this->current_front_face=0; /* 0 = GL_CCW  1 = GL_CW */
   this->current_cull_face=GL_BACK;
@@ -717,7 +711,6 @@ void inline GLContext::glXSaveRenderImg(char* picture )
   CPic.Save(picture);
    
   /* for non 16 bits visuals, a conversion is required */
-  
 }
  
 
@@ -838,9 +831,9 @@ void inline  gl_draw_triangle_fill(GLContext *c,
   if (c->texture_2d_enabled) {
  
     c->zb.ZB_setTexture((PIXEL *)&c->current_texture->images[0].pixmap[0]);
-    ZB_fillTriangleMappingPerspective(&c->zb,&p0->zp,&p1->zp,&p2->zp);
+    c->zb.ZB_fillTriangleMappingPerspective(&p0->zp,&p1->zp,&p2->zp);
   } else if (c->current_shade_model == GL_SMOOTH) {
-    ZB_fillTriangleSmooth(&c->zb,&p0->zp,&p1->zp,&p2->zp);
+    c->zb.ZB_fillTriangleSmooth( &p0->zp,&p1->zp,&p2->zp);
   } 
 }
 
@@ -853,8 +846,7 @@ inline void GraphDrawLib::InitDrawLib(int width,int height)
   //if ( gl_context == NULL) {
   if( gl_context->image_w!=1600){
     gl_context->glInit( width,  height);
-
-
+ 
     gl_context=&gl_ctx;;
     gl_context->image_w = width;
 	gl_context->image_h = height;
@@ -945,23 +937,10 @@ gluLookAt(GLdouble eyex, GLdouble eyey, GLdouble eyez, GLdouble centerx,
     glTranslatef(-eyex, -eyey, -eyez);
 }
 
-
-
-
  
 
 void inline GraphDrawLib::glClose(void)
-{
-  GLContext *c=&gl_ctx;;
-  
-}
-
-void inline ZB_fillTriangleMappingPerspective(ZBuffer *zb,
-                            ZBufferPoint *p0,ZBufferPoint *p1,ZBufferPoint *p2);
-void inline ZB_fillTriangleSmooth(ZBuffer *zb,
-			   ZBufferPoint *p0,ZBufferPoint *p1,ZBufferPoint *p2);
-
- 
+{ }
  
 
 inline void GraphDrawLib::gl_matrix_update(GLContext *c)
@@ -1000,18 +979,7 @@ inline void GraphDrawLib::glVertex4f(float x,float y,float z,float w)
     cnt++;
     c->vertex_cnt = cnt;
 
-    /* quick fix to avoid crashes on large polygons */
-    if (n >= c->vertex_max) {
-	GLVertex *newarray;
-	c->vertex_max <<= 1;	/* just double size */
-	newarray = (GLVertex *)gl_malloc(sizeof(GLVertex) * c->vertex_max);
-	if (!newarray) {
-	   exit(0);// gl_fatal_error("unable to allocate GLVertex array.\n");
-	}
-	memcpy(newarray, c->vertex, n * sizeof(GLVertex));
-	gl_free(c->vertex);
-	c->vertex = newarray;
-    }
+   
     /* new vertex entry */
     v = &c->vertex[n];
     n++;
@@ -1296,16 +1264,9 @@ inline void GraphDrawLib::glMultMatrixf(const float *mm)
    M4 m1,m;
    memcpy( &m1.m[0][0], mm,16*sizeof(float));
    M4::gl_M4_Transpose(&m, &m1);
-  
-  /*GLParam p[17];
-  for(int i=0;i<16;i++) p[i+1].f = mm[i];//glRunFunc(p);
-  GLParam *q; q=p+1;
-  for(i=0;i<4;i++) {
-    m.m[0][i]=q[0].f; m.m[1][i]=q[1].f;
-    m.m[2][i]=q[2].f; m.m[3][i]=q[3].f;
-    q+=4; }  */
 
-  M4::gl_M4_MulLeft(c->TkGLMat[c->matrix_mode].get_current_matrix(),&m);
+
+   M4::gl_M4_MulLeft(c->TkGLMat[c->matrix_mode].get_current_matrix(),&m);
 
   gl_matrix_update(c);
 }
@@ -1437,8 +1398,6 @@ inline void GraphDrawLib::glViewport(int x,int y,int width,int height)
    
   int  xsize_req,ysize_req;
   
- // xmin=p[1].i;
- // ymin=p[2].i;
   int xmin(x), ymin(y);
   int xsize=width;
   int ysize=height;
@@ -1464,8 +1423,7 @@ inline void GraphDrawLib::glViewport(int x,int y,int width,int height)
     exit(0);//  gl_fatal_error("glViewport: size too small");
     }
 
-    //tgl_trace("glViewport: %d %d %d %d\n",
-     //         xmin, ymin, xsize, ysize);
+ 
     c->viewport.xmin=xmin;
     c->viewport.ymin=ymin;
     c->viewport.xsize=xsize;
@@ -1634,30 +1592,19 @@ inline void GraphDrawLib::glMaterialf(int mode,int type,float val)
   }
 }
 
-/*
-void glColorMaterial(int mode,int type)
-{
-  GLContext *c=&gl_ctx;; 
-  c->current_color_material_mode=mode;
-  c->current_color_material_type=type;
-}*/
+ 
 
 inline void GraphDrawLib::glLightfv(int light,int type,float *val)
 { GLContext *c=&gl_ctx;; 
   GLParam p[7];
   int i;
 
-  //p[0].op=OP_Light;
-  p[1].i=light;
-  p[2].i=type;
+  p[1].i=light; p[2].i=type;
   /* TODO: 3 composants ? */
   for(i=0;i<4;i++) p[3+i].f=val[i];
-
  
-  V4 v;
-  GLLight *l;
-//  int i;
-  
+  V4 v; GLLight *l;
+ 
   assert(light >= GL_LIGHT0 && light < GL_LIGHT0+MAX_LIGHTS );
 
   l=&c->lights[light-GL_LIGHT0];
@@ -1757,9 +1704,7 @@ inline void GraphDrawLib::glTexImage2D( int target, int level, int components,
   im=&c->current_texture->images[level];
   im->xsize=width;
   im->ysize=height;
-  //if (im->pixmap!=NULL) gl_free(im->pixmap);
-//#if TGL_FEATURE_RENDER_BITS == 24 
-  //im->pixmap=gl_malloc(width*height*3);
+ 
   im->pixmap.resize(width*height*3);
   
   memcpy(&im->pixmap[0],pixels1,width*height*3);
@@ -1915,9 +1860,7 @@ void inline gl_transform_to_viewport(GLContext *c,GLVertex *v)
 
  /* triangle */
 
-/*
- * Clipping
- */
+/*  Clipping  */
 
 /* We clip the segment [a,b] against the 6 planes of the normal volume.
  * We compute the point 'c' of intersection and the value of the parameter 't'
