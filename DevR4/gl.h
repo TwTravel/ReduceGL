@@ -1988,7 +1988,7 @@ inline void GraphDrawLib::gl_draw_triangle_clip(GLContext *c,
 
 
  
- 
+///<-----------------main triangle drawing entry 
 void inline GraphDrawLib::gl_draw_triangle(GLContext *c,
                       GLVertex *p0,GLVertex *p1,GLVertex *p2)
 {
