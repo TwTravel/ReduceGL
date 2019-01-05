@@ -252,36 +252,12 @@ void StlShape_Render(std::vector<triangle>&facet)
 void Test_TRIANGLES( )
 {
   int i;
-   
-  //glPushAttrib(GL_ALL_ATTRIB_BITS);
-
-  TkGDrawLib.glBegin(GL_TRIANGLES);
- // for(int i = 0; i < facet.size(); i++)
- // {
-        // 遍历三角形的所有点
-  //    for(int whichVertex = 0; whichVertex < 3; whichVertex++ )
-     //  {
-        // 给出法向量
-        //glNormal3f(facet[i].normal.x, facet[i].normal.y, facet[i].normal.z);
-        // 如果对象具有纹理
-		//glNormal3f(1, 1, 1);
-        TkGDrawLib.glVertex3f(-1.5,0,0); /* */
-		//glNormal3f(1, 1, 1);
-		TkGDrawLib.glVertex3f(-1,0,1);
-		//glNormal3f(1, 1, 1);
-		TkGDrawLib.glVertex3f(0,0.3,0);
-		
-		/*glNormal3f(facet[i].normal.z,facet[i].normal.x, facet[i].normal.y);
-        // 如果对象具有纹理
-        glVertex3f( facet[i].point[whichVertex].z ,
-		            facet[i].point[whichVertex].x , 
-		            facet[i].point[whichVertex].y 
-				     );*/
-       //}
-  // }
-  TkGDrawLib.glEnd();
-  
- //glPopAttrib(); 
+   TkGDrawLib.glBegin(GL_TRIANGLES);
+   TkGDrawLib.glVertex3f(-1.5,0,0); /* */
+   TkGDrawLib.glVertex3f(-1,0,1);
+   TkGDrawLib.glVertex3f(0,0.3,0);
+   TkGDrawLib.glEnd();
+ 
 }
 void SetCamera()
 {
@@ -302,22 +278,12 @@ int main(int argc,char* argv[])
 {
 	TkGDrawLib.InitDrawLib(1600,1600);
 	ui_loop(argc, argv, "models");
-  	// GLUT初始化
-	/*glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowPosition(100, 100);
-	glutInitWindowSize(WindowWidth, WindowHeight);
-	glutCreateWindow(WindowTitle);*/	
-	//int height);
+ 
 	TkGDrawLib.glEnable(GL_DEPTH_TEST);    
 	TkGDrawLib.glEnable(GL_TEXTURE_2D);    // 启用纹理
-	//model_init();
-	//init();
+ 
 	reshape(WindowWidth, WindowHeight);
-	//texGround = load_texture("ground.bmp");  //加载纹理
-	//texWall = load_texture("wall.bmp");
-	//glutDisplayFunc(&RenderScene);   //注册函数 
-	//glutIdleFunc(&myIdle);  
+	 
 	//glutMainLoop(); //循环调用
 	float Position[4], SpotDirection[4];
 
@@ -333,9 +299,6 @@ int main(int argc,char* argv[])
 	TkGDrawLib.glLightfv(GL_LIGHT1, GL_POSITION, Position);
 	TkGDrawLib.glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, SpotDirection);
 	
-	//glLightfv(LightName, GL_AMBIENT, Ambient);
-    //glLightfv(LightName, GL_DIFFUSE, Diffuse);
-    //glLightfv(LightName, GL_SPECULAR, Specular);
 	TkGDrawLib.glEnable(GL_LIGHT1);
 	
     Position[0] = -2;  Position[1] =  3 ; Position[2] =1.5;  Position[3] =1;
@@ -355,16 +318,15 @@ int main(int argc,char* argv[])
     TkGDrawLib.glLightfv(GL_LIGHT3, GL_POSITION, Position);
 	TkGDrawLib.glLightfv(GL_LIGHT3, GL_SPOT_DIRECTION, SpotDirection);
 	
-	
 	TkGDrawLib.glEnable(GL_LIGHT3);
 	
 	
 	int i,j;
 	
 	std::vector<triangle> bunny_facet;
-	 double x_min,   x_max,  y_min,   y_max,  z_min,   z_max;
-   read_binary_STL_file("bunny.stl",bunny_facet,
-   x_min,   x_max,  y_min,   y_max,  z_min,   z_max);
+	double x_min,   x_max,  y_min,   y_max,  z_min,   z_max;
+    read_binary_STL_file("bunny.stl",bunny_facet,
+    x_min,   x_max,  y_min,   y_max,  z_min,   z_max);
 	
    printf("%.2lf,%.2lf\n",x_min,   x_max);	
    TkGDrawLib.glDisable(GL_TEXTURE_2D);
@@ -373,9 +335,7 @@ int main(int argc,char* argv[])
    for(i=0;i<10;i++)
    {
 	   for(j=0;j<4;j++) vx[j][1] +=0.2;
-	  // vx[][3]
-	  // float vx[][3]={{0,  -0.02, 0.0},{100, -0.02, 0.0},
-      //         {100, 0.02, 0.0},{  0,  0.02, 0.0} };
+	   
 	   drawPolygon(vx);
    }
   SurfSetColor(0.0, 1, 0);
@@ -383,9 +343,7 @@ int main(int argc,char* argv[])
      for(i=0;i<10;i++)
    {
 	   for(j=0;j<4;j++) vy[j][0] +=0.2;
-	  // vx[][3]
-	  // float vx[][3]={{0,  -0.02, 0.0},{100, -0.02, 0.0},
-      //         {100, 0.02, 0.0},{  0,  0.02, 0.0} };
+	  
 	   drawPolygon(vy);
    }
   SurfSetColor(0.0, 0, 1);
@@ -394,14 +352,15 @@ int main(int argc,char* argv[])
        for(i=0;i<10;i++)
    {
 	   for(j=0;j<4;j++) vz[j][0] +=0.2;
-	  // vx[][3]
-	  // float vx[][3]={{0,  -0.02, 0.0},{100, -0.02, 0.0},
-      //         {100, 0.02, 0.0},{  0,  0.02, 0.0} };
+	   
 	   drawPolygon(vz);
    }/**/
-    Test_TRIANGLES( );
-    TkGDrawLib.glScalef(5, 5, 5);
-  
+    
+	Test_TRIANGLES( );
+    TkGDrawLib.glScalef(7, 7, 7);
+    
+	TkGDrawLib.glRotatef(40.0, 0, 1.0f, 0);
+	
     StlShape_Render(bunny_facet);
    // glXSwapBuffers();
 

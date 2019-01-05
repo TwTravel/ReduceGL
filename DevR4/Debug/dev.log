@@ -1,9 +1,9 @@
-﻿Build started 2019/1/5 星期六 15:14:19.
+﻿Build started 2019/1/5 星期六 15:49:55.
 Project "F:\tzwang\graphics\ReduceGL\DevR4\dev.vcxproj" on node 2 (rebuild target(s)).
 _PrepareForClean:
   Deleting file "Debug\dev.lastbuildstate".
 InitializeBuildStatus:
-  Touching "Debug\dev.unsuccessfulbuild".
+  Creating "Debug\dev.unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
   c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt 3DS.cpp main.cpp
   main.cpp
@@ -167,11 +167,11 @@ f:\tzwang\graphics\reducegl\devr4\main.cpp(238): warning C4244: 'argument' : con
 f:\tzwang\graphics\reducegl\devr4\main.cpp(238): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
 f:\tzwang\graphics\reducegl\devr4\main.cpp(238): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
 f:\tzwang\graphics\reducegl\devr4\main.cpp(222): warning C4101: 'i' : unreferenced local variable
-f:\tzwang\graphics\reducegl\devr4\main.cpp(272): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(258): warning C4305: 'argument' : truncation from 'double' to 'float'
 f:\tzwang\graphics\reducegl\devr4\main.cpp(254): warning C4101: 'i' : unreferenced local variable
-f:\tzwang\graphics\reducegl\devr4\main.cpp(389): warning C4305: '+=' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\devr4\main.cpp(399): warning C4305: '+=' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\devr4\main.cpp(410): warning C4305: '+=' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(337): warning C4305: '+=' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(345): warning C4305: '+=' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\devr4\main.cpp(354): warning C4305: '+=' : truncation from 'double' to 'float'
   3DS.cpp
 f:\tzwang\graphics\reducegl\devr4\3ds.cpp(24): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
           c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
@@ -193,4 +193,4 @@ Done Building Project "F:\tzwang\graphics\ReduceGL\DevR4\dev.vcxproj" (rebuild t
 
 Build succeeded.
 
-Time Elapsed 00:00:02.56
+Time Elapsed 00:00:04.63
