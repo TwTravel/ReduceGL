@@ -300,6 +300,7 @@ void SetCamera()
 void glXSwapBuffers();
 int main(int argc,char* argv[])
 {
+	TkGDrawLib.InitDrawLib(1600,1600);
 	ui_loop(argc, argv, "models");
   	// GLUT初始化
 	/*glutInit(&argc, argv);
@@ -307,6 +308,7 @@ int main(int argc,char* argv[])
 	glutInitWindowPosition(100, 100);
 	glutInitWindowSize(WindowWidth, WindowHeight);
 	glutCreateWindow(WindowTitle);*/	
+	//int height);
 	TkGDrawLib.glEnable(GL_DEPTH_TEST);    
 	TkGDrawLib.glEnable(GL_TEXTURE_2D);    // 启用纹理
 	//model_init();

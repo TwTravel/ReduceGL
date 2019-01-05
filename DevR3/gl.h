@@ -273,15 +273,7 @@ typedef union {
   void *p;
 } GLParam;
 
-typedef struct GLParamBuffer {
-  GLParam ops[OP_BUFFER_MAX_SIZE];
-  struct GLParamBuffer *next;
-} GLParamBuffer;
-
-typedef struct GLList {
-  GLParamBuffer *first_op_buffer;
-  /* TODO: extensions for an hash table or a better allocating scheme */
-} GLList;
+ 
 
 typedef struct GLVertex {
   int edge_flag;
@@ -417,10 +409,7 @@ public:
 
    
 
-  /* current list */
-  GLParamBuffer *current_op_buffer;
-  int current_op_buffer_index;
-  int exec_flag,compile_flag,print_flag;
+ 
 
   /* matrix */
 
@@ -548,13 +537,7 @@ void inline GLContext::glInit(int xsize,int ysize)
   v->ysize= ysize;
   v->updated=1;
 
-  
-
-  /* lists */
-  c->exec_flag=1;
-  c->compile_flag=0;
-  c->print_flag=0;
-  c->in_begin=0;
+ 
 
   /* lights */
   for(i=0;i<MAX_LIGHTS;i++) {
@@ -997,7 +980,7 @@ void inline ZB_fillTriangleMappingPerspective(ZBuffer *zb,
 void inline ZB_fillTriangleSmooth(ZBuffer *zb,
 			   ZBufferPoint *p0,ZBufferPoint *p1,ZBufferPoint *p2);
 
-void inline GraphDrawLib::gl_draw_triangle_fill(GLContext *c,
+/*void inline GraphDrawLib::gl_draw_triangle_fill(GLContext *c,
                            GLVertex *p0,GLVertex *p1,GLVertex *p2)
 {
  
@@ -1009,7 +992,7 @@ void inline GraphDrawLib::gl_draw_triangle_fill(GLContext *c,
   } else if (c->current_shade_model == GL_SMOOTH) {
     ZB_fillTriangleSmooth(&c->zb,&p0->zp,&p1->zp,&p2->zp);
   } 
-}
+}*/
  
 
 inline void GraphDrawLib::gl_matrix_update(GLContext *c)
