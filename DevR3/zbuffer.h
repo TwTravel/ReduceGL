@@ -1,16 +1,143 @@
-#include <math.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#ifndef _tgl_zbuffer_h_
+#define _tgl_zbuffer_h_
+
+/*
+ * Z buffer
+ */
 
  
-#include "gl.h"
+
+#define ZB_Z_BITS 16
+
+#define ZB_POINT_Z_FRAC_BITS 14
+
+#define ZB_POINT_S_MIN ( (1<<13) )
+#define ZB_POINT_S_MAX ( (1<<22)-(1<<13) )
+#define ZB_POINT_T_MIN ( (1<<21) )
+#define ZB_POINT_T_MAX ( (1<<30)-(1<<21) )
+
  
 
-//void glInit(void *zbuffer1);
-void glInit(int xsize,int ysize);
+#define ZB_POINT_RED_MIN ( (1<<9) )
+#define ZB_POINT_RED_MAX ( (1<<16)-(1<<9) )
+#define ZB_POINT_GREEN_MIN ( (1<<9) )
+#define ZB_POINT_GREEN_MAX ( (1<<16)-(1<<9) )
+#define ZB_POINT_BLUE_MIN ( (1<<9) )
+#define ZB_POINT_BLUE_MAX ( (1<<16)-(1<<9) )
 
-#ifndef M_PI
+ 
+ 
+
+//#elif TGL_FEATURE_RENDER_BITS == 24
+
+#define RGB_TO_PIXEL(r,g,b) \
+  ((((r) << 8) & 0xff0000) | ((g) & 0xff00) | ((b) >> 8))
+typedef unsigned char PIXEL;
+#define PSZB 3
+#define PSZSH 5
+
+
+class ZBuffer{
+public:
+    int xsize,ysize;
+    int linesize; /* line size, in bytes */
+    int mode;
+    
+    double *zbuf;
+    PIXEL *pbuf;
+    int frame_buffer_allocated;
+    
+    int nb_colors;
+    unsigned char *dctable;
+    int *ctable;
+    PIXEL *current_texture;
+	ZBuffer inline *ZB_open(int xsize, int ysize, int mode,
+		 int nb_colors,
+		 unsigned char *color_indexes,
+		 int *color_table,
+		 void *frame_buffer);
+	void inline  ZB_close( );
+	void inline  ZB_setTexture( PIXEL *texture);
+};// ZBuffer;
+
+void gl_free(void *p);
+void *gl_malloc(int size);
+void *gl_zalloc(int size);
+
+typedef struct {
+  int x,y,z;     /* integer coordinates in the zbuffer */
+  int s,t;       /* coordinates for the mapping */
+  int r,g,b;     /* color indexes */
+  
+  float sz,tz;   /* temporary coordinates for mapping */
+} ZBufferPoint;
+
+/* zbuffer.c */
+inline ZBuffer * ZBuffer::ZB_open(int xsize, int ysize, int mode,
+		 int nb_colors,
+		 unsigned char *color_indexes,
+		 int *color_table,
+		 void *frame_buffer)
+{
+    ZBuffer *zb = this;
+    int size;
+
+   // zb = (ZBuffer *)gl_malloc(sizeof(ZBuffer));
+
+    if (zb == NULL)
+	return NULL;
+
+    zb->xsize = xsize;
+    zb->ysize = ysize;
+    zb->mode = mode;
+    zb->linesize = (xsize * PSZB + 3) & ~3;
+
+ 
+    zb->nb_colors = 0;
+ 
+
+    size = zb->xsize * zb->ysize * sizeof(double);//sizeof(unsigned short);
+
+    zb->zbuf = (double *)gl_malloc(size);
+    if (zb->zbuf == NULL)
+	goto error;
+
+    if (frame_buffer == NULL) {
+	zb->pbuf = (PIXEL *)gl_malloc(zb->ysize * zb->linesize);
+	if (zb->pbuf == NULL) {
+	    gl_free(zb->zbuf);
+	    goto error;
+	}
+	zb->frame_buffer_allocated = 1;
+    } else {
+	zb->frame_buffer_allocated = 0;
+	zb->pbuf = (PIXEL *)frame_buffer;
+    }
+
+    zb->current_texture = NULL;
+
+    return zb;
+  error:
+    gl_free(zb);
+    return NULL;
+}
+
+void inline ZBuffer::ZB_close()
+{
+	ZBuffer * zb = this;
+    if (zb->frame_buffer_allocated)
+	gl_free(zb->pbuf);
+
+    gl_free(zb->zbuf);
+    gl_free(zb);
+}
+
+ void inline ZBuffer::ZB_setTexture( PIXEL *texture)
+{
+     current_texture=texture;
+}
+
+ #ifndef M_PI
 #  define M_PI 3.14159265
 #endif
 
@@ -620,70 +747,4 @@ ZBufferPoint *t,*pr1,*pr2,*l1,*l2;
   
  
 }
-
-
-
-
-/*void inline ZB_fillTriangleMappingPerspective(ZBuffer *zb,
-                            ZBufferPoint *p0,ZBufferPoint *p1,ZBufferPoint *p2);
-void inline ZB_fillTriangleSmooth(ZBuffer *zb,
-			   ZBufferPoint *p0,ZBufferPoint *p1,ZBufferPoint *p2);*/
-
-void inline  gl_draw_triangle_fill(GLContext *c,
-                           GLVertex *p0,GLVertex *p1,GLVertex *p2)
-{
- 
-    
-  if (c->texture_2d_enabled) {
- 
-    c->zb.ZB_setTexture((PIXEL *)&c->current_texture->images[0].pixmap[0]);
-    ZB_fillTriangleMappingPerspective(&c->zb,&p0->zp,&p1->zp,&p2->zp);
-  } else if (c->current_shade_model == GL_SMOOTH) {
-    ZB_fillTriangleSmooth(&c->zb,&p0->zp,&p1->zp,&p2->zp);
-  } 
-}
-
- bool glXMakeDrawOk(  int width, int height)
-{
-  GLContext * gl_context=gl_get_context();   
-   
-  //if ( gl_context == NULL) {
-  if( gl_context->image_w!=1600){
-    gl_context->glInit( width,  height);
-
-
-    gl_context=gl_get_context();
-    gl_context->image_w = width;
-	gl_context->image_h = height;
-    gl_context->gl_resize_viewport= NULL;  
-    gl_context->viewport.xsize=-1;
-    gl_context->viewport.ysize=-1;
-
-    gl_context->glViewport(0, 0, width,height);
-
-	gl_context->draw_triangle_front = gl_draw_triangle_fill;
-	gl_context->draw_triangle_back  = gl_draw_triangle_fill;
-  }
-
-  return true;
-}
-
- 
-void reshape( int width, int height );
-void init( void );
-
-int ui_loop(int argc, char **argv, const char *name)
-{
-   int k, width, height;
-   char buf[80];
-   width  = 1600;  height = 1600;
-    
-   glXMakeDrawOk(   width,  height);
-
-   init();
-   reshape(width, height);
-  
-  return 1;
-}
-
-
+#endif /* _tgl_zbuffer_h_ */

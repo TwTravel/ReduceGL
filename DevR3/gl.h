@@ -841,8 +841,7 @@ inline void glTexImage2D( int target, int level, int components,
                    int format, int type, void *pixels);
 
 inline void glBindTexture(int target,int texture);
-void inline gl_draw_triangle_fill(GLContext *c,
-                           GLVertex *p0,GLVertex *p1,GLVertex *p2);
+
 void inline  gl_draw_triangle(GLContext *c,
                       GLVertex *p0,GLVertex *p1,GLVertex *p2);
 inline void GraphDrawLib::gl_draw_triangle_clip(GLContext *c,
@@ -864,8 +863,48 @@ inline  void  free_texture(GLContext *c,int h);
 inline void gluLookAt(GLdouble eyex, GLdouble eyey, GLdouble eyez, GLdouble centerx,
 	  GLdouble centery, GLdouble centerz, GLdouble upx, GLdouble upy,
 	  GLdouble upz);
+void InitDrawLib(int width,int height);
 };
 
+void inline  gl_draw_triangle_fill(GLContext *c,
+                           GLVertex *p0,GLVertex *p1,GLVertex *p2)
+{
+ 
+    
+  if (c->texture_2d_enabled) {
+ 
+    c->zb.ZB_setTexture((PIXEL *)&c->current_texture->images[0].pixmap[0]);
+    ZB_fillTriangleMappingPerspective(&c->zb,&p0->zp,&p1->zp,&p2->zp);
+  } else if (c->current_shade_model == GL_SMOOTH) {
+    ZB_fillTriangleSmooth(&c->zb,&p0->zp,&p1->zp,&p2->zp);
+  } 
+}
+
+inline void GraphDrawLib::InitDrawLib(int width,int height)
+{
+//========================================================
+
+  GLContext * gl_context=gl_get_context();   
+   
+  //if ( gl_context == NULL) {
+  if( gl_context->image_w!=1600){
+    gl_context->glInit( width,  height);
+
+
+    gl_context=gl_get_context();
+    gl_context->image_w = width;
+	gl_context->image_h = height;
+    gl_context->gl_resize_viewport= NULL;  
+    gl_context->viewport.xsize=-1;
+    gl_context->viewport.ysize=-1;
+
+    gl_context->glViewport(0, 0, width,height);
+
+	gl_context->draw_triangle_front = gl_draw_triangle_fill;
+	gl_context->draw_triangle_back  = gl_draw_triangle_fill;
+  }
+}
+//========================================================
  void inline  __gluMakeIdentityf(GLfloat m[16])
 {
     m[0+4*0] = 1; m[0+4*1] = 0; m[0+4*2] = 0; m[0+4*3] = 0;
