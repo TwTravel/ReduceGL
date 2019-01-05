@@ -821,6 +821,7 @@ inline void gluLookAt(GLdouble eyex, GLdouble eyey, GLdouble eyez, GLdouble cent
 void InitDrawLib(int width,int height);
 int textmaxid;
 GLContext gl_ctx;
+inline void  SetMaterial(GLMaterial *m,int type,float *v);
 };
 
 void inline  gl_draw_triangle_fill(GLContext *c,
@@ -1065,7 +1066,7 @@ inline void GraphDrawLib::glNormal3f(float x,float y,float z)
   c->current_normal.W = 0;
 }
 
- void inline glopMaterial(GLContext *c,GLParam *p);
+ 
 
 /* glColor */
 
@@ -1085,15 +1086,9 @@ inline void GraphDrawLib::glColor4f(float r,float g,float b,float a)
                             ZB_POINT_BLUE_MIN);
 
     if (c->color_material_enabled) {
-	GLParam q[7];
-	//q[0].op = OP_Material;
-	q[1].i = c->current_color_material_mode;
-	q[2].i = c->current_color_material_type;
-	q[3].f = r;
-	q[4].f = g;
-	q[5].f = b;
-	q[6].f = a;
-	glopMaterial(c, q);
+	 float v[4];
+	 v[0] =r; v[1]=g;v[2]=b;v[3]=a;
+	 glMaterialfv(c->current_color_material_mode,c->current_color_material_type, v);
     }
 }
 
@@ -1476,33 +1471,8 @@ inline void GraphDrawLib::gluPerspective( GLdouble fovy, GLdouble aspect,
 }
 
 /* lightening */
-
-inline void GraphDrawLib::glMaterialfv(int mode,int type,float *v)
+inline void GraphDrawLib::SetMaterial(GLMaterial *m,int type,float *v)
 {
-  GLContext *c=&gl_ctx;; 
-  int i,n;
-  n=4;
-  GLParam p[7]; p[1].i=mode; p[2].i=type;
-  for(i=0;i<4;i++) p[3+i].f=v[i];
-  for(i=n;i<4;i++) p[3+i].f=0;
-  
-
-  assert(mode == GL_FRONT  || mode == GL_BACK || mode==GL_FRONT_AND_BACK);
-  
-  if (type == GL_SHININESS) n=1;
-   
-  GLMaterial *m;
-
-  if (mode == GL_FRONT_AND_BACK) {
-    p[1].i=GL_FRONT;
-    glopMaterial(c,p);
-    mode=GL_BACK;
-  }
-  if (mode == GL_FRONT) 
-	  m=&c->materials[0];
-  else
-	  m=&c->materials[1];
-
   switch(type) {
   case GL_EMISSION:
     memcpy(m->emission.v, v, 4*sizeof(float));
@@ -1528,68 +1498,33 @@ inline void GraphDrawLib::glMaterialfv(int mode,int type,float *v)
     assert(0);
   }
 }
+inline void GraphDrawLib::glMaterialfv(int mode,int type,float *v)
+{
+  GLContext *c=&gl_ctx;; 
+  
+  if (mode == GL_FRONT) 
+  { 
+     SetMaterial(&c->materials[0], type, v);
+  }
+  else if (mode == GL_BACK) 
+  { 
+     SetMaterial(&c->materials[1], type, v);
+  }
+  else 
+  {
+	 SetMaterial(&c->materials[0], type, v); 
+	 SetMaterial(&c->materials[1], type, v);
+  }
+
+  
+}
 
 inline void GraphDrawLib::glMaterialf(int mode,int type,float val)
 {
   GLContext *c=&gl_ctx;; 
-  GLParam p[7];
-  int i;
-
-  //p[0].op=OP_Material;
-  p[1].i=mode;
-  p[2].i=type;
-  p[3].f=val;
-  for(i=0;i<3;i++) p[4+i].f=0;
-
-  
-  float v[4];
-  v[0] = p[3].f;
-  v[1] = p[4].f;
-  v[2] = p[5].f;
-  v[3] = p[6].f;
-  //float *v=v;//&p[3].f;
- // float *v=&p[3].f;
-//  int i;
-  GLMaterial *m;
-
-  if (mode == GL_FRONT_AND_BACK) {
-    p[1].i=GL_FRONT;
-    glopMaterial(c,p);
-    mode=GL_BACK;
-  }
-  if (mode == GL_FRONT) m=&c->materials[0];
-  else m=&c->materials[1];
-
-  switch(type) {
-  case GL_EMISSION:
-    for(i=0;i<4;i++)
-      m->emission.v[i]=v[i];
-    break;
-  case GL_AMBIENT:
-    for(i=0;i<4;i++)
-      m->ambient.v[i]=v[i];
-    break;
-  case GL_DIFFUSE:
-    for(i=0;i<4;i++)
-      m->diffuse.v[i]=v[i];
-    break;
-  case GL_SPECULAR:
-    for(i=0;i<4;i++)
-      m->specular.v[i]=v[i];
-    break;
-  case GL_SHININESS:
-    m->shininess=v[0];
-    m->shininess_i = (v[0]/128.0f)*SPECULAR_BUFFER_RESOLUTION;
-    break;
-  case GL_AMBIENT_AND_DIFFUSE:
-    for(i=0;i<4;i++)
-      m->diffuse.v[i]=v[i];
-    for(i=0;i<4;i++)
-      m->ambient.v[i]=v[i];
-    break;
-  default:
-    assert(0);
-  }
+  float v[4]; memset(v,0,4*sizeof(float));
+  v[0] = val;
+  glMaterialfv( mode, type, v);
 }
 
  
@@ -2133,62 +2068,7 @@ void inline GraphDrawLib::gl_draw_triangle(GLContext *c,
 }
 
 
-//=======================================================================
-//=======================================================================
-void inline glopMaterial(GLContext *c,GLParam *p)
-{
-  int mode=p[1].i;
-  int type=p[2].i;
-  
-  float vv[4];
-  vv[0] = p[3].f;
-  vv[1] = p[4].f;
-  vv[2] = p[5].f;
-  vv[3] = p[6].f;
-  float *v=vv;//&p[3].f;
- // float *v=&p[3].f;
-  int i;
-  GLMaterial *m;
-
-  if (mode == GL_FRONT_AND_BACK) {
-    p[1].i=GL_FRONT;
-    glopMaterial(c,p);
-    mode=GL_BACK;
-  }
-  if (mode == GL_FRONT) m=&c->materials[0];
-  else m=&c->materials[1];
-
-  switch(type) {
-  case GL_EMISSION:
-    for(i=0;i<4;i++)
-      m->emission.v[i]=v[i];
-    break;
-  case GL_AMBIENT:
-    for(i=0;i<4;i++)
-      m->ambient.v[i]=v[i];
-    break;
-  case GL_DIFFUSE:
-    for(i=0;i<4;i++)
-      m->diffuse.v[i]=v[i];
-    break;
-  case GL_SPECULAR:
-    for(i=0;i<4;i++)
-      m->specular.v[i]=v[i];
-    break;
-  case GL_SHININESS:
-    m->shininess   = v[0];
-    m->shininess_i = (v[0]/128.0f)*SPECULAR_BUFFER_RESOLUTION;
-    break;
-  case GL_AMBIENT_AND_DIFFUSE:
-    for(i=0;i<4;i++)
-      m->diffuse.v[i]=v[i];
-    for(i=0;i<4;i++)
-      m->ambient.v[i]=v[i];
-    break;
-  default:
-    assert(0);
-  }
-}
+ 
 
 
 static inline float clampf(float a,float min,float max)
