@@ -327,14 +327,9 @@ int main(int argc,char* argv[])
 	
 	RenderScene();
 	
-    Position[0] = -1; 
-	Position[1] =1 ;
-	Position[2] =1; 
-	Position[3] =1;
-	SpotDirection[0] =   1;
-	SpotDirection[1] =  -1;
-	SpotDirection[2] =  -1;
-	SpotDirection[3] =   1;
+    Position[0]=-1; Position[1]=1; Position[2]=1; Position[3]=1;
+	SpotDirection[0] =  1; SpotDirection[1] = -1; SpotDirection[2] = -1; SpotDirection[3] =  1;
+
 	TkGDrawLib.glLightfv(GL_LIGHT1, GL_POSITION, Position);
 	TkGDrawLib.glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, SpotDirection);
 	
@@ -343,13 +338,9 @@ int main(int argc,char* argv[])
     //glLightfv(LightName, GL_SPECULAR, Specular);
 	TkGDrawLib.glEnable(GL_LIGHT1);
 	
-    Position[0] = -2;  
-	Position[1] =  3 ;
-	Position[2] =1.5; 
-	Position[3] =1;
-	SpotDirection[0] =   2;
-	SpotDirection[1] =  -3;
-	SpotDirection[2] =  -1.5;
+    Position[0] = -2;  Position[1] =  3 ; Position[2] =1.5;  Position[3] =1;
+
+	SpotDirection[0] =   2; SpotDirection[1] =  -3; SpotDirection[2] =  -1.5;
 	
     TkGDrawLib.glLightfv(GL_LIGHT2, GL_POSITION, Position);
 	TkGDrawLib.glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, SpotDirection);
@@ -358,13 +349,8 @@ int main(int argc,char* argv[])
 	TkGDrawLib.glEnable(GL_LIGHT2);
 	
 	
-	Position[0] =0;  
-	Position[1] =5 ;
-	Position[2] =3; 
-	Position[3] =1;
-	SpotDirection[0] =  0;
-	SpotDirection[1] =  -5;
-	SpotDirection[2] =  -3;
+	Position[0] =0;  Position[1] =5 ;  Position[2] =3;  Position[3] =1;
+	SpotDirection[0] =  0; SpotDirection[1] =  -5; SpotDirection[2] =  -3;
 	
     TkGDrawLib.glLightfv(GL_LIGHT3, GL_POSITION, Position);
 	TkGDrawLib.glLightfv(GL_LIGHT3, GL_SPOT_DIRECTION, SpotDirection);
