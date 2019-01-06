@@ -8,7 +8,6 @@
 #include "c24bitmap.h"
 
 #define FILE_NAME  "FACE.3DS"
-#include "x11imp.h"
 #include "readstl.h"
 
 typedef unsigned int UINT;
@@ -168,7 +167,6 @@ void init()
 	TkGDrawLib.glEnable(GL_COLOR_MATERIAL);					
 
 }
-int ui_loop(int argc, char **argv, const char *name);
  
 
 float vx[][3]={{0,  -0.02, 0.0},{100, -0.02, 0.0},
@@ -192,6 +190,8 @@ void drawPolygon(float Vertices[][3])
   TkGDrawLib.glEnd();
 
 }				
+
+  
 
 
 void SurfSetColor(float rr,float gg, float bb)
@@ -277,8 +277,9 @@ void glXSwapBuffers();
 int main(int argc,char* argv[])
 {
 	TkGDrawLib.InitDrawLib(1600,1600);
-	ui_loop(argc, argv, "models");
- 
+	//ui_loop(argc, argv, "models");
+    init();
+	
 	TkGDrawLib.glEnable(GL_DEPTH_TEST);    
 	TkGDrawLib.glEnable(GL_TEXTURE_2D);    // 启用纹理
  
