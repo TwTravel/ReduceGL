@@ -1,0 +1,224 @@
+﻿生成启动时间为 2019/1/6 15:48:52。
+项目“E:\graphdev\robodraw\ReduceGL\kkdev\kkdev.vcxproj”在节点 2 上(rebuild 个目标)。
+_PrepareForClean:
+  正在删除文件“Debug\kkdev.lastbuildstate”。
+InitializeBuildStatus:
+  正在对“Debug\kkdev.unsuccessfulbuild”执行 Touch 任务。
+ClCompile:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Model3dRender.cpp
+  Model3dRender.cpp
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(210): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(210): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(210): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(210): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(211): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(211): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(211): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(211): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(212): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(212): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(212): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(212): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(213): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(213): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(213): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(213): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(405): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(406): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(409): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(409): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(416): warning C4244: “=”: 从“double”转换到“BYTE”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(417): warning C4244: “=”: 从“double”转换到“BYTE”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(418): warning C4244: “=”: 从“double”转换到“BYTE”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(426): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(427): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(430): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(430): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(509): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h(521): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+e:\graphdev\robodraw\reducegl\kkdev\c256bitmap.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\graphdev\robodraw\reducegl\kkdev\c256bitmap.h(96): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+e:\graphdev\robodraw\reducegl\kkdev\c256bitmap.h(107): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+e:\graphdev\robodraw\reducegl\kkdev\read_cfg.h(86): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+e:\graphdev\robodraw\reducegl\kkdev\read_cfg.h(104): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\graphdev\robodraw\reducegl\kkdev\c256bitmap.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(223): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(224): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(226): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(227): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(232): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(240): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(241): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(245): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(246): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(250): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(251): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(255): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(256): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(513): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(514): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(516): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(517): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(522): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(530): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(531): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(671): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(687): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(481): warning C4101: “drdy”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(487): warning C4101: “dtdl_min”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(486): warning C4101: “dsdy”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(482): warning C4101: “dgdx”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(487): warning C4101: “dtdy”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(481): warning C4101: “r1”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(482): warning C4101: “dgdy”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(486): warning C4101: “dsdl_max”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(481): warning C4101: “drdl_min”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(482): warning C4101: “dgdl_min”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(486): warning C4101: “dsdl_min”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(483): warning C4101: “dbdl_min”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(483): warning C4101: “dbdx”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(482): warning C4101: “dgdl_max”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(487): warning C4101: “dtdl_max”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(486): warning C4101: “s1”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(483): warning C4101: “dbdl_max”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(482): warning C4101: “g1”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(487): warning C4101: “t1”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(481): warning C4101: “drdx”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(486): warning C4101: “dsdx”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(483): warning C4101: “dbdy”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(487): warning C4101: “dtdx”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(481): warning C4101: “drdl_max”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\zbuffer.h(483): warning C4101: “b1”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(311): warning C4099: “GLTexture”: 类型名称以前使用“class”现在使用的是“struct”
+          e:\graphdev\robodraw\reducegl\kkdev\gl.h(306) : 参见“GLTexture”的声明
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(541): warning C4305: “参数”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(541): warning C4305: “参数”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(541): warning C4305: “参数”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(550): warning C4305: “参数”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(550): warning C4305: “参数”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(550): warning C4305: “参数”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(551): warning C4305: “参数”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(551): warning C4305: “参数”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(551): warning C4305: “参数”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(906): warning C4244: “=”: 从“GLdouble”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(907): warning C4244: “=”: 从“GLdouble”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(908): warning C4244: “=”: 从“GLdouble”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(910): warning C4244: “=”: 从“GLdouble”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(911): warning C4244: “=”: 从“GLdouble”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(912): warning C4244: “=”: 从“GLdouble”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(937): warning C4244: “参数”: 从“GLdouble”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(937): warning C4244: “参数”: 从“GLdouble”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(937): warning C4244: “参数”: 从“GLdouble”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(955): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(959): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(960): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(961): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(963): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(964): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(965): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(973): warning C4101: “i”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1292): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1359): warning C4101: “m”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1376): warning C4101: “m”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1440): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1441): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1442): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1443): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1444): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1445): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1490): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1589): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1656): warning C4101: “p”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1685): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(1699): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\gl.h(2159): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\node.h(140): warning C4305: “=”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\node.h(140): warning C4305: “=”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\node.h(140): warning C4305: “=”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\node.h(111): warning C4101: “i”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\graphdev\robodraw\reducegl\kkdev\readstl.h(282): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h(580): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h(580): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h(580): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h(581): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h(581): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h(581): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h(669): warning C4018: “<”: 有符号/无符号不匹配
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h(678): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h(678): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h(678): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h(642): warning C4101: “i”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\c24bitmap.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\graphdev\robodraw\reducegl\kkdev\geometry.h(728): warning C4101: “i”: 未引用的局部变量
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(26): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(26): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(27): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(27): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(28): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(28): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(111): warning C4305: “初始化”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(111): warning C4305: “初始化”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(112): warning C4305: “初始化”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(112): warning C4305: “初始化”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(114): warning C4305: “初始化”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(114): warning C4305: “初始化”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(115): warning C4305: “初始化”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(115): warning C4305: “初始化”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(117): warning C4305: “初始化”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(117): warning C4305: “初始化”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(118): warning C4305: “初始化”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(118): warning C4305: “初始化”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(138): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(138): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(138): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(142): warning C4305: “参数”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(144): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(161): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(161): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(161): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(161): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(162): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(162): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(162): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(174): warning C4305: “参数”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(175): warning C4305: “参数”: 从“double”到“float”截断
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(206): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(207): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(208): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(216): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(216): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(216): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(217): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(217): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(217): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(217): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(247): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(247): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(247): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(248): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(248): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\graphdev\robodraw\reducegl\kkdev\model3drender.cpp(248): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+Link:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\graphdev\robodraw\ReduceGL\kkdev\Debug\kkdev.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\kkdev.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\graphdev\robodraw\ReduceGL\kkdev\Debug\kkdev.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\graphdev\robodraw\ReduceGL\kkdev\Debug\kkdev.lib" /MACHINE:X86 Debug\Model3dRender.obj
+  kkdev.vcxproj -> E:\graphdev\robodraw\ReduceGL\kkdev\Debug\kkdev.exe
+Manifest:
+  c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"E:\graphdev\robodraw\ReduceGL\kkdev\Debug\kkdev.exe;#1" /manifest Debug\kkdev.exe.intermediate.manifest
+FinalizeBuildStatus:
+  正在删除文件“Debug\kkdev.unsuccessfulbuild”。
+  正在对“Debug\kkdev.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\graphdev\robodraw\ReduceGL\kkdev\kkdev.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:05.14
