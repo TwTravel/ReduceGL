@@ -171,11 +171,12 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
    int element_num = lines.size() - 4 ;
    world_model.StlElements.resize(element_num); 
    Loopi(element_num) { world_model.StlElements[i] = new StlShape(&graphLib);
-                        world_model.StlElements[i]->grawLib=&graphLib;
+                        //world_model.StlElements[i]->grawLib=&graphLib;
                         }
    world_model.StlTrans.resize(element_num);    
    Loopi(element_num) {world_model.StlTrans[i]    = new Transformation(&graphLib);
-                       world_model.StlTrans[i]->grawLib=&graphLib; }
+                       //world_model.StlTrans[i]->grawLib=&graphLib;
+                      }
      //StlShape       *StlElements = new StlShape[ element_num ];
   //Transformation *StlTrans    = new Transformation[ element_num ];
    
@@ -261,6 +262,7 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
        world_model.StlElements[i]->SetMaterial(GetColorMat(mat_h, mat_s, mat_v ,&graphLib));  //GetColorMat(360*0.0/8.0, 1.0, 1.0 ));//
        
 	   world_model.SysTrans->AddChild( world_model.StlElements[i]);
+	   world_model.SysTrans->nodename ="XXX";
 	   printf( "%s\n", trim(lines[i]).c_str() );
    }
   

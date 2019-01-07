@@ -27,6 +27,7 @@ class Material: public Node
 inline Material::Material(GraphDrawLib *gLib)
 {
   grawLib = gLib;
+  LeftChild = RightSibling =NULL;
   int i;
 
   for(i=0; i<5; i++)

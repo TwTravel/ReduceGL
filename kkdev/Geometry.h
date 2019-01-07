@@ -189,7 +189,7 @@ Geometry::Render()
 class Line: public Geometry
 {
  public:
-  Line(GraphDrawLib *gLib){grawLib=gLib;};
+  Line(GraphDrawLib *gLib){grawLib=gLib;LeftChild = RightSibling =NULL;};
   void SetVertices(float *, float *);
   void SetVerticesv(float v[][3]);
   void Render();
@@ -225,7 +225,7 @@ Line::Render()
   if(ColorNode)
     ColorNode->Render();
   if(MatNode)
-  {MatNode->nodespace = ParentNode->nodespace +"</-/>"; MatNode->Render();}
+  {MatNode->nodespace = ParentNode->nodespace +"</-Line-/>"; MatNode->Render();}
   if(TransNode)
     TransNode->Render();
   
@@ -243,7 +243,7 @@ Line::Render()
 class Cube:public Geometry
 {
  public:
-  Cube(GraphDrawLib *gLib){grawLib=gLib;};
+  Cube(GraphDrawLib *gLib){grawLib=gLib;LeftChild = RightSibling =NULL;};
   Cube(float, float, float);
   void SetValue(Enum PName, float v);
   void Render();
@@ -345,7 +345,7 @@ Cube::Render()
 class Cylinder: public Geometry
 {
  public:
-  Cylinder(GraphDrawLib *gLib){grawLib=gLib;};
+  Cylinder(GraphDrawLib *gLib){grawLib=gLib;LeftChild = RightSibling =NULL;};
   void SetValue(Enum, float);
   void Render();
 
@@ -391,7 +391,7 @@ Cylinder::Render()
 class Sphere: public Geometry
 {
  public:
-  Sphere(GraphDrawLib *gLib){grawLib=gLib;};
+  Sphere(GraphDrawLib *gLib){grawLib=gLib;LeftChild = RightSibling =NULL;};
   Sphere(float R);
   void SetValue(Enum Pname, float v);
   void Render();
@@ -465,12 +465,12 @@ Polygon::Render()
   if(ColorNode)
     ColorNode->Render();
   if(MatNode)
-    {MatNode->nodespace = ParentNode->nodespace +"</-/>"; MatNode->Render();}
+    {MatNode->nodespace = ParentNode->nodespace +"</-p-/>"; MatNode->Render();}
   if(TransNode)
     TransNode->Render();
  
 
-  printf("%s name draw GL_POLYGONs:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
+  printf("%s name draw GL_POLYGONs1:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
   grawLib->glBegin(GL_POLYGON);
   for(i=0; i<Size; i++)
     grawLib->glVertex3fv(Vertices[i]);
@@ -566,12 +566,12 @@ StlShape::Render()
   if(ColorNode)
     ColorNode->Render();
   if(MatNode)
-    {MatNode->nodespace = ParentNode->nodespace +"</-/>"; MatNode->Render();}
+    {MatNode->nodespace = ParentNode->nodespace +"</-stl-/>"; MatNode->Render();}
   if(TransNode)
     TransNode->Render();
  
 
-  printf("%s name draw GL_POLYGONs:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
+  printf("%s name draw GL_POLYGONs2:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
 
  /*
  class triangle
@@ -653,11 +653,11 @@ TextureSurface::Render()
   if(ColorNode)
     ColorNode->Render();
   if(MatNode)
-    {MatNode->nodespace = ParentNode->nodespace +"</-/>"; MatNode->Render();}
+    {MatNode->nodespace = ParentNode->nodespace +"</-txt-/>"; MatNode->Render();}
   if(TransNode)
     TransNode->Render();
  
-  printf("%s name draw GL_POLYGONs:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
+  printf("%s name draw GL_POLYGONs:3%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
   
   int texture[1];
   grawLib->glGenTextures(1, (GLuint*)&texture[0]);

@@ -38,6 +38,8 @@ inline Light::Light(GraphDrawLib *gLib)
 {
   int i;
   grawLib = gLib;
+  LeftChild = RightSibling =NULL;
+
   for(i=0; i<7; i++)
     Changed[i]=false;
 

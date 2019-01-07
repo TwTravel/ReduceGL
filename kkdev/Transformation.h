@@ -26,10 +26,12 @@ class Transformation: public Node
 inline Transformation::Transformation(GraphDrawLib *gLib)
 {
   int i;
-  grawLib=gLib;
+  grawLib = gLib;
+  LeftChild = RightSibling = NULL;
   OpNum=0;
   for(i=0; i<10; i++)
     TransformOrder[i]=-1;
+  
 }
 
 inline void 

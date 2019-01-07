@@ -8,7 +8,7 @@
 class Color: public Node
 {
  public:
-  Color(GraphDrawLib *gLib){grawLib=gLib;};
+  Color(GraphDrawLib *gLib){grawLib=gLib;LeftChild = RightSibling =NULL;};
   void SetValuev(float *v);
   void SetValue(float v1, float v2, float v3);
   void SetValue(Enum Type);

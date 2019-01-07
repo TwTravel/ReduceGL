@@ -95,6 +95,7 @@ inline Node::Node(GraphDrawLib *gLib)
   nodespace="";
   ParentNode=NULL;
   this->grawLib = gLib;
+  LeftChild = RightSibling =NULL;
 }
 
 inline Node::~Node()
