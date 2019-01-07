@@ -45,7 +45,7 @@ inline Geometry::Geometry()
   ColorNode=NULL;
   MatNode=NULL;
   TransNode=NULL;
- 
+  LeftChild = RightSibling =NULL;
 }
 
 inline Geometry::~Geometry()
@@ -531,7 +531,10 @@ Material *GetColorMat(double c1_h, double c1_s, double c1_v,GraphDrawLib *gLib)
 class StlShape: public Geometry
 {
  public:
-  StlShape(GraphDrawLib *gLib){grawLib=gLib;LeftChild = RightSibling =NULL;};
+  StlShape(GraphDrawLib *gLib)
+  {grawLib=gLib;
+  LeftChild = RightSibling =NULL;
+  nodename="stlkk";};
   void LoadStl(char*file);
   void SetVerticesv();
   void Render();

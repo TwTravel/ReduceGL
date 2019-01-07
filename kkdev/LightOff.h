@@ -18,6 +18,7 @@ class TurnOff: public Node
 inline TurnOff::TurnOff(Light *L)
 {
   LightName=L->LightName;
+  LeftChild = RightSibling =NULL;
 }
 
 inline void

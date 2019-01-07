@@ -43,6 +43,12 @@ inline Light::Light(GraphDrawLib *gLib)
   for(i=0; i<7; i++)
     Changed[i]=false;
 
+  memset(Diffuse,0, 4*4);
+  memset(Specular,0,4*4);
+  memset(Ambient,0,4*4);
+  memset(Position,0,4*4);
+  memset(SpotDirection,0,3*4);
+
   On=false;
 
   switch(LightNum)

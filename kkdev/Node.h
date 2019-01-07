@@ -28,7 +28,7 @@ class Node
 {
  public:
   GraphDrawLib *grawLib;
-  Node(){};
+  Node(){LeftChild = RightSibling = NULL;};
   Node(GraphDrawLib *gLib);
   virtual ~Node();
   virtual void Render();
@@ -62,14 +62,30 @@ Node::Traverse()
   
   if(LeftChild!=NULL)
   {  
-	 LeftChild->Traverse();
+	  
+	  try{
+        printf("try left %s\n",this->nodename.c_str());
+	    LeftChild->Traverse();
+	  }
+	  catch(...)
+	  {
+		  int aa;aa=5;
+	  }
   }
   if(!KeepMatrix)
     grawLib->glPopMatrix();
   if(RightSibling!=NULL)
   {   
-     RightSibling->Traverse();
+	  try
+	  {
+		printf("try right %s\n",this->nodename.c_str());
+		RightSibling->Traverse();
+	  }
+     catch(...)
+	  {int aa;aa=5;
+	  }
   }
+  printf("finish %s\n",this->nodename.c_str());
 }
 
 inline void
