@@ -57,7 +57,7 @@ void reshape( GraphDrawLib *grawLib, int width, int height )
 class VWordModel
 {
   public:
-  VWordModel();
+  VWordModel(GraphDrawLib*gLib);
   ~VWordModel();
   Camera *Camera1 ;
   Transformation *SysTrans  ;
@@ -73,7 +73,7 @@ class VWordModel
   Transformation* texsurface_trs;
 };
 
-VWordModel::VWordModel()
+VWordModel::VWordModel(GraphDrawLib*gLib)
 {
   Camera1  = new Camera(PERSPECTIVE);
   SysTrans = new Transformation;
@@ -87,6 +87,10 @@ VWordModel::VWordModel()
   MyViewer = new GLViewer;// MyViewer ->nodename = "Viewer";
   groundface = new TextureSurface;
   texsurface_trs = new Transformation;
+
+  Camera1->grawLib = SysTrans->grawLib = Light1->grawLib = AxisXX->grawLib =
+	AxisYY->grawLib = AxisZZ->grawLib = Root->grawLib = MyViewer->grawLib =
+	groundface->grawLib =  texsurface_trs->grawLib = gLib;
 }
 
 VWordModel::~VWordModel()
@@ -94,7 +98,8 @@ VWordModel::~VWordModel()
 	return;
 }
 
-VWordModel world_model;
+GraphDrawLib graphLib;
+VWordModel world_model(&graphLib);
 
 void ReadModelFile(int argc, char *argv[])
 {
@@ -164,9 +169,11 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 //##################################################################  
    int element_num = lines.size() - 4 ;
    world_model.StlElements.resize(element_num); 
-      Loopi(element_num) world_model.StlElements[i] = new StlShape;
+   Loopi(element_num) {world_model.StlElements[i] = new StlShape;
+                       world_model.StlElements[i]->grawLib=&graphLib;}
    world_model.StlTrans.resize(element_num);    
-       Loopi(element_num) world_model.StlTrans[i]    = new Transformation;
+   Loopi(element_num) {world_model.StlTrans[i]    = new Transformation;
+                       world_model.StlTrans[i]->grawLib=&graphLib; }
      //StlShape       *StlElements = new StlShape[ element_num ];
   //Transformation *StlTrans    = new Transformation[ element_num ];
    
@@ -271,7 +278,7 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
   
   //Viewer:
 }
-GraphDrawLib TkGDrawLib;
+
 void reshape(int width, int height)		
 {
 	if (height==0)										
@@ -279,30 +286,31 @@ void reshape(int width, int height)
 		height=1;										
 	}
 
-	TkGDrawLib.glViewport(0,0,width,height);						
+	graphLib.glViewport(0,0,width,height);						
 
-	TkGDrawLib.glMatrixMode(GL_PROJECTION);		
-	TkGDrawLib.glLoadIdentity();						
-	TkGDrawLib.gluPerspective(45.0f,(GLfloat)width/(GLfloat)height, .5f ,150.0f);
+	graphLib.glMatrixMode(GL_PROJECTION);		
+	graphLib.glLoadIdentity();						
+	graphLib.gluPerspective(45.0f,(GLfloat)width/(GLfloat)height, .5f ,150.0f);
 
-	TkGDrawLib.glMatrixMode(GL_MODELVIEW);						
-	TkGDrawLib.glLoadIdentity();									
+	graphLib.glMatrixMode(GL_MODELVIEW);						
+	graphLib.glLoadIdentity();									
 }
 int main(int argc, char *argv[])
 {
  // ui_loop(argc, argv, "models");
-  reshape(800, 800);
+  graphLib.InitDrawLib(1600,1600);
+  reshape(1600, 1600);
 
   ReadModelFile( argc,  argv );
   world_model.MyViewer->Init(argc, argv);
   world_model.MyViewer->SetValue(BACKCOLOR, GREY);
   world_model.MyViewer->SetValue(BUFFER, DOUBLE);
-  world_model.MyViewer->CreateWin("Working Hard", 800, 800);
+  world_model.MyViewer->CreateWin("Working Hard", 1600, 1600);
    
   world_model.MyViewer->Show( world_model.Root);
   world_model.MyViewer->Display0();
  // tkSwapBuffers();
-  TkGDrawLib.gl_ctx.glXSaveRenderImg("imgok.bmp");
-  TkGDrawLib.glClose();
+  graphLib.gl_ctx.glXSaveRenderImg("imgok.bmp");
+  graphLib.glClose();
   return 1;
 }

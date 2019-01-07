@@ -49,7 +49,8 @@ public:
     int xsize,ysize;
     int linesize; /* line size, in bytes */
     int mode;
-    
+    void  ZB_clear(int clear_z, int z,
+	      int clear_color, int r, int g, int b);
     double *zbuf;
     PIXEL *pbuf;
     int frame_buffer_allocated;
@@ -173,6 +174,24 @@ void inline PUT_PIXELK(int _a, double &z, double &zz, register PIXEL *pp,double 
     ob1+=dbdx;					 
 }
 
+void ZBuffer::ZB_clear(int clear_z, int z,
+	      int clear_color, int r, int g, int bb)
+{
+ 
+    int y;
+    PIXEL *pp;
+
+    if (clear_z) {
+	memset(this->zbuf, z, this->xsize * this->ysize);
+    }
+    if (clear_color) {
+	pp = this->pbuf;
+	for (y = 0; y < this->ysize; y++) {
+            memset(pp,(r>>8),this->xsize);//,g>>8,(bb>>8)
+	    pp = (PIXEL *) ((char *) pp + this->linesize);
+	}
+    }
+}
 void inline ZBuffer::ZB_fillTriangleSmooth(
 			   ZBufferPoint *p0,ZBufferPoint *p1,ZBufferPoint *p2)
 {
