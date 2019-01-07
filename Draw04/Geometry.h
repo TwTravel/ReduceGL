@@ -262,10 +262,10 @@ Line::Render()
   if(StyleNode)
     {StyleNode->nodespace = ParentNode->nodespace +"</-/>"; StyleNode->Render();}
 
-  grawLib->glBegin(GL_LINES);
-    grawLib->glVertex3fv(Vertices[0]);
-    grawLib->glVertex3fv(Vertices[1]);
-  grawLib->glEnd();  
+  glBegin(GL_LINES);
+    glVertex3fv(Vertices[0]);
+    glVertex3fv(Vertices[1]);
+  glEnd();  
     
   //glPopAttrib KH();
   
@@ -333,12 +333,12 @@ Cube::Polygon(GLubyte *Index)
   GLfloat V[][3]={{x1, y1, z2},{x1, y2, z2},{x2, y2, z2},{x2, y1, z2},
           {x1, y1, z1},{x1, y2, z1},{x2, y2, z1},{x2, y1, z1}};
 
-  grawLib->glBegin(GL_POLYGON);
-    grawLib->glVertex3fv(V[Index[0]]);
-    grawLib->glVertex3fv(V[Index[1]]);
-    grawLib->glVertex3fv(V[Index[2]]);
-    grawLib->glVertex3fv(V[Index[3]]);
-  grawLib->glEnd();
+  glBegin(GL_POLYGON);
+    glVertex3fv(V[Index[0]]);
+    glVertex3fv(V[Index[1]]);
+    glVertex3fv(V[Index[2]]);
+    glVertex3fv(V[Index[3]]);
+  glEnd();
 
 }
 
@@ -370,7 +370,7 @@ Cube::Render()
   //glutSolidSphere(1.0, 40, 40);
   for(i=0; i<6; i++)
     {
-      grawLib->glNormal3f(N[i][0],N[i][1],N[i][2]);
+      glNormal3fv(N[i]);
       Polygon(&CubeIndex[i*4]);      
     }
   /*    
@@ -431,7 +431,7 @@ Cylinder::Render()
   if(StyleNode)
     {StyleNode->nodespace = ParentNode->nodespace +"</-/>"; StyleNode->Render();}
 
-  //GLUquadricObj *CylinderObj;
+  GLUquadricObj *CylinderObj;
   //KHtemp CylinderObj=gluNewQuadric();
   //KHtemp gluCylinder(CylinderObj, Radius, Radius, Height, 30, 30);
    
@@ -527,10 +527,10 @@ Polygon::Render()
     {StyleNode->nodespace = ParentNode->nodespace +"</-/>"; StyleNode->Render();}
 
   printf("%s name draw GL_POLYGONs:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
-  grawLib->glBegin(GL_POLYGON);
+  glBegin(GL_POLYGON);
   for(i=0; i<Size; i++)
-    grawLib->glVertex3fv(Vertices[i]);
-  grawLib->glEnd();  
+    glVertex3fv(Vertices[i]);
+  glEnd();  
   
   //glPopAttrib KH();
   
@@ -665,16 +665,16 @@ public:
 };
  */
   //glScalef(4, 4, 4);
-  grawLib->glBegin(GL_TRIANGLES);
+  glBegin(GL_TRIANGLES);
   for(int i = 0; i < facet.size(); i++)
   {
         // 遍历三角形的所有点
       for(int whichVertex = 0; whichVertex < 3; whichVertex++ )
        {
         // 给出法向量
-      grawLib->glNormal3f(facet[i].normal.x, facet[i].normal.y, facet[i].normal.z);
+      glNormal3f(facet[i].normal.x, facet[i].normal.y, facet[i].normal.z);
         // 如果对象具有纹理
-        grawLib->glVertex3f( facet[i].point[whichVertex].x , 
+        glVertex3f( facet[i].point[whichVertex].x , 
 		            facet[i].point[whichVertex].y , 
 				    facet[i].point[whichVertex].z ); /* */
 		/*glNormal3f(facet[i].normal.z,facet[i].normal.x, facet[i].normal.y);
@@ -685,7 +685,7 @@ public:
 				     );*/
        }
    }
-  grawLib->glEnd();
+  glEnd();
   /*glBegin(GL_POLYGON);
   for(i=0; i<Size; i++)
     glVertex3fv(Vertices[i]);
@@ -729,7 +729,7 @@ TextureSurface::Render()
   int i;
   printf("%s name:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
   //glPushAttrib KH(GL_ALL_ATTRIB_BITS);
-  grawLib->glPushMatrix();
+  glPushMatrix();
   
   if(ColorNode)
     ColorNode->Render();
@@ -745,34 +745,34 @@ TextureSurface::Render()
   
   int texture[1];
    
-  grawLib->glGenTextures(1, (GLuint*)&texture[0]);
-  grawLib->glBindTexture(GL_TEXTURE_2D, texture[0]);   // 2d texture (x and y size)
+  glGenTextures(1, (GLuint*)&texture[0]);
+  glBindTexture(GL_TEXTURE_2D, texture[0]);   // 2d texture (x and y size)
 
-  //grawLib->glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR); // scale linearly when image bigger than texture
-  //grawLib->glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR); // scale linearly when image smalled than texture
+  glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR); // scale linearly when image bigger than texture
+  glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR); // scale linearly when image smalled than texture
 
     // 2d texture, level of detail 0 (normal), 3 components (red, green, blue), x size from image, y size from image, 
     // border 0 (normal), rgb color data, unsigned byte data, and finally the data itself.
-  grawLib->glTexImage2D(GL_TEXTURE_2D, 0, 3, Pic.Width, Pic.Height, 0, GL_RGB, GL_UNSIGNED_BYTE, Pic.Buffer);
-  grawLib->glEnable(GL_TEXTURE_2D);
+  glTexImage2D(GL_TEXTURE_2D, 0, 3, Pic.Width, Pic.Height, 0, GL_RGB, GL_UNSIGNED_BYTE, Pic.Buffer);
+  glEnable(GL_TEXTURE_2D);
   
   
    
-  grawLib->glBegin(GL_POLYGON);
+  glBegin(GL_POLYGON);
   
   
-  grawLib->glTexCoord2f(0.0f, 0.0f); grawLib->glVertex3fv(Vertices[0]);	// Bottom Left Of The Texture and Quad
-  grawLib->glTexCoord2f(1.0f, 0.0f); grawLib->glVertex3fv(Vertices[1]);	// Bottom Right Of The Texture and Quad
-  grawLib->glTexCoord2f(1.0f, 1.0f); grawLib->glVertex3fv(Vertices[2]);	// Top Right Of The Texture and Quad
-  grawLib->glTexCoord2f(0.0f, 1.0f); grawLib->glVertex3fv(Vertices[3]);	// Top Left Of The Texture and Quad
+  glTexCoord2f(0.0f, 0.0f); glVertex3fv(Vertices[0]);	// Bottom Left Of The Texture and Quad
+  glTexCoord2f(1.0f, 0.0f); glVertex3fv(Vertices[1]);	// Bottom Right Of The Texture and Quad
+  glTexCoord2f(1.0f, 1.0f); glVertex3fv(Vertices[2]);	// Top Right Of The Texture and Quad
+  glTexCoord2f(0.0f, 1.0f); glVertex3fv(Vertices[3]);	// Top Left Of The Texture and Quad
 	
  // for(i=0; i<Size; i++)
  //   glVertex3fv(Vertices[i]);
-  grawLib->glEnd();  
+  glEnd();  
   
-  grawLib->glDisable(GL_TEXTURE_2D);
+  glDisable(GL_TEXTURE_2D);
   
-  grawLib->glPopMatrix();
+  glPopMatrix();
   //glDeleteTextures(1, (GLuint*)&texture[0]);
  // glBindTexture(GL_TEXTURE_2D,0);
   //glPopAttrib KH();

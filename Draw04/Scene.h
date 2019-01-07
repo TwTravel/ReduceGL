@@ -13,7 +13,7 @@
 //#include "Line.h"
 //#include "Polygon.h"
 //#include "Cylinder.h"
-enum GBufType {GLUT_SINGLE,GLUT_DOUBLE};
+
 int Light::LightNum=0;
 int GLViewer::ViewerNum=0;
 int GLViewer::BufType[]={GLUT_SINGLE,GLUT_SINGLE,GLUT_SINGLE};

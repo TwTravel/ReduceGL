@@ -3,9 +3,6 @@
 #ifndef C_24_BitMap
 #define C_24_BitMap
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <stdio.h>
 #include <fcntl.h>
 #include <string.h>
 
@@ -74,11 +71,11 @@ typedef struct tagBITMAPINFOHEADER {
 class C24BitMap
 {
 public:
-	BITMAPINFOHEADER BitMpInfoHead;BITMAPFILEHEADER BitMpHead;//å›¾åƒä¿¡æ¯å¤´ç»“æ„,å›¾åƒå¤´ç»“æ„
+	BITMAPINFOHEADER BitMpInfoHead;BITMAPFILEHEADER BitMpHead;//Í¼ÏñĞÅÏ¢Í·½á¹¹,Í¼ÏñÍ·½á¹¹
 	void inline Load(char*FileName);
 	void inline Save(char*FileName);
 	void inline FormatF(int w,int h);
-	inline C24BitMap&operator=(const C24BitMap&OtherPic);//ç®—ç¬¦é‡è½½
+	inline C24BitMap&operator=(const C24BitMap&OtherPic);//Ëã·ûÖØÔØ
 	int Width,Height,LineWidth;
 	BYTE *Buffer;
 	inline C24BitMap();
@@ -169,13 +166,13 @@ Loopi(LineWidth*Height) Buffer[i]= val;
 }
 
 
-void inline TransAxis(double &XX,double&YY,double&dx,double&dy)
+void inline TransAxis(double &X,double&Y,double&dx,double&dy)
 {
  double TmpX,TmpY;
- TmpX = XX*dx    + YY*dy;
- TmpY = XX*(-dy) + YY*dx;
- XX = TmpX;
- YY = TmpY;
+ TmpX = X*dx    + Y*dy;
+ TmpY = X*(-dy) + Y*dx;
+ X = TmpX;
+ Y = TmpY;
 }
 
 void inline C24BitMap::Rectangle(int centerX,int centerY , double dx, double dy,
@@ -279,9 +276,9 @@ void inline C24BitMap::DrawDashLine(int x1,int y1,int x2,int y2,double R)
 {
 	int dx = x2 - x1;
 	int dy = y2 - y1;
-	int ux = ((dx > 0) << 1) - 1;//xçš„å¢é‡æ–¹å‘ï¼Œå–æˆ–-1
-	int uy = ((dy > 0) << 1) - 1;//yçš„å¢é‡æ–¹å‘ï¼Œå–æˆ–-1
-	int x = x1, y = y1, eps;//epsä¸ºç´¯åŠ è¯¯å·®
+	int ux = ((dx > 0) << 1) - 1;//xµÄÔöÁ¿·½Ïò£¬È¡»ò-1
+	int uy = ((dy > 0) << 1) - 1;//yµÄÔöÁ¿·½Ïò£¬È¡»ò-1
+	int x = x1, y = y1, eps;//epsÎªÀÛ¼ÓÎó²î
 	
 	double distance;
 	
@@ -329,9 +326,9 @@ void inline C24BitMap::DrawTkLine(int x1,int y1,int x2,int y2,double R)
 {
 	int dx = x2 - x1;
 	int dy = y2 - y1;
-	int ux = ((dx > 0) << 1) - 1;//xçš„å¢é‡æ–¹å‘ï¼Œå–æˆ–-1
-	int uy = ((dy > 0) << 1) - 1;//yçš„å¢é‡æ–¹å‘ï¼Œå–æˆ–-1
-	int x = x1, y = y1, eps;//epsä¸ºç´¯åŠ è¯¯å·®
+	int ux = ((dx > 0) << 1) - 1;//xµÄÔöÁ¿·½Ïò£¬È¡»ò-1
+	int uy = ((dy > 0) << 1) - 1;//yµÄÔöÁ¿·½Ïò£¬È¡»ò-1
+	int x = x1, y = y1, eps;//epsÎªÀÛ¼ÓÎó²î
 	
 	eps = 0;dx = abs(dx); dy = abs(dy); 
 	if (dx > dy) 
@@ -367,9 +364,9 @@ void inline C24BitMap::DrawLine(int x1,int y1,int x2,int y2)
 	
 	int dx = x2 - x1;
 	int dy = y2 - y1;
-	int ux = ((dx > 0) << 1) - 1;//xçš„å¢é‡æ–¹å‘ï¼Œå–æˆ–-1
-	int uy = ((dy > 0) << 1) - 1;//yçš„å¢é‡æ–¹å‘ï¼Œå–æˆ–-1
-	int x = x1, y = y1, eps;//epsä¸ºç´¯åŠ è¯¯å·®
+	int ux = ((dx > 0) << 1) - 1;//xµÄÔöÁ¿·½Ïò£¬È¡»ò-1
+	int uy = ((dy > 0) << 1) - 1;//yµÄÔöÁ¿·½Ïò£¬È¡»ò-1
+	int x = x1, y = y1, eps;//epsÎªÀÛ¼ÓÎó²î
 	
 	eps = 0;dx = abs(dx); dy = abs(dy); 
 	if (dx > dy) 
@@ -465,7 +462,7 @@ void inline C24BitMap::RectDot(int x,int y)
  }
 }
 
-inline C24BitMap& C24BitMap::operator=(const C24BitMap&OtherPic)//ç®—ç¬¦é‡è½½
+inline C24BitMap& C24BitMap::operator=(const C24BitMap&OtherPic)//Ëã·ûÖØÔØ
 {int i;
 FormatF(OtherPic.Width,OtherPic.Height);
 int BtCnt(Height*LineWidth);
@@ -499,7 +496,7 @@ BYTE BMP24FileHead[54]={
 	memcpy((void*)&BitMpHead,(void*)BMP24FileHead,14);
 	memcpy((void*)&BitMpInfoHead,(void*)(BMP24FileHead+14),40);
 	BitMpInfoHead.biHeight=h;BitMpInfoHead.biWidth=w;
-	Width = w; Height = h; LineWidth = 4*int((Width*3+3)/4);//æ¯è¡Œæ•°æ®å­—èŠ‚å¤§å°
+	Width = w; Height = h; LineWidth = 4*int((Width*3+3)/4);//Ã¿ĞĞÊı¾İ×Ö½Ú´óĞ¡
 	PicDataSize = Height * LineWidth;
 	Re_Local_Mem(Buffer,LineWidth*Height);
 }
@@ -533,7 +530,7 @@ inline void C24BitMap::Load(char*FileName)
 		Height = -Height;
 		BitMpInfoHead.biHeight= Height;
 	}
-	LineWidth=4*int((Width*3+3)/4);//æ¯è¡Œæ•°æ®å­—èŠ‚å¤§å°
+	LineWidth=4*int((Width*3+3)/4);//Ã¿ĞĞÊı¾İ×Ö½Ú´óĞ¡
 	Re_Local_Mem(Buffer,LineWidth*Height);
 	fread((void*)Buffer,1,(LineWidth*Height),file);
     fclose(file);
@@ -555,7 +552,7 @@ return Result;}
 
 C24PixVal inline C24PtItrp(C24BitMap&Pix,int x,int y,float fu,float fv)
 {int i,j;
-C24PixVal abyDot[2][2],Result; //åƒç´ ç‚¹(x, y)çš„æ•°æ®ä½ç½®
+C24PixVal abyDot[2][2],Result; //ÏñËØµã(x, y)µÄÊı¾İÎ»ÖÃ
 
 Loopi(2)Loopj(2)abyDot[i][j]=get_pix_color(Pix,x+i,y+j);
 
@@ -593,19 +590,19 @@ inline C24PixVal C24PtItrp(BYTE*PtPos,int x,int y,float fu,float fv,
 						   int nScanWidth,int nScanHeight)
 {
 	C24PixVal Result;
-	//ç›¸é‚»çš„å››ä¸ªåƒç´ æœ€å³ä¸‹è§’ç‚¹çš„x, yåæ ‡åç§»é‡
+	//ÏàÁÚµÄËÄ¸öÏñËØ×îÓÒÏÂ½ÇµãµÄx, y×ø±êÆ«ÒÆÁ¿
 	int nx(1),ny(1);
 	if((x+1)>(nScanWidth-1))nx=0;if(y==0)ny=0;
 	
-	C24PixVal abyDot[2][2]; //åƒç´ ç‚¹(x, y)çš„æ•°æ®ä½ç½®
-	BYTE* pbySrc=PtPos;//è·å–åƒç´ æ•°å€¼(x, y) = (x, y) + (0, 0)						
+	C24PixVal abyDot[2][2]; //ÏñËØµã(x, y)µÄÊı¾İÎ»ÖÃ
+	BYTE* pbySrc=PtPos;//»ñÈ¡ÏñËØÊıÖµ(x, y) = (x, y) + (0, 0)						
 	
 	abyDot[0][0].R=PtPos[0];abyDot[0][0].G=PtPos[1];abyDot[0][0].B=PtPos[2];
 	
 	pbySrc=PtPos+nx*3;//(x+1,y)=(x,y)+(1,0)
 	abyDot[1][0].R=PtPos[0];abyDot[1][0].G=PtPos[1];abyDot[1][0].B=PtPos[2];
 	
-	pbySrc=(PtPos-ny*nScanWidth);//æŒ‡å‘ä¸‹ä¸€è¡Œæ•°æ®
+	pbySrc=(PtPos-ny*nScanWidth);//Ö¸ÏòÏÂÒ»ĞĞÊı¾İ
 	abyDot[0][1].R=PtPos[0];abyDot[0][1].G=PtPos[1];abyDot[0][1].B=PtPos[2];
 	
 	pbySrc=pbySrc+nx*3;

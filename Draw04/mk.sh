@@ -1,1 +1,1 @@
-g++ -I ./include -g Model3dRender.cpp  -o main -L../ -ltest
+g++ -g mdlrender.cpp -o main  -lGLU -lGL -lglut

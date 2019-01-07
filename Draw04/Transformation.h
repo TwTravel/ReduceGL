@@ -96,18 +96,18 @@ Transformation::Render()
 	case TRANSLATION:
 	  printf("%s name:%s, TRANSLATION:%.2f,%.2f,%.2f\n",(char*)nodespace.c_str(),(char*)nodename.c_str(),
 	         Transform[i][0], Transform[i][1], Transform[i][2]);
-	  grawLib->glTranslatef(Transform[i][0], Transform[i][1], Transform[i][2]);
+	  glTranslatef(Transform[i][0], Transform[i][1], Transform[i][2]);
 	  break;
 	case ROTATION:
 	  printf("%s name:%s, ROTATION:%.2f,%.2f,%.2f\n",(char*)nodespace.c_str(),(char*)nodename.c_str(),
 	        Transform[i][0], Transform[i][1], Transform[i][2]);
-	  grawLib->glRotatef(Transform[i][0], Transform[i][1], Transform[i][2], 
+	  glRotatef(Transform[i][0], Transform[i][1], Transform[i][2], 
 		    Transform[i][3]);
 	  break;
 	case SCALE:
 	  printf("%s name:%s, SCALE:%.2f,%.2f,%.2f\n",(char*)nodespace.c_str(),(char*)nodename.c_str(),
 	        Transform[i][0], Transform[i][1], Transform[i][2]);
-	  grawLib->glScalef(Transform[i][0], Transform[i][1], Transform[i][2]);
+	  glScalef(Transform[i][0], Transform[i][1], Transform[i][2]);
 	  break;
 	default:
 	  break;

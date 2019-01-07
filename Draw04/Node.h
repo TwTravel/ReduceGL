@@ -1,11 +1,10 @@
 //Node.h 
-//#include <GL/glut.h>
+#include <GL/glut.h>
 #include <iostream>
 #include <stdio.h>
 #include <string>
 #ifndef NODE_H
 #define NODE_H
-#include "gl.h"
 
 using namespace std;
 
@@ -27,7 +26,6 @@ enum Enum
 class Node
 {
  public:
-  GraphDrawLib *grawLib;
   Node();
   virtual ~Node();
   virtual void Render();
@@ -51,19 +49,21 @@ class Node
 inline void 
 Node::Traverse()
 {
+  
   if(!KeepMatrix)
-    grawLib->glPushMatrix();
+    glPushMatrix();
  
  if(ParentNode!=NULL)
-   nodespace = ParentNode->nodespace +"<--->";
-   Render();
+  nodespace = ParentNode->nodespace +"<--->";
+  Render();
   
   if(LeftChild!=NULL)
-  {  
-	 LeftChild->Traverse();
+  {
+	  
+	  LeftChild->Traverse();
   }
   if(!KeepMatrix)
-    grawLib->glPopMatrix();
+    glPopMatrix();
   if(RightSibling!=NULL)
   {   
      RightSibling->Traverse();
@@ -113,31 +113,47 @@ Node::GetColor(Enum Color, float *C)
   switch(Color)
     {
     case BLACK:
-      C[0] = C[1] = C[2] = 0.0;
+      for(i=0; i<3; i++)
+	C[i]=0.0;
       break;
     case WHITE:
-      C[0] = C[1] = C[2] = 1.0;
+      for(i=0; i<3; i++)
+	C[i]=1.0;
       break;
     case RED:
-      C[0]=1.0; C[1]=0.0; C[2]=0.0;
+      C[0]=1.0;
+      C[1]=0.0;
+      C[2]=0.0;
       break;
     case GREEN:
-      C[0]=0.0; C[1]=1.0; C[2]=0.0;
+      C[0]=0.0;
+      C[1]=1.0;
+      C[2]=0.0;
       break;
     case YELLOW:
-      C[0]=1.0; C[1]=1.0; C[2]=0.0;
+      C[0]=1.0;
+      C[1]=1.0;
+      C[2]=0.0;
       break;
     case BLUE:
-      C[0]=0.0; C[1]=0.0; C[2]=1.0;
+      C[0]=0.0;
+      C[1]=0.0;
+      C[2]=1.0;
       break;
     case MAGENTA:
-      C[0]=1.0; C[1]=0.0; C[2]=1.0;
+      C[0]=1.0;
+      C[1]=0.0;
+      C[2]=1.0;
       break;
     case CYAN:
-      C[0]=0.0; C[1]=1.0; C[2]=1.0;
+      C[0]=0.0;
+      C[1]=1.0;
+      C[2]=1.0;
       break;
     case GREY:
-      C[0]=0.2; C[1]=0.2; C[2]=0.2;
+      C[0]=0.1;
+      C[1]=0.1;
+      C[2]=0.1;
       break;
 
     default:
@@ -148,7 +164,8 @@ Node::GetColor(Enum Color, float *C)
 
 inline void
 Node::Render()
-{ }
+{
+}
 
 
 #endif  

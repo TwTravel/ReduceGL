@@ -8,7 +8,7 @@
 class Color: public Node
 {
  public:
-  Color(){ };
+  Color();
   void SetValuev(float *v);
   void SetValue(float v1, float v2, float v3);
   void SetValue(Enum Type);
@@ -18,7 +18,11 @@ class Color: public Node
   bool Changed;
   float Color3f[3];
 };
- 
+
+inline Color::Color()
+{
+}
+
 inline  void 
 Color::SetValue(Enum Type)
 {
@@ -30,6 +34,7 @@ inline  void
 Color::SetValuev(float *v)
 {
   int i;
+
   Changed=true;
   for(i=0; i<3; i++)
     Color3f[i]=v[i];
@@ -48,7 +53,7 @@ inline void
 Color::Render()
 { printf("%s name:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
   if(Changed)
-    grawLib->glColor3f(Color3f[0],Color3f[1],Color3f[2]);
+    glColor3fv(Color3f);
 }
 
 

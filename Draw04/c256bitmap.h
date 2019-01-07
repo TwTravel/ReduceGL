@@ -35,9 +35,9 @@ class C256BitMap
 public:
 C256BitMap();
 ~C256BitMap();
-BITMAPINFOHEADER BitMpInfoHead;BITMAPFILEHEADER BitMpHead;//å›¾åƒä¿¡æ¯å¤´ç»“æ„,å›¾åƒå¤´ç»“æ„
-RGBQUAD ColorTable[256];//è‰²å½©æŒ‡é’ˆ
-C256BitMap&operator=(const C256BitMap&OtherPic);//ç®—ç¬¦é‡è½½
+BITMAPINFOHEADER BitMpInfoHead;BITMAPFILEHEADER BitMpHead;//Í¼ÏñĞÅÏ¢Í·½á¹¹,Í¼ÏñÍ·½á¹¹
+RGBQUAD ColorTable[256];//É«²ÊÖ¸Õë
+C256BitMap&operator=(const C256BitMap&OtherPic);//Ëã·ûÖØÔØ
 void Load(char*FileName);
 void Save(char*FileName);
 void Clear();
@@ -57,7 +57,7 @@ void inline C256BitMap::Clear()
  Loopi(Height* LineWidth) Buffer[i]=255; 
 }
 
-inline C256BitMap& C256BitMap::operator=(const C256BitMap&OtherPic)//ç®—ç¬¦é‡è½½
+inline C256BitMap& C256BitMap::operator=(const C256BitMap&OtherPic)//Ëã·ûÖØÔØ
 {int i;
 FormatF(OtherPic.Width,OtherPic.Height);
 int BtCnt(Height*LineWidth);
@@ -80,7 +80,7 @@ C256Memcnt-=LineWidth*Height;
 memcpy((void*)&BitMpHead,(void*)BMPFileHead,14);
 memcpy((void*)&BitMpInfoHead,(void*)(BMPFileHead+14),40);
 BitMpInfoHead.biHeight=h;BitMpInfoHead.biWidth=w;
-Width=w;Height=h;LineWidth=4*int((Width+3)/4);//æ¯è¡Œæ•°æ®å­—èŠ‚å¤§å°
+Width=w;Height=h;LineWidth=4*int((Width+3)/4);//Ã¿ĞĞÊı¾İ×Ö½Ú´óĞ¡
 delete []Buffer;Buffer=NULL;Buffer=new BYTE[LineWidth*Height];
 C256Memcnt+=LineWidth*Height;
 
@@ -110,7 +110,7 @@ fread(&BitMpInfoHead,1,sizeof(BitMpInfoHead),file);
 fread((void*)ColorTable, sizeof(RGBQUAD),256,file);
 
 Height=BitMpInfoHead.biHeight;Width=BitMpInfoHead.biWidth;
-LineWidth=4*int((Width+3)/4);//æ¯è¡Œæ•°æ®å­—èŠ‚å¤§å°
+LineWidth=4*int((Width+3)/4);//Ã¿ĞĞÊı¾İ×Ö½Ú´óĞ¡
 delete []Buffer;Buffer=NULL;Buffer=new BYTE[LineWidth*Height];
 fread((void*)Buffer,1,(LineWidth*Height),file);
 fclose(file);

@@ -163,27 +163,27 @@ Light::Render()
   printf("%s *name:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
   if(On)
     {
-      grawLib->glEnable(GL_LIGHTING);
-      grawLib->glEnable(LightName);
+      glEnable(GL_LIGHTING);
+      glEnable(LightName);
     }
   else
     {
-      grawLib->glDisable(GL_LIGHTING);
-      grawLib->glDisable(LightName);
+      glDisable(GL_LIGHTING);
+      glDisable(LightName);
     }
 
   if(Changed[0])
-    grawLib->glLightfv(LightName, GL_AMBIENT, Ambient);
+    glLightfv(LightName, GL_AMBIENT, Ambient);
   if(Changed[1])
-    grawLib->glLightfv(LightName, GL_DIFFUSE, Diffuse);
+    glLightfv(LightName, GL_DIFFUSE, Diffuse);
   if(Changed[2])
-    grawLib->glLightfv(LightName, GL_SPECULAR, Specular);
+    glLightfv(LightName, GL_SPECULAR, Specular);
   if(Changed[3])
-    grawLib->glLightfv(LightName, GL_POSITION, Position);
+    glLightfv(LightName, GL_POSITION, Position);
   if(Changed[4])
-    grawLib->glLightfv(LightName, GL_SPOT_DIRECTION, SpotDirection);
+    glLightfv(LightName, GL_SPOT_DIRECTION, SpotDirection);
   if(Changed[6])
-    grawLib->glLightfv(LightName, GL_SPOT_CUTOFF, &CutOffAngle);
+    glLightf(LightName, GL_SPOT_CUTOFF, CutOffAngle);
 }
 
 #endif

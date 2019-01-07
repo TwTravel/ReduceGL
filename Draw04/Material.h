@@ -87,15 +87,15 @@ inline void
 Material::Render()
 { printf("%s *name:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
   if(Changed[0])
-    grawLib->glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, Ambient);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, Ambient);
   if(Changed[1])
-    grawLib->glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, Diffuse);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, Diffuse);
   if(Changed[2])
-    grawLib->glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, Specular);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, Specular);
   if(Changed[3])
-    grawLib->glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, Emission);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, Emission);
   if(Changed[4])
-    grawLib->glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, Shininess);
+    glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, Shininess);
 }
 
 #endif

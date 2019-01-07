@@ -23,8 +23,8 @@ inline TurnOff::TurnOff(Light *L)
 inline void
 TurnOff::Render()
 {
-  grawLib->glDisable(GL_LIGHTING);
-  grawLib->glDisable(LightName);
+  glDisable(GL_LIGHTING);
+  glDisable(LightName);
 }
 
 

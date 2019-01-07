@@ -130,16 +130,18 @@ void inline Camera::Render()
 
   if(Changed[1])
     {
-      grawLib->glMatrixMode(GL_PROJECTION);
-      grawLib->glLoadIdentity();
-   
-	  grawLib->gluPerspective(YAngle, Aspect, Near, Far);
-      grawLib->glMatrixMode(GL_MODELVIEW);
+      glMatrixMode(GL_PROJECTION);
+      glLoadIdentity();
+    //  if(Type==ORTHO)
+	//glOrtho(x1, x2, y1, y2, Near, Far);
+    //  else
+	gluPerspective(YAngle, Aspect, Near, Far);
+      glMatrixMode(GL_MODELVIEW);
     }
   if(Changed[0])
     {
-      grawLib->glLoadIdentity();
-      grawLib->gluLookAt(Position[0], Position[1], Position[2], AimAt[0],
+      glLoadIdentity();
+      gluLookAt(Position[0], Position[1], Position[2], AimAt[0],
 		AimAt[1], AimAt[2], UpDirection[0], UpDirection[1],
 		UpDirection[2]);
     }

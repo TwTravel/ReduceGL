@@ -86,9 +86,12 @@ DrawStyle::Render()
 	default:
 	  break;
 	}
-      //KH_Add grawLib->glPolygonMode(GL_FRONT_AND_BACK, GlStyle);
+      glPolygonMode(GL_FRONT_AND_BACK, GlStyle);
     }
- 
+  /*if(Changed[1])
+    glPointSize(PointSize);
+  if(Changed[2])
+    glLineWidth(LineWidth);*/
 }
 
 
