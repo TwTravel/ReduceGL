@@ -7,7 +7,7 @@
 class Transformation: public Node
 {
  public:
-  Transformation();
+  Transformation(GraphDrawLib *gLib);//{grawLib=gLib;};
   void SetValuev(Enum Pname, float *, int Order);
   void SetValue(Enum Pname, float x, float y, float z, int Order);
   void SetValue(Enum Pname, float a, float x, float y, float z, int Order);
@@ -23,10 +23,10 @@ class Transformation: public Node
 
 };
 
-inline Transformation::Transformation()
+inline Transformation::Transformation(GraphDrawLib *gLib)
 {
   int i;
-
+  grawLib=gLib;
   OpNum=0;
   for(i=0; i<10; i++)
     TransformOrder[i]=-1;

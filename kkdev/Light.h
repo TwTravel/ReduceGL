@@ -7,7 +7,7 @@
 class Light: public Node
 {
  public:
-  Light();
+  Light(GraphDrawLib *gLib) ;
   void Render();
 
   void SetValue(Enum PName, Enum color);
@@ -34,10 +34,10 @@ class Light: public Node
   friend class TurnOff;
 };
 
-inline Light::Light()
+inline Light::Light(GraphDrawLib *gLib)
 {
   int i;
-
+  grawLib = gLib;
   for(i=0; i<7; i++)
     Changed[i]=false;
 

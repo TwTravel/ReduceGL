@@ -6,7 +6,7 @@
 #include "Color.h"
 #include "Material.h"
 #include "Transformation.h"
-#include "DrawStyle.h"
+
 #include "readstl.h"
 #include "c24bitmap.h"
 
@@ -28,16 +28,14 @@ class Geometry: public Node
   void SetTransform(Enum, float, float, float, int);
   void SetTransform(Enum, float, float, float, float, int);
   void SetTransform(Transformation *);
-  void SetStyle(Enum, Enum);
-  void SetStyle(Enum, float);
-  void SetStyle(DrawStyle *);
+ 
   virtual void Render();
 
  protected:
   Color *ColorNode;
   Material *MatNode;
   Transformation *TransNode;
-  DrawStyle *StyleNode;
+ 
 };
 
 
@@ -47,7 +45,7 @@ inline Geometry::Geometry()
   ColorNode=NULL;
   MatNode=NULL;
   TransNode=NULL;
-  StyleNode=NULL;
+ 
 }
 
 inline Geometry::~Geometry()
@@ -67,17 +65,13 @@ inline Geometry::~Geometry()
       delete TransNode;
       TransNode=NULL;
     }
-  if(StyleNode)
-    {
-      delete StyleNode;
-      StyleNode=NULL;
-    }
+ 
 }
 
 inline void Geometry::SetColor(Enum C)
 {
   if(ColorNode==NULL)
-    ColorNode=new Color;
+    ColorNode=new Color(grawLib);
 
   ColorNode->SetValue(C);
 }
@@ -86,7 +80,7 @@ inline void
 Geometry::SetColor(float v1, float v2, float v3)
 {
   if(ColorNode==NULL)
-    ColorNode=new Color;
+    ColorNode=new Color(grawLib);
 
   ColorNode->SetValue(v1, v2, v3);
 }
@@ -95,7 +89,7 @@ inline  void
 Geometry::SetColorv(float *v)
 {
   if(ColorNode==NULL)
-    ColorNode=new Color;
+    ColorNode=new Color(grawLib);
 
   ColorNode->SetValuev(v);
 }
@@ -113,7 +107,7 @@ inline  void
 Geometry::SetMaterial(Enum PName, float v1, float v2, float v3, float v4)
 {
   if(MatNode==NULL)
-    MatNode=new Material;
+    MatNode=new Material(grawLib);
 
   MatNode->SetValue(PName, v1, v2, v3, v4);
 }
@@ -122,7 +116,7 @@ inline  void
 Geometry::SetMaterialv(Enum PName, float *v)
 {
   if(MatNode==NULL)
-    MatNode=new Material;
+    MatNode=new Material(grawLib);
 
   MatNode->SetValuev(PName, v);
 }
@@ -131,7 +125,7 @@ inline  void
 Geometry::SetMaterial(Enum PName, float v)
 {
   if(MatNode==NULL)
-    MatNode=new Material;
+    MatNode=new Material(grawLib);
 
   MatNode->SetValue(PName, v);
 }
@@ -149,7 +143,7 @@ inline  void
 Geometry::SetTransform(Enum Pname, float *v, int Order)
 {
   if(TransNode==NULL)
-    TransNode=new Transformation;
+    TransNode=new Transformation(grawLib);
 
   TransNode->SetValuev(Pname, v, Order);
 }
@@ -158,7 +152,7 @@ inline  void
 Geometry::SetTransform(Enum Pname, float x, float y, float z, int Order)
 {
   if(TransNode==NULL)
-    TransNode=new Transformation;
+    TransNode=new Transformation(grawLib);
 
   TransNode->SetValue(Pname, x, y, z, Order);
 }
@@ -168,7 +162,7 @@ Geometry::SetTransform(Enum Pname, float a, float x, float y, float z,
                int Order)
 {
   if(TransNode==NULL)
-    TransNode=new Transformation;
+    TransNode=new Transformation(grawLib);
 
   TransNode->SetValue(Pname, a, x, y, z, Order);
 }
@@ -184,32 +178,7 @@ Geometry::SetTransform(Transformation *T)
   TransNode=T;
 }
 
-inline void
-Geometry::SetStyle(Enum Pname, Enum v)
-{
-  if(StyleNode==NULL)
-    StyleNode=new DrawStyle;
-
-  StyleNode->SetValue(Pname, v);  
-}
-
-inline void
-Geometry::SetStyle(Enum Pname, float v)
-{
-  if(StyleNode==NULL)
-    StyleNode=new DrawStyle;
-
-  StyleNode->SetValue(Pname, v);
-}
-
-inline void
-Geometry::SetStyle(DrawStyle *S)
-{
-  if(StyleNode==NULL)
-    StyleNode=new DrawStyle;
-
-  StyleNode=S;  
-}
+ 
 
 inline  void 
 Geometry::Render()
@@ -220,7 +189,7 @@ Geometry::Render()
 class Line: public Geometry
 {
  public:
-  Line(){};
+  Line(GraphDrawLib *gLib){grawLib=gLib;};
   void SetVertices(float *, float *);
   void SetVerticesv(float v[][3]);
   void Render();
@@ -259,8 +228,7 @@ Line::Render()
   {MatNode->nodespace = ParentNode->nodespace +"</-/>"; MatNode->Render();}
   if(TransNode)
     TransNode->Render();
-  if(StyleNode)
-    {StyleNode->nodespace = ParentNode->nodespace +"</-/>"; StyleNode->Render();}
+  
 
   grawLib->glBegin(GL_LINES);
     grawLib->glVertex3fv(Vertices[0]);
@@ -275,7 +243,7 @@ Line::Render()
 class Cube:public Geometry
 {
  public:
-  Cube(){};
+  Cube(GraphDrawLib *gLib){grawLib=gLib;};
   Cube(float, float, float);
   void SetValue(Enum PName, float v);
   void Render();
@@ -292,10 +260,7 @@ class Cube:public Geometry
 
 Cube::Cube(float w, float h, float d)
 {
-
-  Width=w;
-  Height=h;
-  Depth=d;
+  Width=w; Height=h; Depth=d;
 }
 
 inline void
@@ -321,7 +286,6 @@ Cube::SetValue(Enum PName, float v)
 inline void
 Cube::Polygon(GLubyte *Index)
 {
-
   float x1=(-1)*(Width/2);
   float x2=(Width/2);
   float y1=(-1)*(Height/2);
@@ -355,8 +319,7 @@ Cube::Render()
     {MatNode->nodespace = ParentNode->nodespace +"</-/>"; MatNode->Render();}
   if(TransNode)
     TransNode->Render();
-  if(StyleNode)
-    {StyleNode->nodespace = ParentNode->nodespace +"</-/>"; StyleNode->Render();}
+  
 
   GLubyte CubeIndex[]={0, 3, 2, 1, 2, 3, 7, 6, 3, 0, 4, 7, 1, 2, 6, 5,
                4, 5, 6, 7, 5, 4, 0, 1};
@@ -373,15 +336,7 @@ Cube::Render()
       grawLib->glNormal3f(N[i][0],N[i][1],N[i][2]);
       Polygon(&CubeIndex[i*4]);      
     }
-  /*    
-  Polygon(0, 3, 2, 1);
-  Polygon(2, 3, 7, 6);
-  Polygon(3, 0, 4, 7);
-  Polygon(1, 2, 6, 5);
-  Polygon(4, 5, 6, 7);
-  Polygon(5, 4, 0, 1);
-  */
-
+	
   //glPopAttrib KH();
 }
 
@@ -390,7 +345,7 @@ Cube::Render()
 class Cylinder: public Geometry
 {
  public:
-  Cylinder(){};
+  Cylinder(GraphDrawLib *gLib){grawLib=gLib;};
   void SetValue(Enum, float);
   void Render();
 
@@ -428,24 +383,15 @@ Cylinder::Render()
     {MatNode->nodespace = ParentNode->nodespace +"</-/>"; MatNode->Render();}
   if(TransNode)
     TransNode->Render();
-  if(StyleNode)
-    {StyleNode->nodespace = ParentNode->nodespace +"</-/>"; StyleNode->Render();}
-
-  //GLUquadricObj *CylinderObj;
-  //KHtemp CylinderObj=gluNewQuadric();
-  //KHtemp gluCylinder(CylinderObj, Radius, Radius, Height, 30, 30);
-   
-  //glPopAttrib KH();
+ 
 }
 
-
-
-
+ 
 
 class Sphere: public Geometry
 {
  public:
-  Sphere(){};
+  Sphere(GraphDrawLib *gLib){grawLib=gLib;};
   Sphere(float R);
   void SetValue(Enum Pname, float v);
   void Render();
@@ -478,8 +424,7 @@ Sphere::Render()
     {MatNode->nodespace = ParentNode->nodespace +"</-/>"; MatNode->Render();}
   if(TransNode)
     TransNode->Render();
-  if(StyleNode)
-    {StyleNode->nodespace = ParentNode->nodespace +"</-/>"; StyleNode->Render();}
+  
   
   printf("%s<-*-> name:%s glutSolidSphere\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
   //KHtemp glutSolidSphere(Radius, 40, 40);
@@ -490,7 +435,7 @@ Sphere::Render()
 class Polygon: public Geometry
 {
  public:
-  Polygon(){};
+  Polygon(GraphDrawLib *gLib){grawLib=gLib;LeftChild = RightSibling =NULL;};
   void SetVerticesv(float v[][3], int);
   void Render();
 
@@ -523,8 +468,7 @@ Polygon::Render()
     {MatNode->nodespace = ParentNode->nodespace +"</-/>"; MatNode->Render();}
   if(TransNode)
     TransNode->Render();
-  if(StyleNode)
-    {StyleNode->nodespace = ParentNode->nodespace +"</-/>"; StyleNode->Render();}
+ 
 
   printf("%s name draw GL_POLYGONs:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
   grawLib->glBegin(GL_POLYGON);
@@ -545,7 +489,7 @@ Polygon::Render()
    Saturation is between 0 and 1
 */
 
-Material *GetColorMat(double c1_h, double c1_s, double c1_v)
+Material *GetColorMat(double c1_h, double c1_s, double c1_v,GraphDrawLib *gLib)
 {
 	double sat_r, sat_g, sat_b;
 
@@ -575,7 +519,7 @@ Material *GetColorMat(double c1_h, double c1_s, double c1_v)
    sat_g = (1 - c1_s + c1_s * sat_g) * c1_v;
    sat_b = (1 - c1_s + c1_s * sat_b) * c1_v;
    //==================================================
-   Material *RobotMat=new Material;
+   Material *RobotMat=new Material(gLib);
    //Robot Value:
    RobotMat->SetValue(DIFFUSE, sat_r, sat_g, sat_b, 1.0);
    RobotMat->SetValue(AMBIENT, sat_r, sat_g, sat_b, 1.0);
@@ -583,26 +527,11 @@ Material *GetColorMat(double c1_h, double c1_s, double c1_v)
    RobotMat->SetValue(SHININESS, 100.0);
    return RobotMat;
 }
-
-/*struct COLOUR
-{
-};
-
-struct HSV
-{
-};
-
-COLOUR HSV2RGB(HSV c1)
-{
-  
-
-   return(c2);
-}*/
-
+ 
 class StlShape: public Geometry
 {
  public:
-  StlShape(){};
+  StlShape(GraphDrawLib *gLib){grawLib=gLib;LeftChild = RightSibling =NULL;};
   void LoadStl(char*file);
   void SetVerticesv();
   void Render();
@@ -625,16 +554,7 @@ inline void StlShape::LoadStl(char*file)
          x_min,  x_max, y_min,  y_max, z_min, z_max);
 }
 
-inline void
-StlShape::SetVerticesv()
-{
-  /*int i, j;
-  Size = facet.size();
-
-  for(i=0; i<S; i++)
-    for(j=0; j<3; j++)
-      Vertices[i][j]= facet.point[i][j];*/
-}
+ 
 
 inline void
 StlShape::Render()
@@ -649,8 +569,7 @@ StlShape::Render()
     {MatNode->nodespace = ParentNode->nodespace +"</-/>"; MatNode->Render();}
   if(TransNode)
     TransNode->Render();
-  if(StyleNode)
-    {StyleNode->nodespace = ParentNode->nodespace +"</-/>"; StyleNode->Render();}
+ 
 
   printf("%s name draw GL_POLYGONs:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
 
@@ -737,45 +656,27 @@ TextureSurface::Render()
     {MatNode->nodespace = ParentNode->nodespace +"</-/>"; MatNode->Render();}
   if(TransNode)
     TransNode->Render();
-  if(StyleNode)
-    {StyleNode->nodespace = ParentNode->nodespace +"</-/>"; StyleNode->Render();}
-  /**/
-  
+ 
   printf("%s name draw GL_POLYGONs:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
   
   int texture[1];
-   
   grawLib->glGenTextures(1, (GLuint*)&texture[0]);
   grawLib->glBindTexture(GL_TEXTURE_2D, texture[0]);   // 2d texture (x and y size)
 
-  //grawLib->glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR); // scale linearly when image bigger than texture
-  //grawLib->glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR); // scale linearly when image smalled than texture
-
-    // 2d texture, level of detail 0 (normal), 3 components (red, green, blue), x size from image, y size from image, 
-    // border 0 (normal), rgb color data, unsigned byte data, and finally the data itself.
   grawLib->glTexImage2D(GL_TEXTURE_2D, 0, 3, Pic.Width, Pic.Height, 0, GL_RGB, GL_UNSIGNED_BYTE, Pic.Buffer);
   grawLib->glEnable(GL_TEXTURE_2D);
   
-  
-   
   grawLib->glBegin(GL_POLYGON);
-  
   
   grawLib->glTexCoord2f(0.0f, 0.0f); grawLib->glVertex3fv(Vertices[0]);	// Bottom Left Of The Texture and Quad
   grawLib->glTexCoord2f(1.0f, 0.0f); grawLib->glVertex3fv(Vertices[1]);	// Bottom Right Of The Texture and Quad
   grawLib->glTexCoord2f(1.0f, 1.0f); grawLib->glVertex3fv(Vertices[2]);	// Top Right Of The Texture and Quad
   grawLib->glTexCoord2f(0.0f, 1.0f); grawLib->glVertex3fv(Vertices[3]);	// Top Left Of The Texture and Quad
-	
- // for(i=0; i<Size; i++)
- //   glVertex3fv(Vertices[i]);
+ 
   grawLib->glEnd();  
-  
   grawLib->glDisable(GL_TEXTURE_2D);
-  
   grawLib->glPopMatrix();
-  //glDeleteTextures(1, (GLuint*)&texture[0]);
- // glBindTexture(GL_TEXTURE_2D,0);
-  //glPopAttrib KH();
+ 
   
 }
 #endif

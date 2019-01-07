@@ -7,7 +7,8 @@
 class Camera: public Node
 {
  public:
-  Camera(Enum CType);
+  //Camera(GraphDrawLib *gLib){};
+  Camera(GraphDrawLib *gLib, Enum CType);
 
   void Render();
   void SetValuev(Enum PName, float *v);
@@ -28,10 +29,11 @@ class Camera: public Node
   
 };
 
-inline Camera::Camera(Enum CType)
+inline Camera::Camera(GraphDrawLib *gLib,Enum CType)
 {
   int i;
-  
+  LeftChild = RightSibling =NULL;
+  grawLib = gLib;
   Type=CType;
   KeepMatrix=true;
 

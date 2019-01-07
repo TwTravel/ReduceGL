@@ -75,18 +75,19 @@ class VWordModel
 
 VWordModel::VWordModel(GraphDrawLib*gLib)
 {
-  Camera1  = new Camera(PERSPECTIVE);
-  SysTrans = new Transformation;
-  Light1   = new Light;
+  Camera1  = new Camera(gLib, PERSPECTIVE);
+  SysTrans = new Transformation(gLib);
+  Light1   = new Light(gLib);
   //StlShape       *StlElements = new StlShape[ element_num ];
   //Transformation *StlTrans    = new Transformation[ element_num ];
-  AxisXX = new Polygon;  AxisXX->nodename ="AxisXX = new Polygon";                             
-  AxisYY = new Polygon;  AxisYY->nodename ="AxisYY = new Polygon";                             
-  AxisZZ = new Polygon;  AxisZZ->nodename ="AxisZZ = new Polygon";                             
+  AxisXX = new Polygon(gLib);  AxisXX->nodename ="AxisXX = new Polygon";                             
+  AxisYY = new Polygon(gLib);  AxisYY->nodename ="AxisYY = new Polygon";                             
+  AxisZZ = new Polygon(gLib);  AxisZZ->nodename ="AxisZZ = new Polygon";                             
   Root   = new Node;     Root  ->nodename ="Root";
+  Root->grawLib = gLib;
   MyViewer = new GLViewer;// MyViewer ->nodename = "Viewer";
   groundface = new TextureSurface;
-  texsurface_trs = new Transformation;
+  texsurface_trs = new Transformation(gLib);
 
   Camera1->grawLib = SysTrans->grawLib = Light1->grawLib = AxisXX->grawLib =
 	AxisYY->grawLib = AxisZZ->grawLib = Root->grawLib = MyViewer->grawLib =
@@ -169,10 +170,11 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 //##################################################################  
    int element_num = lines.size() - 4 ;
    world_model.StlElements.resize(element_num); 
-   Loopi(element_num) {world_model.StlElements[i] = new StlShape;
-                       world_model.StlElements[i]->grawLib=&graphLib;}
+   Loopi(element_num) { world_model.StlElements[i] = new StlShape(&graphLib);
+                        world_model.StlElements[i]->grawLib=&graphLib;
+                        }
    world_model.StlTrans.resize(element_num);    
-   Loopi(element_num) {world_model.StlTrans[i]    = new Transformation;
+   Loopi(element_num) {world_model.StlTrans[i]    = new Transformation(&graphLib);
                        world_model.StlTrans[i]->grawLib=&graphLib; }
      //StlShape       *StlElements = new StlShape[ element_num ];
   //Transformation *StlTrans    = new Transformation[ element_num ];
@@ -185,9 +187,9 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
   
 
   
-   world_model.AxisXX->SetVerticesv(vx, 4); world_model.AxisXX->SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0 ));  
-   world_model.AxisYY->SetVerticesv(vy, 4); world_model.AxisYY->SetMaterial(GetColorMat(360*4.0/8.0, 1.0, 1.0 ));
-   world_model.AxisZZ->SetVerticesv(vz, 4); world_model.AxisZZ->SetMaterial(GetColorMat(360*6.0/8.0, 1.0, 1.0 ));
+   world_model.AxisXX->SetVerticesv(vx, 4); world_model.AxisXX->SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0,&graphLib));  
+   world_model.AxisYY->SetVerticesv(vy, 4); world_model.AxisYY->SetMaterial(GetColorMat(360*4.0/8.0, 1.0, 1.0,&graphLib));
+   world_model.AxisZZ->SetVerticesv(vz, 4); world_model.AxisZZ->SetMaterial(GetColorMat(360*6.0/8.0, 1.0, 1.0,&graphLib));
    
    //===================================================================================
    strvec.clear(); splitString(lines[3], strvec, ",");
@@ -218,7 +220,7 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
                     { 200,  -200, 0.0},{ 200, 200, 0.0} };*/
    world_model.groundface->SetVerticesv(vground,4);
    // groundface->SetVerticesv(vx, 4);
-   world_model.groundface->SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0 ));
+   world_model.groundface->SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0 ,&graphLib));
    
    world_model.texsurface_trs->SetValue(TRANSLATION , offsetx, offsety, offsetz , 1);
    world_model.texsurface_trs->SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 0);
@@ -256,7 +258,7 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 	   
 	   world_model.StlElements[i]->SetTransform( world_model.StlTrans[i]);
        world_model.StlElements[i]->LoadStl((char*)trim(fname).c_str());
-       world_model.StlElements[i]->SetMaterial(GetColorMat(mat_h, mat_s, mat_v ));  //GetColorMat(360*0.0/8.0, 1.0, 1.0 ));//
+       world_model.StlElements[i]->SetMaterial(GetColorMat(mat_h, mat_s, mat_v ,&graphLib));  //GetColorMat(360*0.0/8.0, 1.0, 1.0 ));//
        
 	   world_model.SysTrans->AddChild( world_model.StlElements[i]);
 	   printf( "%s\n", trim(lines[i]).c_str() );
@@ -265,7 +267,7 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
   world_model.Light1->AddChild( world_model.AxisXX);
   world_model.Light1->AddChild( world_model.AxisYY);
   world_model.Light1->AddChild( world_model.AxisZZ);
-  world_model.Light1->AddChild( world_model.groundface);
+  //world_model.Light1->AddChild( world_model.groundface);
    
   
   

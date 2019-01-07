@@ -473,8 +473,8 @@ public:
   inline void  glViewport(int x,int y,int width,int height);
   inline GLTexture *  find_texture(GLContext *c,int h);
   void inline  glInit(int xsize,int ysize);
-  inline void glMatrixMode(int mode);
-  inline void  GLContext::glInitTextures(GLContext *c);
+  inline void  glMatrixMode(int mode);
+  inline void  glInitTextures(GLContext *c);
   inline void  glLoadIdentity(void);
 
   map<int, GLTexture> glTextureHashTable;
@@ -798,7 +798,7 @@ inline void glBindTexture(int target,int texture);
 
 void inline  gl_draw_triangle(GLContext *c,
                       GLVertex *p0,GLVertex *p1,GLVertex *p2);
-inline void GraphDrawLib::gl_draw_triangle_clip(GLContext *c,
+inline void  gl_draw_triangle_clip(GLContext *c,
                                   GLVertex *p0,GLVertex *p1,GLVertex *p2,int clip_bit);
 
 void inline gl_enable_disable_light(GLContext *c,int light,int v);

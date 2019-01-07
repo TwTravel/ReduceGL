@@ -116,6 +116,7 @@ void
 GLViewer::Display0()
 {printf("=============================================\n");
   //Add_grawLib->glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  Root[0]->ParentNode=NULL;
   Root[0]->Traverse();
   
   //grawLib->glFlush();

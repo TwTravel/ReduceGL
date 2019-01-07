@@ -64,7 +64,6 @@
     <ClInclude Include="c256bitmap.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Color.h" />
-    <ClInclude Include="DrawStyle.h" />
     <ClInclude Include="Geometry.h" />
     <ClInclude Include="gl.h" />
     <ClInclude Include="GLViewer.h" />

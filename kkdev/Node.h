@@ -28,7 +28,8 @@ class Node
 {
  public:
   GraphDrawLib *grawLib;
-  Node();
+  Node(){};
+  Node(GraphDrawLib *gLib);
   virtual ~Node();
   virtual void Render();
   void AddChild(Node *);
@@ -40,8 +41,9 @@ class Node
   void GetColor(Enum, float *);
   bool KeepMatrix; 
 
- private:
+// private:
   void Traverse();
+  
   Node *LeftChild;
   Node *RightSibling;
  
@@ -84,7 +86,7 @@ Node::AddChild(Node *node)
   //node->nodespace = nodespace + " --- " + node->nodespace;
 }
 
-inline Node::Node()
+inline Node::Node(GraphDrawLib *gLib)
 {
   KeepMatrix=false;
   LeftChild=NULL;
@@ -92,6 +94,7 @@ inline Node::Node()
   nodename="";
   nodespace="";
   ParentNode=NULL;
+  this->grawLib = gLib;
 }
 
 inline Node::~Node()

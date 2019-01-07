@@ -7,13 +7,14 @@
 class Material: public Node
 {
  public:
-  Material();
+	 Material(GraphDrawLib *gLib);//{grawLib = gLib;};
   void SetValuev(Enum Pname, float *);
   void SetValue(Enum Pname, float v1, float v2, float v3, float v4);
   void SetValue(Enum Pname, float Value);
   void Render();
 
  private:
+
   bool Changed[5];
   float Ambient[4];
   float Diffuse[4];
@@ -23,8 +24,9 @@ class Material: public Node
 };
 
 
-inline Material::Material()
+inline Material::Material(GraphDrawLib *gLib)
 {
+  grawLib = gLib;
   int i;
 
   for(i=0; i<5; i++)
