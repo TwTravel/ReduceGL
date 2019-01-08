@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-01-08 10:56:52</td>
+            <td class="headerValue">2019-01-09 03:23:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -192,8 +192,8 @@
 <span class="lineNum">     130 </span>            :       // constructor stores the streamoff as the offset and default
 <a name="131"><span class="lineNum">     131 </span>            :       // constructs the state.</a>
 <span class="lineNum">     132 </span>            :       /// Construct position from offset.
-<span class="lineNum">     133 </span><span class="lineCov">          1 :       fpos(streamoff __off)</span>
-<span class="lineNum">     134 </span><span class="lineCov">          1 :       : _M_off(__off), _M_state() { }</span>
+<span class="lineNum">     133 </span><span class="lineCov">         14 :       fpos(streamoff __off)</span>
+<span class="lineNum">     134 </span><span class="lineCov">         14 :       : _M_off(__off), _M_state() { }</span>
 <span class="lineNum">     135 </span>            : 
 <span class="lineNum">     136 </span>            :       /// Convert to streamoff.
 <span class="lineNum">     137 </span>            :       operator streamoff() const { return _M_off; }

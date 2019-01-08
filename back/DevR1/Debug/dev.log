@@ -1,0 +1,105 @@
+﻿生成启动时间为 2019/1/4 8:21:21。
+     1>项目“D:\graphdev\ReduceGL\DevR1\dev.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\dev.lastbuildstate”。
+       InitializeBuildStatus:
+         正在对“Debug\dev.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt 3DS.cpp main.cpp
+         main.cpp
+     1>d:\graphdev\reducegl\devr1\main.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(210): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(210): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(210): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(210): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(211): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(211): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(211): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(211): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(212): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(212): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(212): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(212): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(213): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(213): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(213): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(213): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(405): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(406): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(409): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(409): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(416): warning C4244: “=”: 从“double”转换到“BYTE”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(417): warning C4244: “=”: 从“double”转换到“BYTE”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(418): warning C4244: “=”: 从“double”转换到“BYTE”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(426): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(427): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(430): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(430): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(509): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h(521): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\graphdev\reducegl\devr1\c256bitmap.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\graphdev\reducegl\devr1\c256bitmap.h(96): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\graphdev\reducegl\devr1\c256bitmap.h(107): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\graphdev\reducegl\devr1\gl.h(607): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\graphdev\reducegl\devr1\gl.h(607): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\graphdev\reducegl\devr1\gl.h(607): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\graphdev\reducegl\devr1\gl.h(616): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\graphdev\reducegl\devr1\gl.h(616): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\graphdev\reducegl\devr1\gl.h(616): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\graphdev\reducegl\devr1\gl.h(617): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\graphdev\reducegl\devr1\gl.h(617): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\graphdev\reducegl\devr1\gl.h(617): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\graphdev\reducegl\devr1\gl.h(936): warning C4244: “=”: 从“GLdouble”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(937): warning C4244: “=”: 从“GLdouble”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(938): warning C4244: “=”: 从“GLdouble”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(940): warning C4244: “=”: 从“GLdouble”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(941): warning C4244: “=”: 从“GLdouble”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(942): warning C4244: “=”: 从“GLdouble”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(967): warning C4244: “参数”: 从“GLdouble”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(967): warning C4244: “参数”: 从“GLdouble”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(967): warning C4244: “参数”: 从“GLdouble”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1024): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1028): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1029): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1030): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1032): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1033): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1034): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1042): warning C4101: “i”: 未引用的局部变量
+     1>d:\graphdev\reducegl\devr1\gl.h(1385): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1452): warning C4101: “m”: 未引用的局部变量
+     1>d:\graphdev\reducegl\devr1\gl.h(1469): warning C4101: “m”: 未引用的局部变量
+     1>d:\graphdev\reducegl\devr1\gl.h(1536): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1537): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1538): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1539): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1540): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1541): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1611): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1672): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1756): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1841): warning C4101: “p”: 未引用的局部变量
+     1>d:\graphdev\reducegl\devr1\gl.h(1875): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(1889): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(2306): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\gl.h(2432): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\graphdev\reducegl\devr1\c24bitmap.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\graphdev\reducegl\devr1\x11imp.h(9): fatal error C1083: 无法打开包括文件:“zgl.h”: No such file or directory
+         3DS.cpp
+     1>d:\graphdev\reducegl\devr1\3ds.cpp(24): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\graphdev\reducegl\devr1\3ds.cpp(29): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+     1>d:\graphdev\reducegl\devr1\3ds.cpp(43): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+         正在生成代码...
+     1>已完成生成项目“D:\graphdev\ReduceGL\DevR1\dev.vcxproj”(rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:02.35

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-01-08 10:56:52</td>
+            <td class="headerValue">2019-01-09 03:23:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -221,11 +221,11 @@
 <span class="lineNum">     159 </span>            :       /**
 <a name="160"><span class="lineNum">     160 </span>            :        *  @brief  Default constructor creates no elements.</a>
 <span class="lineNum">     161 </span>            :        */
-<span class="lineNum">     162 </span><span class="lineCov">          1 :       map()</span>
+<span class="lineNum">     162 </span><span class="lineCov">          2 :       map()</span>
 <span class="lineNum">     163 </span>            : #if __cplusplus &gt;= 201103L
 <span class="lineNum">     164 </span>            :       noexcept(is_nothrow_default_constructible&lt;allocator_type&gt;::value)
 <span class="lineNum">     165 </span>            : #endif
-<span class="lineNum">     166 </span><span class="lineCov">          1 :       : _M_t() { }</span>
+<span class="lineNum">     166 </span><span class="lineCov">          2 :       : _M_t() { }</span>
 <span class="lineNum">     167 </span>            : 
 <span class="lineNum">     168 </span>            :       /**
 <span class="lineNum">     169 </span>            :        *  @brief  Creates a %map with no elements.
@@ -415,8 +415,8 @@
 <span class="lineNum">     353 </span>            :        *  according to the keys.
 <a name="354"><span class="lineNum">     354 </span>            :        */</a>
 <span class="lineNum">     355 </span>            :       iterator
-<span class="lineNum">     356 </span><span class="lineCov">          3 :       end() _GLIBCXX_NOEXCEPT</span>
-<span class="lineNum">     357 </span><span class="lineCov">          3 :       { return _M_t.end(); }</span>
+<span class="lineNum">     356 </span><span class="lineCov">          6 :       end() _GLIBCXX_NOEXCEPT</span>
+<span class="lineNum">     357 </span><span class="lineCov">          6 :       { return _M_t.end(); }</span>
 <span class="lineNum">     358 </span>            : 
 <span class="lineNum">     359 </span>            :       /**
 <span class="lineNum">     360 </span>            :        *  Returns a read-only (constant) iterator that points one past the last
@@ -533,22 +533,22 @@
 <span class="lineNum">     471 </span>            :        *  Lookup requires logarithmic time.
 <a name="472"><span class="lineNum">     472 </span>            :        */</a>
 <span class="lineNum">     473 </span>            :       mapped_type&amp;
-<span class="lineNum">     474 </span><span class="lineCov">          2 :       operator[](const key_type&amp; __k)</span>
+<span class="lineNum">     474 </span><span class="lineCov">          4 :       operator[](const key_type&amp; __k)</span>
 <span class="lineNum">     475 </span>            :       {
 <span class="lineNum">     476 </span>            :         // concept requirements
 <span class="lineNum">     477 </span>            :         __glibcxx_function_requires(_DefaultConstructibleConcept&lt;mapped_type&gt;)
 <span class="lineNum">     478 </span>            : 
-<span class="lineNum">     479 </span><span class="lineCov">          2 :         iterator __i = lower_bound(__k);</span>
+<span class="lineNum">     479 </span><span class="lineCov">          4 :         iterator __i = lower_bound(__k);</span>
 <span class="lineNum">     480 </span>            :         // __i-&gt;first is greater than or equivalent to __k.
-<span class="lineNum">     481 </span><span class="lineCov">          2 :         if (__i == end() || key_comp()(__k, (*__i).first))</span>
+<span class="lineNum">     481 </span><span class="lineCov">          4 :         if (__i == end() || key_comp()(__k, (*__i).first))</span>
 <span class="lineNum">     482 </span>            : #if __cplusplus &gt;= 201103L
 <span class="lineNum">     483 </span>            :           __i = _M_t._M_emplace_hint_unique(__i, std::piecewise_construct,
 <span class="lineNum">     484 </span>            :                                             std::tuple&lt;const key_type&amp;&gt;(__k),
 <span class="lineNum">     485 </span>            :                                             std::tuple&lt;&gt;());
 <span class="lineNum">     486 </span>            : #else
-<span class="lineNum">     487 </span><span class="lineCov">          1 :           __i = insert(__i, value_type(__k, mapped_type()));</span>
+<span class="lineNum">     487 </span><span class="lineCov">          2 :           __i = insert(__i, value_type(__k, mapped_type()));</span>
 <span class="lineNum">     488 </span>            : #endif
-<span class="lineNum">     489 </span><span class="lineCov">          2 :         return (*__i).second;</span>
+<span class="lineNum">     489 </span><span class="lineCov">          4 :         return (*__i).second;</span>
 <span class="lineNum">     490 </span>            :       }
 <span class="lineNum">     491 </span>            : 
 <span class="lineNum">     492 </span>            : #if __cplusplus &gt;= 201103L
@@ -723,9 +723,9 @@
 <span class="lineNum">     661 </span>            : #if __cplusplus &gt;= 201103L
 <a name="662"><span class="lineNum">     662 </span>            :       insert(const_iterator __position, const value_type&amp; __x)</a>
 <span class="lineNum">     663 </span>            : #else
-<span class="lineNum">     664 </span><span class="lineCov">          1 :       insert(iterator __position, const value_type&amp; __x)</span>
+<span class="lineNum">     664 </span><span class="lineCov">          2 :       insert(iterator __position, const value_type&amp; __x)</span>
 <span class="lineNum">     665 </span>            : #endif
-<span class="lineNum">     666 </span><span class="lineCov">          1 :       { return _M_t._M_insert_unique_(__position, __x); }</span>
+<span class="lineNum">     666 </span><span class="lineCov">          2 :       { return _M_t._M_insert_unique_(__position, __x); }</span>
 <span class="lineNum">     667 </span>            : 
 <span class="lineNum">     668 </span>            : #if __cplusplus &gt;= 201103L
 <span class="lineNum">     669 </span>            :       template&lt;typename _Pair, typename = typename
@@ -877,8 +877,8 @@
 <span class="lineNum">     815 </span>            :        *  constructed.
 <a name="816"><span class="lineNum">     816 </span>            :        */</a>
 <span class="lineNum">     817 </span>            :       key_compare
-<span class="lineNum">     818 </span><span class="lineCov">          1 :       key_comp() const</span>
-<span class="lineNum">     819 </span><span class="lineCov">          1 :       { return _M_t.key_comp(); }</span>
+<span class="lineNum">     818 </span><span class="lineCov">          2 :       key_comp() const</span>
+<span class="lineNum">     819 </span><span class="lineCov">          2 :       { return _M_t.key_comp(); }</span>
 <span class="lineNum">     820 </span>            : 
 <span class="lineNum">     821 </span>            :       /**
 <span class="lineNum">     822 </span>            :        *  Returns a value comparison object, built from the key comparison
@@ -904,8 +904,8 @@
 <span class="lineNum">     842 </span>            :        */
 <a name="843"><span class="lineNum">     843 </span>            : </a>
 <span class="lineNum">     844 </span>            :       iterator
-<span class="lineNum">     845 </span><span class="lineCov">          1 :       find(const key_type&amp; __x)</span>
-<span class="lineNum">     846 </span><span class="lineCov">          1 :       { return _M_t.find(__x); }</span>
+<span class="lineNum">     845 </span><span class="lineCov">          2 :       find(const key_type&amp; __x)</span>
+<span class="lineNum">     846 </span><span class="lineCov">          2 :       { return _M_t.find(__x); }</span>
 <span class="lineNum">     847 </span>            : 
 <span class="lineNum">     848 </span>            : #if __cplusplus &gt; 201103L
 <span class="lineNum">     849 </span>            :       template&lt;typename _Kt&gt;
@@ -974,8 +974,8 @@
 <span class="lineNum">     912 </span>            :        *  or end() if no such element exists.
 <a name="913"><span class="lineNum">     913 </span>            :        */</a>
 <span class="lineNum">     914 </span>            :       iterator
-<span class="lineNum">     915 </span><span class="lineCov">          2 :       lower_bound(const key_type&amp; __x)</span>
-<span class="lineNum">     916 </span><span class="lineCov">          2 :       { return _M_t.lower_bound(__x); }</span>
+<span class="lineNum">     915 </span><span class="lineCov">          4 :       lower_bound(const key_type&amp; __x)</span>
+<span class="lineNum">     916 </span><span class="lineCov">          4 :       { return _M_t.lower_bound(__x); }</span>
 <span class="lineNum">     917 </span>            : 
 <span class="lineNum">     918 </span>            : #if __cplusplus &gt; 201103L
 <span class="lineNum">     919 </span>            :       template&lt;typename _Kt&gt;

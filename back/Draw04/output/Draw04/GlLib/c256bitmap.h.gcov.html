@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - Draw04/GlLib/c256bitmap.h</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">Draw04/GlLib</a> - c256bitmap.h<span style="font-size: 80%;"> (source / <a href="c256bitmap.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">25</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2019-01-08 10:58:27</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : </a>
+<span class="lineNum">       2 </span>            : #ifndef c256bitmap_Class
+<span class="lineNum">       3 </span>            : #define c256bitmap_Class
+<span class="lineNum">       4 </span>            : #include &lt;stdio.h&gt;
+<span class="lineNum">       5 </span>            : #include &lt;fcntl.h&gt;
+<span class="lineNum">       6 </span>            : typedef unsigned char BYTE;
+<span class="lineNum">       7 </span>            : 
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : #define IJT   int i,j,t;
+<span class="lineNum">      10 </span>            : #define Loopi(k) for(i=0;i&lt;k;i++)
+<span class="lineNum">      11 </span>            : #define LoopPic_ij(Pic) Loopi(Pic.Width)Loopj(Pic.Height)
+<span class="lineNum">      12 </span>            : #define BOUND(x,a,b) (((x) &lt; (a)) ? (a) : (((x) &gt; (b)) ? (b) : (x)))
+<span class="lineNum">      13 </span>            : #define THRESHOLD(x,a,b,v) x&lt;v?a:b
+<span class="lineNum">      14 </span>            : 
+<span class="lineNum">      15 </span>            : //#define max(a,b) ((a) &gt; (b) ? (a) : (b)) 
+<span class="lineNum">      16 </span>            : //#define min(a,b) ((a) &lt; (b) ? (a) : (b)) 
+<span class="lineNum">      17 </span>            : 
+<span class="lineNum">      18 </span>            : 
+<span class="lineNum">      19 </span>            : #define RGBcolor(tt) RGB(tt.rgbRed,tt.rgbGreen,tt.rgbBlue)
+<span class="lineNum">      20 </span>            : BYTE BMPFileHead[54]={
+<span class="lineNum">      21 </span>            : 0x42,0x4D,0xC6,0x2C,0x00,0x00,0x00,0x00,0x00,0x00,0x36,0x04,0x00,0x00,0x28,0x00,
+<span class="lineNum">      22 </span>            : 0x00,0x00,0x58,0x00,0x00,0x00,0x76,0x00,0x00,0x00,0x01,0x00,0x08,0x00,0x00,0x00,
+<span class="lineNum">      23 </span>            : 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x01,
+<span class="lineNum">      24 </span>            : 0x00,0x00,0x00,0x01,0x00,0x00};
+<span class="lineNum">      25 </span>            : 
+<span class="lineNum">      26 </span>            : typedef struct tagRGBQUAD {
+<span class="lineNum">      27 </span>            :   BYTE rgbBlue;
+<span class="lineNum">      28 </span>            :   BYTE rgbGreen;
+<span class="lineNum">      29 </span>            :   BYTE rgbRed;
+<span class="lineNum">      30 </span>            :   BYTE rgbReserved;
+<span class="lineNum">      31 </span>            : } RGBQUAD;/**/
+<span class="lineNum">      32 </span>            : 
+<span class="lineNum">      33 </span>            : class C256BitMap
+<span class="lineNum">      34 </span>            : {
+<span class="lineNum">      35 </span>            : public:
+<span class="lineNum">      36 </span>            : C256BitMap();
+<span class="lineNum">      37 </span>            : ~C256BitMap();
+<span class="lineNum">      38 </span>            : BITMAPINFOHEADER BitMpInfoHead;BITMAPFILEHEADER BitMpHead;//图像信息头结构,图像头结构
+<span class="lineNum">      39 </span>            : RGBQUAD ColorTable[256];//色彩指针
+<span class="lineNum">      40 </span>            : C256BitMap&amp;operator=(const C256BitMap&amp;OtherPic);//算符重载
+<span class="lineNum">      41 </span>            : void Load(char*FileName);
+<span class="lineNum">      42 </span>            : void Save(char*FileName);
+<span class="lineNum">      43 </span>            : void Clear();
+<span class="lineNum">      44 </span>            : void FormatF(int w,int h);
+<span class="lineNum">      45 </span>            : int Width,Height,LineWidth;
+<span class="lineNum">      46 </span>            : BYTE *Buffer;
+<span class="lineNum">      47 </span>            : static int C256Memcnt;
+<a name="48"><span class="lineNum">      48 </span>            : };</a>
+<span class="lineNum">      49 </span>            : int C256BitMap::C256Memcnt=0;
+<span class="lineNum">      50 </span><span class="lineNoCov">          0 : C256BitMap::~C256BitMap()</span>
+<span class="lineNum">      51 </span><span class="lineNoCov">          0 : {C256Memcnt-=LineWidth*Height;</span>
+<span class="lineNum">      52 </span><span class="lineNoCov">          0 : delete []Buffer;Buffer=NULL;</span>
+<span class="lineNum">      53 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      54 </span>            : 
+<span class="lineNum">      55 </span>            : void inline C256BitMap::Clear()
+<span class="lineNum">      56 </span>            : {int i;
+<span class="lineNum">      57 </span>            :  Loopi(Height* LineWidth) Buffer[i]=255; 
+<a name="58"><span class="lineNum">      58 </span>            : }</a>
+<span class="lineNum">      59 </span>            : 
+<span class="lineNum">      60 </span><span class="lineNoCov">          0 : C256BitMap&amp; C256BitMap::operator=(const C256BitMap&amp;OtherPic)//算符重载</span>
+<span class="lineNum">      61 </span>            : {int i;
+<span class="lineNum">      62 </span><span class="lineNoCov">          0 : FormatF(OtherPic.Width,OtherPic.Height);</span>
+<span class="lineNum">      63 </span><span class="lineNoCov">          0 : int BtCnt(Height*LineWidth);</span>
+<span class="lineNum">      64 </span><span class="lineNoCov">          0 : Loopi(BtCnt)Buffer[i]=OtherPic.Buffer[i];</span>
+<a name="65"><span class="lineNum">      65 </span><span class="lineNoCov">          0 : return *this;}</span></a>
+<span class="lineNum">      66 </span>            : 
+<span class="lineNum">      67 </span><span class="lineNoCov">          0 : C256BitMap::C256BitMap()</span>
+<span class="lineNum">      68 </span><span class="lineNoCov">          0 : {LineWidth=0;Height=0;Width=0;</span>
+<a name="69"><span class="lineNum">      69 </span><span class="lineNoCov">          0 : Buffer=NULL;}</span></a>
+<span class="lineNum">      70 </span>            : 
+<span class="lineNum">      71 </span><span class="lineNoCov">          0 : void inline C256BitMap::FormatF(int w,int h)</span>
+<span class="lineNum">      72 </span>            : {int i;
+<span class="lineNum">      73 </span><span class="lineNoCov">          0 : C256Memcnt-=LineWidth*Height;</span>
+<span class="lineNum">      74 </span><span class="lineNoCov">          0 : memcpy((void*)&amp;BitMpHead,(void*)BMPFileHead,14);</span>
+<span class="lineNum">      75 </span><span class="lineNoCov">          0 : memcpy((void*)&amp;BitMpInfoHead,(void*)(BMPFileHead+14),40);</span>
+<span class="lineNum">      76 </span><span class="lineNoCov">          0 : BitMpInfoHead.biHeight=h;BitMpInfoHead.biWidth=w;</span>
+<span class="lineNum">      77 </span><span class="lineNoCov">          0 : Width=w;Height=h;LineWidth=4*int((Width+3)/4);//每行数据字节大小</span>
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 : delete []Buffer;Buffer=NULL;Buffer=new BYTE[LineWidth*Height];</span>
+<span class="lineNum">      79 </span><span class="lineNoCov">          0 : C256Memcnt+=LineWidth*Height;</span>
+<span class="lineNum">      80 </span>            : 
+<span class="lineNum">      81 </span><span class="lineNoCov">          0 : Loopi(256)</span>
+<span class="lineNum">      82 </span><span class="lineNoCov">          0 : {ColorTable[i].rgbRed=i;</span>
+<span class="lineNum">      83 </span><span class="lineNoCov">          0 : ColorTable[i].rgbGreen=i;</span>
+<span class="lineNum">      84 </span><span class="lineNoCov">          0 : ColorTable[i].rgbBlue=i;}</span>
+<span class="lineNum">      85 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      86 </span>            : 
+<span class="lineNum">      87 </span>            : void inline C256BitMap::Save(char*FileName)
+<span class="lineNum">      88 </span>            : {
+<span class="lineNum">      89 </span>            :  
+<span class="lineNum">      90 </span>            : FILE*file = fopen(FileName,&quot;wb+&quot;);
+<span class="lineNum">      91 </span>            : fwrite((void*)&amp;BitMpHead,1,14,file);
+<span class="lineNum">      92 </span>            : fwrite(&amp;BitMpInfoHead,1,sizeof(BitMpInfoHead),file);
+<span class="lineNum">      93 </span>            : fwrite((void*)ColorTable, sizeof(RGBQUAD),256,file);
+<span class="lineNum">      94 </span>            : fwrite((void*)Buffer,1,(LineWidth*Height),file);
+<span class="lineNum">      95 </span>            : fclose(file);
+<span class="lineNum">      96 </span>            : 
+<span class="lineNum">      97 </span>            : }
+<span class="lineNum">      98 </span>            : 
+<span class="lineNum">      99 </span>            : void inline C256BitMap::Load(char*FileName)
+<span class="lineNum">     100 </span>            : {
+<span class="lineNum">     101 </span>            : FILE*file = fopen(FileName,&quot;rb&quot;);
+<span class="lineNum">     102 </span>            : fread((void*)&amp;BitMpHead,1,14,file);
+<span class="lineNum">     103 </span>            : fread(&amp;BitMpInfoHead,1,sizeof(BitMpInfoHead),file);
+<span class="lineNum">     104 </span>            : fread((void*)ColorTable, sizeof(RGBQUAD),256,file);
+<span class="lineNum">     105 </span>            : 
+<span class="lineNum">     106 </span>            : Height=BitMpInfoHead.biHeight;Width=BitMpInfoHead.biWidth;
+<span class="lineNum">     107 </span>            : LineWidth=4*int((Width+3)/4);//每行数据字节大小
+<span class="lineNum">     108 </span>            : delete []Buffer;Buffer=NULL;Buffer=new BYTE[LineWidth*Height];
+<span class="lineNum">     109 </span>            : fread((void*)Buffer,1,(LineWidth*Height),file);
+<span class="lineNum">     110 </span>            : fclose(file);
+<span class="lineNum">     111 </span>            : 
+<span class="lineNum">     112 </span>            : }
+<span class="lineNum">     113 </span>            : 
+<span class="lineNum">     114 </span>            : /*void Disp(TCanvas*CV,C256BitMap*Pic,int x=0,int y=0)
+<span class="lineNum">     115 </span>            : {
+<span class="lineNum">     116 </span>            : int i,j,V;Loopi(Pic-&gt;Width)Loopj(Pic-&gt;Height)
+<span class="lineNum">     117 </span>            : {V=Pic-&gt;PicPt[j][i];
+<span class="lineNum">     118 </span>            : CV-&gt;Pixels[x+i][y+j]=RGBcolor(Pic-&gt;ColorTable[V]);
+<span class="lineNum">     119 </span>            : }
+<span class="lineNum">     120 </span>            : } */
+<span class="lineNum">     121 </span>            : 
+<span class="lineNum">     122 </span>            : inline BYTE* get_pix_color(C256BitMap&amp;pic,int x,int y)
+<span class="lineNum">     123 </span>            : {x=BOUND(x,0,pic.Width-1);y=BOUND(y,0,pic.Height-1);
+<span class="lineNum">     124 </span>            : return pic.Buffer+(pic.Height-1-y)*pic.LineWidth+x;}
+<span class="lineNum">     125 </span>            : 
+<span class="lineNum">     126 </span>            : #endif
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.12</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
