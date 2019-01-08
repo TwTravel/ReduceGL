@@ -180,7 +180,7 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
    world_model.SysTrans->SetValue(TRANSLATION, trans_x,  trans_y, trans_z, 2);
 //##################################################################
 //##################################################################  
-   int element_num = lines.size() - 4 ;
+   int element_num = lines.size() - 3 ;
    world_model.StlElements.resize(element_num); 
       Loopi(element_num) world_model.StlElements[i] = new StlShape;
    world_model.StlTrans.resize(element_num);    
@@ -201,10 +201,9 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
    world_model.AxisZZ->SetVerticesv(vz, 4); world_model.AxisZZ->SetMaterial(GetColorMat(360*6.0/8.0, 1.0, 1.0 ));
    
    //===================================================================================
-   strvec.clear(); splitString(lines[3], strvec, ",");
+   /*strvec.clear(); splitString(lines[3], strvec, ",");
    
-   /*float vground[][3]={{0, 0, 0},{ 0.115*5.0,  0,  0},
-                       {0.115*5.0, 0.115*5.0, 0},{  0,  0.115*5.0, 0} };*/
+    
 	float vground[4][3];//={{0, 0, 0},{ 0.115 ,  0,  0},
                        //{0.115 , 0.115 , 0},{  0,  0.115 , 0} };
 	double offsetx(0), offsety(0), offsetz(0);//, offsetx(0), offsety(0), offsetz(0);
@@ -225,21 +224,20 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 		vground[i][1] = atof(trim(strvec[1+3*i]).c_str()) ;//+ offsety;;
 		vground[i][2] = atof(trim(strvec[2+3*i]).c_str()) ;//+ offsetz;;
 	}
-  /* float vground[][3]={{-200,  200, 0.0},{-200, -200, 0.0},
-                    { 200,  -200, 0.0},{ 200, 200, 0.0} };*/
+   
    world_model.groundface->SetVerticesv(vground,4);
    // groundface->SetVerticesv(vx, 4);
    world_model.groundface->SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0 ));
    
    world_model.texsurface_trs->SetValue(TRANSLATION , offsetx, offsety, offsetz , 1);
    world_model.texsurface_trs->SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 0);
-   world_model.groundface->SetTransform( world_model.texsurface_trs);
+   world_model.groundface->SetTransform( world_model.texsurface_trs);*/
    //world_model.StlTrans[i]->SetValue(SCALE       , obj_scale, obj_scale, obj_scale,2); 
    //====================================================================================
   
    for( i = 0; i <  element_num; i++ )
    {
-	   strvec.clear(); splitString(lines[4+i], strvec, ",");
+	   strvec.clear(); splitString(lines[3+i], strvec, ",");
 	   
 	   double  mat_h, mat_s, mat_v;
 	   double  obj_x, obj_y, obj_z;
@@ -273,10 +271,10 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 	   printf( "%s\n", trim(lines[i]).c_str() );
    }
   
-  world_model.Light1->AddChild( world_model.AxisXX);
-  world_model.Light1->AddChild( world_model.AxisYY);
-  world_model.Light1->AddChild( world_model.AxisZZ);
-  world_model.Light1->AddChild( world_model.groundface);
+  //world_model.Light1->AddChild( world_model.AxisXX);
+  //world_model.Light1->AddChild( world_model.AxisYY);
+  //world_model.Light1->AddChild( world_model.AxisZZ);
+  //world_model.Light1->AddChild( world_model.groundface);
    
   
   

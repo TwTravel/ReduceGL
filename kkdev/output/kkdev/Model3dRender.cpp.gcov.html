@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">135</td>
-            <td class="headerCovTableEntry">166</td>
-            <td class="headerCovTableEntryMed">81.3 %</td>
+            <td class="headerCovTableEntry">119</td>
+            <td class="headerCovTableEntry">143</td>
+            <td class="headerCovTableEntryMed">83.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-01-07 17:12:43</td>
+            <td class="headerValue">2019-01-08 10:56:52</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -65,17 +65,17 @@
 <span class="lineNum">       3 </span>            : #include &quot;read_cfg.h&quot;
 <a name="4"><span class="lineNum">       4 </span>            : #include &quot;Scene.h&quot;</a>
 <span class="lineNum">       5 </span>            : 
-<span class="lineNum">       6 </span><span class="lineCov">         36 :  string trim(const string&amp; str)</span>
+<span class="lineNum">       6 </span><span class="lineCov">         24 :  string trim(const string&amp; str)</span>
 <span class="lineNum">       7 </span>            : {
-<span class="lineNum">       8 </span><span class="lineCov">         36 :     string::size_type pos = str.find_first_not_of(' ');</span>
-<span class="lineNum">       9 </span><span class="lineCov">         36 :     if (pos == string::npos)</span>
+<span class="lineNum">       8 </span><span class="lineCov">         24 :     string::size_type pos = str.find_first_not_of(' ');</span>
+<span class="lineNum">       9 </span><span class="lineCov">         24 :     if (pos == string::npos)</span>
 <span class="lineNum">      10 </span>            :     {
 <span class="lineNum">      11 </span><span class="lineNoCov">          0 :         return str;</span>
 <span class="lineNum">      12 </span>            :     }
-<span class="lineNum">      13 </span><span class="lineCov">         36 :     string::size_type pos2 = str.find_last_not_of(' ');</span>
-<span class="lineNum">      14 </span><span class="lineCov">         36 :     if (pos2 != string::npos)</span>
+<span class="lineNum">      13 </span><span class="lineCov">         24 :     string::size_type pos2 = str.find_last_not_of(' ');</span>
+<span class="lineNum">      14 </span><span class="lineCov">         24 :     if (pos2 != string::npos)</span>
 <span class="lineNum">      15 </span>            :     {
-<span class="lineNum">      16 </span><span class="lineCov">         36 :         return str.substr(pos, pos2 - pos + 1);</span>
+<span class="lineNum">      16 </span><span class="lineCov">         24 :         return str.substr(pos, pos2 - pos + 1);</span>
 <span class="lineNum">      17 </span>            :     }
 <span class="lineNum">      18 </span><span class="lineNoCov">          0 :     return str.substr(pos);</span>
 <span class="lineNum">      19 </span>            : }
@@ -230,105 +230,105 @@
 <span class="lineNum">     168 </span><span class="lineCov">          1 :    world_model.SysTrans-&gt;SetValue(TRANSLATION, trans_x,  trans_y, trans_z, 2);</span>
 <span class="lineNum">     169 </span>            : //##################################################################
 <span class="lineNum">     170 </span>            : //##################################################################  
-<span class="lineNum">     171 </span><span class="lineCov">          1 :    int element_num = lines.size() - 4 ;</span>
+<span class="lineNum">     171 </span><span class="lineCov">          1 :    int element_num = lines.size() - 3 ;</span>
 <span class="lineNum">     172 </span><span class="lineCov">          1 :    world_model.StlElements.resize(element_num); </span>
-<span class="lineNum">     173 </span><span class="lineCov">          2 :    Loopi(element_num) { world_model.StlElements[i] = new StlShape(&amp;graphLib);</span>
-<span class="lineNum">     174 </span><span class="lineCov">          1 :                         world_model.StlElements[i]-&gt;grawLib=&amp;graphLib;</span>
+<span class="lineNum">     173 </span><span class="lineCov">          1 :    Loopi(element_num) { world_model.StlElements[i] = new StlShape(&amp;graphLib);</span>
+<span class="lineNum">     174 </span>            :                         //world_model.StlElements[i]-&gt;grawLib=&amp;graphLib;
 <span class="lineNum">     175 </span>            :                         }
 <span class="lineNum">     176 </span><span class="lineCov">          1 :    world_model.StlTrans.resize(element_num);    </span>
-<span class="lineNum">     177 </span><span class="lineCov">          2 :    Loopi(element_num) {world_model.StlTrans[i]    = new Transformation(&amp;graphLib);</span>
-<span class="lineNum">     178 </span><span class="lineCov">          1 :                        world_model.StlTrans[i]-&gt;grawLib=&amp;graphLib; }</span>
-<span class="lineNum">     179 </span>            :      //StlShape       *StlElements = new StlShape[ element_num ];
-<span class="lineNum">     180 </span>            :   //Transformation *StlTrans    = new Transformation[ element_num ];
-<span class="lineNum">     181 </span>            :    
+<span class="lineNum">     177 </span><span class="lineCov">          1 :    Loopi(element_num) {world_model.StlTrans[i]    = new Transformation(&amp;graphLib);</span>
+<span class="lineNum">     178 </span>            :                        //world_model.StlTrans[i]-&gt;grawLib=&amp;graphLib;
+<span class="lineNum">     179 </span>            :                       }
+<span class="lineNum">     180 </span>            :      //StlShape       *StlElements = new StlShape[ element_num ];
+<span class="lineNum">     181 </span>            :   //Transformation *StlTrans    = new Transformation[ element_num ];
 <span class="lineNum">     182 </span>            :    
-<span class="lineNum">     183 </span><span class="lineCov">          1 :    world_model.Light1-&gt;SetValue(POSITION,  2, -1,  1.8, 1);</span>
-<span class="lineNum">     184 </span><span class="lineCov">          1 :    world_model.Light1-&gt;SetValue(SPOT_DIRECTION, -2, 1, -1.8);</span>
-<span class="lineNum">     185 </span><span class="lineCov">          1 :    world_model.Light1-&gt;SetValue(CUTOFFANGLE, 180.0);</span>
-<span class="lineNum">     186 </span><span class="lineCov">          1 :    world_model.Light1-&gt;TurnOn();     world_model.Light1-&gt;nodename=&quot;Light1&quot;;</span>
-<span class="lineNum">     187 </span>            :   
-<span class="lineNum">     188 </span>            : 
-<span class="lineNum">     189 </span>            :   
-<span class="lineNum">     190 </span><span class="lineCov">          1 :    world_model.AxisXX-&gt;SetVerticesv(vx, 4); world_model.AxisXX-&gt;SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0,&amp;graphLib));  </span>
-<span class="lineNum">     191 </span><span class="lineCov">          1 :    world_model.AxisYY-&gt;SetVerticesv(vy, 4); world_model.AxisYY-&gt;SetMaterial(GetColorMat(360*4.0/8.0, 1.0, 1.0,&amp;graphLib));</span>
-<span class="lineNum">     192 </span><span class="lineCov">          1 :    world_model.AxisZZ-&gt;SetVerticesv(vz, 4); world_model.AxisZZ-&gt;SetMaterial(GetColorMat(360*6.0/8.0, 1.0, 1.0,&amp;graphLib));</span>
-<span class="lineNum">     193 </span>            :    
-<span class="lineNum">     194 </span>            :    //===================================================================================
-<span class="lineNum">     195 </span><span class="lineCov">          1 :    strvec.clear(); splitString(lines[3], strvec, &quot;,&quot;);</span>
-<span class="lineNum">     196 </span>            :    
-<span class="lineNum">     197 </span>            :    /*float vground[][3]={{0, 0, 0},{ 0.115*5.0,  0,  0},
-<span class="lineNum">     198 </span>            :                        {0.115*5.0, 0.115*5.0, 0},{  0,  0.115*5.0, 0} };*/
+<span class="lineNum">     183 </span>            :    
+<span class="lineNum">     184 </span><span class="lineCov">          1 :    world_model.Light1-&gt;SetValue(POSITION,  2, -1,  1.8, 1);</span>
+<span class="lineNum">     185 </span><span class="lineCov">          1 :    world_model.Light1-&gt;SetValue(SPOT_DIRECTION, -2, 1, -1.8);</span>
+<span class="lineNum">     186 </span><span class="lineCov">          1 :    world_model.Light1-&gt;SetValue(CUTOFFANGLE, 180.0);</span>
+<span class="lineNum">     187 </span><span class="lineCov">          1 :    world_model.Light1-&gt;TurnOn();     world_model.Light1-&gt;nodename=&quot;Light1&quot;;</span>
+<span class="lineNum">     188 </span>            :   
+<span class="lineNum">     189 </span>            : 
+<span class="lineNum">     190 </span>            :   
+<span class="lineNum">     191 </span><span class="lineCov">          1 :    world_model.AxisXX-&gt;SetVerticesv(vx, 4); world_model.AxisXX-&gt;SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0,&amp;graphLib));  </span>
+<span class="lineNum">     192 </span><span class="lineCov">          1 :    world_model.AxisYY-&gt;SetVerticesv(vy, 4); world_model.AxisYY-&gt;SetMaterial(GetColorMat(360*4.0/8.0, 1.0, 1.0,&amp;graphLib));</span>
+<span class="lineNum">     193 </span><span class="lineCov">          1 :    world_model.AxisZZ-&gt;SetVerticesv(vz, 4); world_model.AxisZZ-&gt;SetMaterial(GetColorMat(360*6.0/8.0, 1.0, 1.0,&amp;graphLib));</span>
+<span class="lineNum">     194 </span>            :    
+<span class="lineNum">     195 </span>            :    //===================================================================================
+<span class="lineNum">     196 </span>            :    /*strvec.clear(); splitString(lines[3], strvec, &quot;,&quot;);
+<span class="lineNum">     197 </span>            :    
+<span class="lineNum">     198 </span>            :     
 <span class="lineNum">     199 </span>            :         float vground[4][3];//={{0, 0, 0},{ 0.115 ,  0,  0},
 <span class="lineNum">     200 </span>            :                        //{0.115 , 0.115 , 0},{  0,  0.115 , 0} };
-<span class="lineNum">     201 </span><span class="lineCov">          1 :         double offsetx(0), offsety(0), offsetz(0);//, offsetx(0), offsety(0), offsetz(0);</span>
-<span class="lineNum">     202 </span><span class="lineCov">          1 :         if(strvec.size()&gt;13)</span>
+<span class="lineNum">     201 </span>            :         double offsetx(0), offsety(0), offsetz(0);//, offsetx(0), offsety(0), offsetz(0);
+<span class="lineNum">     202 </span>            :         if(strvec.size()&gt;13)
 <span class="lineNum">     203 </span>            :         { 
-<span class="lineNum">     204 </span><span class="lineNoCov">          0 :       offsetx = atof(trim(strvec[12]).c_str());;;</span>
-<span class="lineNum">     205 </span><span class="lineNoCov">          0 :       offsety = atof(trim(strvec[13]).c_str());;;</span>
-<span class="lineNum">     206 </span><span class="lineNoCov">          0 :           offsetz = atof(trim(strvec[14]).c_str());;;</span>
+<span class="lineNum">     204 </span>            :       offsetx = atof(trim(strvec[12]).c_str());;;
+<span class="lineNum">     205 </span>            :       offsety = atof(trim(strvec[13]).c_str());;;
+<span class="lineNum">     206 </span>            :           offsetz = atof(trim(strvec[14]).c_str());;;
 <span class="lineNum">     207 </span>            :           
-<span class="lineNum">     208 </span><span class="lineNoCov">          0 :           rot_angle   = atof( trim(strvec[15]).c_str() );</span>
-<span class="lineNum">     209 </span><span class="lineNoCov">          0 :       rot_x       = atof( trim(strvec[16]).c_str() );</span>
-<span class="lineNum">     210 </span><span class="lineNoCov">          0 :       rot_y       = atof( trim(strvec[17]).c_str() );</span>
-<span class="lineNum">     211 </span><span class="lineNoCov">          0 :       rot_z       = atof( trim(strvec[18]).c_str() ); </span>
+<span class="lineNum">     208 </span>            :           rot_angle   = atof( trim(strvec[15]).c_str() );
+<span class="lineNum">     209 </span>            :       rot_x       = atof( trim(strvec[16]).c_str() );
+<span class="lineNum">     210 </span>            :       rot_y       = atof( trim(strvec[17]).c_str() );
+<span class="lineNum">     211 </span>            :       rot_z       = atof( trim(strvec[18]).c_str() ); 
 <span class="lineNum">     212 </span>            :         }
-<span class="lineNum">     213 </span><span class="lineCov">          5 :     for( i = 0; i &lt;  4; i++ )</span>
+<span class="lineNum">     213 </span>            :     for( i = 0; i &lt;  4; i++ )
 <span class="lineNum">     214 </span>            :         {
-<span class="lineNum">     215 </span><span class="lineCov">          4 :                 vground[i][0] = atof(trim(strvec[0+3*i]).c_str()) ;//+ offsetx;;</span>
-<span class="lineNum">     216 </span><span class="lineCov">          4 :                 vground[i][1] = atof(trim(strvec[1+3*i]).c_str()) ;//+ offsety;;</span>
-<span class="lineNum">     217 </span><span class="lineCov">          4 :                 vground[i][2] = atof(trim(strvec[2+3*i]).c_str()) ;//+ offsetz;;</span>
+<span class="lineNum">     215 </span>            :                 vground[i][0] = atof(trim(strvec[0+3*i]).c_str()) ;//+ offsetx;;
+<span class="lineNum">     216 </span>            :                 vground[i][1] = atof(trim(strvec[1+3*i]).c_str()) ;//+ offsety;;
+<span class="lineNum">     217 </span>            :                 vground[i][2] = atof(trim(strvec[2+3*i]).c_str()) ;//+ offsetz;;
 <span class="lineNum">     218 </span>            :         }
-<span class="lineNum">     219 </span>            :   /* float vground[][3]={{-200,  200, 0.0},{-200, -200, 0.0},
-<span class="lineNum">     220 </span>            :                     { 200,  -200, 0.0},{ 200, 200, 0.0} };*/
-<span class="lineNum">     221 </span><span class="lineCov">          1 :    world_model.groundface-&gt;SetVerticesv(vground,4);</span>
-<span class="lineNum">     222 </span>            :    // groundface-&gt;SetVerticesv(vx, 4);
-<span class="lineNum">     223 </span><span class="lineCov">          1 :    world_model.groundface-&gt;SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0 ,&amp;graphLib));</span>
-<span class="lineNum">     224 </span>            :    
-<span class="lineNum">     225 </span><span class="lineCov">          1 :    world_model.texsurface_trs-&gt;SetValue(TRANSLATION , offsetx, offsety, offsetz , 1);</span>
-<span class="lineNum">     226 </span><span class="lineCov">          1 :    world_model.texsurface_trs-&gt;SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 0);</span>
-<span class="lineNum">     227 </span><span class="lineCov">          1 :    world_model.groundface-&gt;SetTransform( world_model.texsurface_trs);</span>
-<span class="lineNum">     228 </span>            :    //world_model.StlTrans[i]-&gt;SetValue(SCALE       , obj_scale, obj_scale, obj_scale,2); 
-<span class="lineNum">     229 </span>            :    //====================================================================================
-<span class="lineNum">     230 </span>            :   
-<span class="lineNum">     231 </span><span class="lineCov">          2 :    for( i = 0; i &lt;  element_num; i++ )</span>
-<span class="lineNum">     232 </span>            :    {
-<span class="lineNum">     233 </span><span class="lineCov">          1 :            strvec.clear(); splitString(lines[4+i], strvec, &quot;,&quot;);</span>
-<span class="lineNum">     234 </span>            :            
-<span class="lineNum">     235 </span>            :            double  mat_h, mat_s, mat_v;
-<span class="lineNum">     236 </span>            :            double  obj_x, obj_y, obj_z;
-<span class="lineNum">     237 </span>            :        double  rot_angle, rot_x, rot_y, rot_z , obj_scale;         
-<span class="lineNum">     238 </span><span class="lineCov">          2 :            string  fname;</span>
-<span class="lineNum">     239 </span><span class="lineCov">          1 :            fname = strvec[0];</span>
-<span class="lineNum">     240 </span><span class="lineCov">          1 :            mat_h = atof(trim(strvec[1]).c_str());</span>
-<span class="lineNum">     241 </span><span class="lineCov">          1 :            mat_s = atof(trim(strvec[2]).c_str());</span>
-<span class="lineNum">     242 </span><span class="lineCov">          1 :            mat_v = atof(trim(strvec[3]).c_str());</span>
-<span class="lineNum">     243 </span>            :            
-<span class="lineNum">     244 </span><span class="lineCov">          1 :            obj_x = atof(trim(strvec[4]).c_str());</span>
-<span class="lineNum">     245 </span><span class="lineCov">          1 :            obj_y = atof(trim(strvec[5]).c_str());</span>
-<span class="lineNum">     246 </span><span class="lineCov">          1 :            obj_z = atof(trim(strvec[6]).c_str());</span>
-<span class="lineNum">     247 </span>            :            
-<span class="lineNum">     248 </span><span class="lineCov">          1 :            rot_angle =  atof(trim(strvec[ 7]).c_str());</span>
-<span class="lineNum">     249 </span><span class="lineCov">          1 :            rot_x     =  atof(trim(strvec[ 8]).c_str());</span>
-<span class="lineNum">     250 </span><span class="lineCov">          1 :            rot_y     =  atof(trim(strvec[ 9]).c_str());</span>
-<span class="lineNum">     251 </span><span class="lineCov">          1 :            rot_z     =  atof(trim(strvec[10]).c_str());</span>
-<span class="lineNum">     252 </span><span class="lineCov">          1 :            obj_scale =  atof(trim(strvec[11]).c_str()); </span>
-<span class="lineNum">     253 </span>            :            
-<span class="lineNum">     254 </span><span class="lineCov">          1 :            printf(&quot;##########################trans: %.2f,  %.2f,  %.2f\n&quot;, obj_x ,    obj_y,  obj_z);</span>
-<span class="lineNum">     255 </span>            :            //StlTrans[i].SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 0);
-<span class="lineNum">     256 </span><span class="lineCov">          1 :            world_model.StlTrans[i]-&gt;SetValue(TRANSLATION , obj_x ,    obj_y,  obj_z  , 1);</span>
-<span class="lineNum">     257 </span><span class="lineCov">          1 :            world_model.StlTrans[i]-&gt;SetValue(SCALE       , obj_scale, obj_scale, obj_scale,2); </span>
-<span class="lineNum">     258 </span>            :            
-<span class="lineNum">     259 </span><span class="lineCov">          1 :            world_model.StlElements[i]-&gt;SetTransform( world_model.StlTrans[i]);</span>
-<span class="lineNum">     260 </span><span class="lineCov">          1 :        world_model.StlElements[i]-&gt;LoadStl((char*)trim(fname).c_str());</span>
-<span class="lineNum">     261 </span><span class="lineCov">          1 :        world_model.StlElements[i]-&gt;SetMaterial(GetColorMat(mat_h, mat_s, mat_v ,&amp;graphLib));  //GetColorMat(360*0.0/8.0, 1.0, 1.0 ));//</span>
-<span class="lineNum">     262 </span>            :        
-<span class="lineNum">     263 </span><span class="lineCov">          1 :            world_model.SysTrans-&gt;AddChild( world_model.StlElements[i]);</span>
+<span class="lineNum">     219 </span>            :    
+<span class="lineNum">     220 </span>            :    world_model.groundface-&gt;SetVerticesv(vground,4);
+<span class="lineNum">     221 </span>            :    // groundface-&gt;SetVerticesv(vx, 4);
+<span class="lineNum">     222 </span>            :    world_model.groundface-&gt;SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0 ,&amp;graphLib));
+<span class="lineNum">     223 </span>            :    
+<span class="lineNum">     224 </span>            :    world_model.texsurface_trs-&gt;SetValue(TRANSLATION , offsetx, offsety, offsetz , 1);
+<span class="lineNum">     225 </span>            :    world_model.texsurface_trs-&gt;SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 0);
+<span class="lineNum">     226 </span>            :    world_model.groundface-&gt;SetTransform( world_model.texsurface_trs);*/
+<span class="lineNum">     227 </span>            :    //world_model.StlTrans[i]-&gt;SetValue(SCALE       , obj_scale, obj_scale, obj_scale,2); 
+<span class="lineNum">     228 </span>            :    //====================================================================================
+<span class="lineNum">     229 </span>            :   
+<span class="lineNum">     230 </span><span class="lineCov">          2 :    for( i = 0; i &lt;  element_num; i++ )</span>
+<span class="lineNum">     231 </span>            :    {
+<span class="lineNum">     232 </span><span class="lineCov">          1 :            strvec.clear(); splitString(lines[3+i], strvec, &quot;,&quot;);</span>
+<span class="lineNum">     233 </span>            :            
+<span class="lineNum">     234 </span>            :            double  mat_h, mat_s, mat_v;
+<span class="lineNum">     235 </span>            :            double  obj_x, obj_y, obj_z;
+<span class="lineNum">     236 </span>            :        double  rot_angle, rot_x, rot_y, rot_z , obj_scale;         
+<span class="lineNum">     237 </span><span class="lineCov">          2 :            string  fname;</span>
+<span class="lineNum">     238 </span><span class="lineCov">          1 :            fname = strvec[0];</span>
+<span class="lineNum">     239 </span><span class="lineCov">          1 :            mat_h = atof(trim(strvec[1]).c_str());</span>
+<span class="lineNum">     240 </span><span class="lineCov">          1 :            mat_s = atof(trim(strvec[2]).c_str());</span>
+<span class="lineNum">     241 </span><span class="lineCov">          1 :            mat_v = atof(trim(strvec[3]).c_str());</span>
+<span class="lineNum">     242 </span>            :            
+<span class="lineNum">     243 </span><span class="lineCov">          1 :            obj_x = atof(trim(strvec[4]).c_str());</span>
+<span class="lineNum">     244 </span><span class="lineCov">          1 :            obj_y = atof(trim(strvec[5]).c_str());</span>
+<span class="lineNum">     245 </span><span class="lineCov">          1 :            obj_z = atof(trim(strvec[6]).c_str());</span>
+<span class="lineNum">     246 </span>            :            
+<span class="lineNum">     247 </span><span class="lineCov">          1 :            rot_angle =  atof(trim(strvec[ 7]).c_str());</span>
+<span class="lineNum">     248 </span><span class="lineCov">          1 :            rot_x     =  atof(trim(strvec[ 8]).c_str());</span>
+<span class="lineNum">     249 </span><span class="lineCov">          1 :            rot_y     =  atof(trim(strvec[ 9]).c_str());</span>
+<span class="lineNum">     250 </span><span class="lineCov">          1 :            rot_z     =  atof(trim(strvec[10]).c_str());</span>
+<span class="lineNum">     251 </span><span class="lineCov">          1 :            obj_scale =  atof(trim(strvec[11]).c_str()); </span>
+<span class="lineNum">     252 </span>            :            
+<span class="lineNum">     253 </span><span class="lineCov">          1 :            printf(&quot;##########################trans: %.2f,  %.2f,  %.2f\n&quot;, obj_x ,    obj_y,  obj_z);</span>
+<span class="lineNum">     254 </span>            :            //StlTrans[i].SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 0);
+<span class="lineNum">     255 </span><span class="lineCov">          1 :            world_model.StlTrans[i]-&gt;SetValue(TRANSLATION , obj_x ,    obj_y,  obj_z  , 1);</span>
+<span class="lineNum">     256 </span><span class="lineCov">          1 :            world_model.StlTrans[i]-&gt;SetValue(SCALE       , obj_scale, obj_scale, obj_scale,2); </span>
+<span class="lineNum">     257 </span>            :            
+<span class="lineNum">     258 </span><span class="lineCov">          1 :            world_model.StlElements[i]-&gt;SetTransform( world_model.StlTrans[i]);</span>
+<span class="lineNum">     259 </span><span class="lineCov">          1 :        world_model.StlElements[i]-&gt;LoadStl((char*)trim(fname).c_str());</span>
+<span class="lineNum">     260 </span><span class="lineCov">          1 :        world_model.StlElements[i]-&gt;SetMaterial(GetColorMat(mat_h, mat_s, mat_v ,&amp;graphLib));  //GetColorMat(360*0.0/8.0, 1.0, 1.0 ));//</span>
+<span class="lineNum">     261 </span>            :        
+<span class="lineNum">     262 </span><span class="lineCov">          1 :            world_model.SysTrans-&gt;AddChild( world_model.StlElements[i]);</span>
+<span class="lineNum">     263 </span><span class="lineCov">          1 :            world_model.SysTrans-&gt;nodename =&quot;XXX&quot;;</span>
 <span class="lineNum">     264 </span><span class="lineCov">          1 :            printf( &quot;%s\n&quot;, trim(lines[i]).c_str() );</span>
 <span class="lineNum">     265 </span>            :    }
 <span class="lineNum">     266 </span>            :   
-<span class="lineNum">     267 </span><span class="lineCov">          1 :   world_model.Light1-&gt;AddChild( world_model.AxisXX);</span>
-<span class="lineNum">     268 </span><span class="lineCov">          1 :   world_model.Light1-&gt;AddChild( world_model.AxisYY);</span>
-<span class="lineNum">     269 </span><span class="lineCov">          1 :   world_model.Light1-&gt;AddChild( world_model.AxisZZ);</span>
+<span class="lineNum">     267 </span>            :   //world_model.Light1-&gt;AddChild( world_model.AxisXX);
+<span class="lineNum">     268 </span>            :   //world_model.Light1-&gt;AddChild( world_model.AxisYY);
+<span class="lineNum">     269 </span>            :   //world_model.Light1-&gt;AddChild( world_model.AxisZZ);
 <span class="lineNum">     270 </span>            :   //world_model.Light1-&gt;AddChild( world_model.groundface);
 <span class="lineNum">     271 </span>            :    
 <span class="lineNum">     272 </span>            :   

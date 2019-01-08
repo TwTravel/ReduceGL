@@ -2093,6 +2093,8 @@ void  inline  GraphDrawLib::gl_shade_vertex(GLContext *c,GLVertex *v)
 
   m=&c->materials[0];
 
+  gl_V3_Norm(&v->normal);
+
   n.X=v->normal.X;
   n.Y=v->normal.Y;
   n.Z=v->normal.Z;

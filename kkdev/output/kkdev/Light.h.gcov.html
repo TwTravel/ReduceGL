@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">56</td>
-            <td class="headerCovTableEntry">91</td>
-            <td class="headerCovTableEntryLo">61.5 %</td>
+            <td class="headerCovTableEntry">62</td>
+            <td class="headerCovTableEntry">97</td>
+            <td class="headerCovTableEntryLo">63.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-01-07 17:12:43</td>
+            <td class="headerValue">2019-01-08 10:56:52</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -100,155 +100,163 @@
 <span class="lineNum">      38 </span>            : {
 <span class="lineNum">      39 </span>            :   int i;
 <span class="lineNum">      40 </span><span class="lineCov">          1 :   grawLib = gLib;</span>
-<span class="lineNum">      41 </span><span class="lineCov">          8 :   for(i=0; i&lt;7; i++)</span>
-<span class="lineNum">      42 </span><span class="lineCov">          7 :     Changed[i]=false;</span>
-<span class="lineNum">      43 </span>            : 
-<span class="lineNum">      44 </span><span class="lineCov">          1 :   On=false;</span>
+<span class="lineNum">      41 </span><span class="lineCov">          1 :   LeftChild = RightSibling =NULL;</span>
+<span class="lineNum">      42 </span>            : 
+<span class="lineNum">      43 </span><span class="lineCov">          8 :   for(i=0; i&lt;7; i++)</span>
+<span class="lineNum">      44 </span><span class="lineCov">          7 :     Changed[i]=false;</span>
 <span class="lineNum">      45 </span>            : 
-<span class="lineNum">      46 </span><span class="lineCov">          1 :   switch(LightNum)</span>
-<span class="lineNum">      47 </span>            :     {
-<span class="lineNum">      48 </span>            :     case 0:
-<span class="lineNum">      49 </span><span class="lineCov">          1 :       LightName=GL_LIGHT0;</span>
-<span class="lineNum">      50 </span><span class="lineCov">          1 :       break;</span>
-<span class="lineNum">      51 </span>            :     case 1:
-<span class="lineNum">      52 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT1;</span>
-<span class="lineNum">      53 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">      54 </span>            :     case 2:
-<span class="lineNum">      55 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT2;</span>
-<span class="lineNum">      56 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">      57 </span>            :     case 3:
-<span class="lineNum">      58 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT3;</span>
-<span class="lineNum">      59 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">      60 </span>            :     case 4:
-<span class="lineNum">      61 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT4;</span>
-<span class="lineNum">      62 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">      63 </span>            :     case 5:
-<span class="lineNum">      64 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT5;</span>
-<span class="lineNum">      65 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">      66 </span>            :     case 6:
-<span class="lineNum">      67 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT6;</span>
-<span class="lineNum">      68 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">      69 </span>            :     case 7:
-<span class="lineNum">      70 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT7;</span>
-<span class="lineNum">      71 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">      72 </span>            :     default:
+<span class="lineNum">      46 </span><span class="lineCov">          1 :   memset(Diffuse,0, 4*4);</span>
+<span class="lineNum">      47 </span><span class="lineCov">          1 :   memset(Specular,0,4*4);</span>
+<span class="lineNum">      48 </span><span class="lineCov">          1 :   memset(Ambient,0,4*4);</span>
+<span class="lineNum">      49 </span><span class="lineCov">          1 :   memset(Position,0,4*4);</span>
+<span class="lineNum">      50 </span><span class="lineCov">          1 :   memset(SpotDirection,0,3*4);</span>
+<span class="lineNum">      51 </span>            : 
+<span class="lineNum">      52 </span><span class="lineCov">          1 :   On=false;</span>
+<span class="lineNum">      53 </span>            : 
+<span class="lineNum">      54 </span><span class="lineCov">          1 :   switch(LightNum)</span>
+<span class="lineNum">      55 </span>            :     {
+<span class="lineNum">      56 </span>            :     case 0:
+<span class="lineNum">      57 </span><span class="lineCov">          1 :       LightName=GL_LIGHT0;</span>
+<span class="lineNum">      58 </span><span class="lineCov">          1 :       break;</span>
+<span class="lineNum">      59 </span>            :     case 1:
+<span class="lineNum">      60 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT1;</span>
+<span class="lineNum">      61 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">      62 </span>            :     case 2:
+<span class="lineNum">      63 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT2;</span>
+<span class="lineNum">      64 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">      65 </span>            :     case 3:
+<span class="lineNum">      66 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT3;</span>
+<span class="lineNum">      67 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">      68 </span>            :     case 4:
+<span class="lineNum">      69 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT4;</span>
+<span class="lineNum">      70 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">      71 </span>            :     case 5:
+<span class="lineNum">      72 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT5;</span>
 <span class="lineNum">      73 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">      74 </span>            :     }
-<span class="lineNum">      75 </span><span class="lineCov">          1 :   LightNum++;</span>
-<span class="lineNum">      76 </span><span class="lineCov">          1 : }</span>
-<a name="77"><span class="lineNum">      77 </span>            : </a>
-<span class="lineNum">      78 </span>            : inline void 
-<span class="lineNum">      79 </span><span class="lineCov">          1 : Light::TurnOn()</span>
-<span class="lineNum">      80 </span>            : {
-<span class="lineNum">      81 </span><span class="lineCov">          1 :   On=true;</span>
-<span class="lineNum">      82 </span><span class="lineCov">          1 : }</span>
-<span class="lineNum">      83 </span>            : 
-<span class="lineNum">      84 </span>            : inline void 
-<span class="lineNum">      85 </span>            : Light::TurnOff()
-<span class="lineNum">      86 </span>            : {
-<span class="lineNum">      87 </span>            :   On=false;
-<span class="lineNum">      88 </span>            : }
-<a name="89"><span class="lineNum">      89 </span>            : </a>
-<span class="lineNum">      90 </span>            : inline void 
-<span class="lineNum">      91 </span><span class="lineCov">          2 : Light::SetValuev(Enum pname, float *Value)</span>
-<span class="lineNum">      92 </span>            : {
-<span class="lineNum">      93 </span>            :   int i;
-<span class="lineNum">      94 </span><span class="lineCov">          2 :   float *temp=NULL;</span>
-<span class="lineNum">      95 </span>            : 
-<span class="lineNum">      96 </span><span class="lineCov">          2 :   switch(pname)</span>
-<span class="lineNum">      97 </span>            :     {
-<span class="lineNum">      98 </span>            :     case AMBIENT:
-<span class="lineNum">      99 </span><span class="lineNoCov">          0 :       Changed[0]=true;</span>
-<span class="lineNum">     100 </span><span class="lineNoCov">          0 :       temp=Ambient;</span>
-<span class="lineNum">     101 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">     102 </span>            :     case DIFFUSE:
-<span class="lineNum">     103 </span><span class="lineNoCov">          0 :       Changed[1]=true;</span>
-<span class="lineNum">     104 </span><span class="lineNoCov">          0 :       temp=Diffuse;</span>
-<span class="lineNum">     105 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">     106 </span>            :     case SPECULAR:
-<span class="lineNum">     107 </span><span class="lineNoCov">          0 :       Changed[2]=true;</span>
-<span class="lineNum">     108 </span><span class="lineNoCov">          0 :       temp=Specular;</span>
+<span class="lineNum">      74 </span>            :     case 6:
+<span class="lineNum">      75 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT6;</span>
+<span class="lineNum">      76 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">      77 </span>            :     case 7:
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 :       LightName=GL_LIGHT7;</span>
+<span class="lineNum">      79 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">      80 </span>            :     default:
+<span class="lineNum">      81 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">      82 </span>            :     }
+<span class="lineNum">      83 </span><span class="lineCov">          1 :   LightNum++;</span>
+<span class="lineNum">      84 </span><span class="lineCov">          1 : }</span>
+<a name="85"><span class="lineNum">      85 </span>            : </a>
+<span class="lineNum">      86 </span>            : inline void 
+<span class="lineNum">      87 </span><span class="lineCov">          1 : Light::TurnOn()</span>
+<span class="lineNum">      88 </span>            : {
+<span class="lineNum">      89 </span><span class="lineCov">          1 :   On=true;</span>
+<span class="lineNum">      90 </span><span class="lineCov">          1 : }</span>
+<span class="lineNum">      91 </span>            : 
+<span class="lineNum">      92 </span>            : inline void 
+<span class="lineNum">      93 </span>            : Light::TurnOff()
+<span class="lineNum">      94 </span>            : {
+<span class="lineNum">      95 </span>            :   On=false;
+<span class="lineNum">      96 </span>            : }
+<a name="97"><span class="lineNum">      97 </span>            : </a>
+<span class="lineNum">      98 </span>            : inline void 
+<span class="lineNum">      99 </span><span class="lineCov">          2 : Light::SetValuev(Enum pname, float *Value)</span>
+<span class="lineNum">     100 </span>            : {
+<span class="lineNum">     101 </span>            :   int i;
+<span class="lineNum">     102 </span><span class="lineCov">          2 :   float *temp=NULL;</span>
+<span class="lineNum">     103 </span>            : 
+<span class="lineNum">     104 </span><span class="lineCov">          2 :   switch(pname)</span>
+<span class="lineNum">     105 </span>            :     {
+<span class="lineNum">     106 </span>            :     case AMBIENT:
+<span class="lineNum">     107 </span><span class="lineNoCov">          0 :       Changed[0]=true;</span>
+<span class="lineNum">     108 </span><span class="lineNoCov">          0 :       temp=Ambient;</span>
 <span class="lineNum">     109 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">     110 </span>            :     case POSITION:
-<span class="lineNum">     111 </span><span class="lineCov">          1 :       Changed[3]=true;</span>
-<span class="lineNum">     112 </span><span class="lineCov">          1 :       temp=Position;</span>
-<span class="lineNum">     113 </span><span class="lineCov">          1 :       break;</span>
-<span class="lineNum">     114 </span>            :     case SPOT_DIRECTION:
-<span class="lineNum">     115 </span><span class="lineCov">          1 :       Changed[4]=true;</span>
-<span class="lineNum">     116 </span><span class="lineCov">          1 :       temp=SpotDirection;</span>
-<span class="lineNum">     117 </span><span class="lineCov">          1 :       break;</span>
-<span class="lineNum">     118 </span>            :     default:
-<span class="lineNum">     119 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">     120 </span>            :     }
-<span class="lineNum">     121 </span><span class="lineCov">          8 :   for(i=0; i&lt;3; i++)</span>
-<span class="lineNum">     122 </span><span class="lineCov">          6 :     temp[i]=Value[i];</span>
-<span class="lineNum">     123 </span>            : 
-<span class="lineNum">     124 </span><span class="lineCov">          2 :   if(pname!=SPOT_DIRECTION)</span>
-<span class="lineNum">     125 </span><span class="lineCov">          1 :       temp[3]=Value[3];</span>
-<span class="lineNum">     126 </span><span class="lineCov">          2 : }</span>
-<a name="127"><span class="lineNum">     127 </span>            : </a>
-<span class="lineNum">     128 </span>            : inline void 
-<span class="lineNum">     129 </span><span class="lineCov">          1 : Light::SetValue(Enum pname, float v1, float v2, float v3, float v4)</span>
-<span class="lineNum">     130 </span>            : {
-<span class="lineNum">     131 </span><span class="lineCov">          1 :   float temp[]={v1, v2, v3, v4};</span>
-<span class="lineNum">     132 </span><span class="lineCov">          1 :   SetValuev(pname, temp);</span>
-<span class="lineNum">     133 </span><span class="lineCov">          1 : }</span>
-<a name="134"><span class="lineNum">     134 </span>            : </a>
-<span class="lineNum">     135 </span>            : inline void 
-<span class="lineNum">     136 </span><span class="lineCov">          1 : Light::SetValue(Enum pname, float v1, float v2, float v3)</span>
-<span class="lineNum">     137 </span>            : {
-<span class="lineNum">     138 </span><span class="lineCov">          1 :   float temp[]={v1, v2, v3};</span>
-<span class="lineNum">     139 </span><span class="lineCov">          1 :   SetValuev(pname, temp);</span>
-<span class="lineNum">     140 </span><span class="lineCov">          1 : }</span>
-<a name="141"><span class="lineNum">     141 </span>            : </a>
-<span class="lineNum">     142 </span>            : inline void 
-<span class="lineNum">     143 </span><span class="lineCov">          1 : Light::SetValue(Enum pname, float f)</span>
-<span class="lineNum">     144 </span>            : {
-<span class="lineNum">     145 </span><span class="lineCov">          1 :   switch(pname)</span>
-<span class="lineNum">     146 </span>            :     {
-<span class="lineNum">     147 </span>            :     case DROPOFFRATE:
-<span class="lineNum">     148 </span><span class="lineNoCov">          0 :       Changed[5]=true;</span>
-<span class="lineNum">     149 </span><span class="lineNoCov">          0 :       DropOffRate=f;</span>
-<span class="lineNum">     150 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">     151 </span>            :     case CUTOFFANGLE:
-<span class="lineNum">     152 </span><span class="lineCov">          1 :       Changed[6]=true;</span>
-<span class="lineNum">     153 </span><span class="lineCov">          1 :       CutOffAngle=f;</span>
-<span class="lineNum">     154 </span><span class="lineCov">          1 :       break;</span>
-<span class="lineNum">     155 </span>            :     default:
-<span class="lineNum">     156 </span><span class="lineNoCov">          0 :       break;</span>
-<span class="lineNum">     157 </span>            :     }
-<span class="lineNum">     158 </span><span class="lineCov">          1 : }</span>
-<a name="159"><span class="lineNum">     159 </span>            : </a>
-<span class="lineNum">     160 </span>            : inline void 
-<span class="lineNum">     161 </span><span class="lineCov">          1 : Light::Render()</span>
-<span class="lineNum">     162 </span>            : {
-<span class="lineNum">     163 </span><span class="lineCov">          1 :   printf(&quot;%s *name:%s\n&quot;,(char*)nodespace.c_str(),(char*)nodename.c_str());</span>
-<span class="lineNum">     164 </span><span class="lineCov">          1 :   if(On)</span>
-<span class="lineNum">     165 </span>            :     {
-<span class="lineNum">     166 </span><span class="lineCov">          1 :       grawLib-&gt;glEnable(GL_LIGHTING);</span>
-<span class="lineNum">     167 </span><span class="lineCov">          1 :       grawLib-&gt;glEnable(LightName);</span>
-<span class="lineNum">     168 </span>            :     }
-<span class="lineNum">     169 </span>            :   else
-<span class="lineNum">     170 </span>            :     {
-<span class="lineNum">     171 </span><span class="lineNoCov">          0 :       grawLib-&gt;glDisable(GL_LIGHTING);</span>
-<span class="lineNum">     172 </span><span class="lineNoCov">          0 :       grawLib-&gt;glDisable(LightName);</span>
-<span class="lineNum">     173 </span>            :     }
-<span class="lineNum">     174 </span>            : 
-<span class="lineNum">     175 </span><span class="lineCov">          1 :   if(Changed[0])</span>
-<span class="lineNum">     176 </span><span class="lineNoCov">          0 :     grawLib-&gt;glLightfv(LightName, GL_AMBIENT, Ambient);</span>
-<span class="lineNum">     177 </span><span class="lineCov">          1 :   if(Changed[1])</span>
-<span class="lineNum">     178 </span><span class="lineNoCov">          0 :     grawLib-&gt;glLightfv(LightName, GL_DIFFUSE, Diffuse);</span>
-<span class="lineNum">     179 </span><span class="lineCov">          1 :   if(Changed[2])</span>
-<span class="lineNum">     180 </span><span class="lineNoCov">          0 :     grawLib-&gt;glLightfv(LightName, GL_SPECULAR, Specular);</span>
-<span class="lineNum">     181 </span><span class="lineCov">          1 :   if(Changed[3])</span>
-<span class="lineNum">     182 </span><span class="lineCov">          1 :     grawLib-&gt;glLightfv(LightName, GL_POSITION, Position);</span>
-<span class="lineNum">     183 </span><span class="lineCov">          1 :   if(Changed[4])</span>
-<span class="lineNum">     184 </span><span class="lineCov">          1 :     grawLib-&gt;glLightfv(LightName, GL_SPOT_DIRECTION, SpotDirection);</span>
-<span class="lineNum">     185 </span><span class="lineCov">          1 :   if(Changed[6])</span>
-<span class="lineNum">     186 </span><span class="lineCov">          1 :     grawLib-&gt;glLightfv(LightName, GL_SPOT_CUTOFF, &amp;CutOffAngle);</span>
-<span class="lineNum">     187 </span><span class="lineCov">          1 : }</span>
-<span class="lineNum">     188 </span>            : 
-<span class="lineNum">     189 </span>            : #endif
+<span class="lineNum">     110 </span>            :     case DIFFUSE:
+<span class="lineNum">     111 </span><span class="lineNoCov">          0 :       Changed[1]=true;</span>
+<span class="lineNum">     112 </span><span class="lineNoCov">          0 :       temp=Diffuse;</span>
+<span class="lineNum">     113 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">     114 </span>            :     case SPECULAR:
+<span class="lineNum">     115 </span><span class="lineNoCov">          0 :       Changed[2]=true;</span>
+<span class="lineNum">     116 </span><span class="lineNoCov">          0 :       temp=Specular;</span>
+<span class="lineNum">     117 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">     118 </span>            :     case POSITION:
+<span class="lineNum">     119 </span><span class="lineCov">          1 :       Changed[3]=true;</span>
+<span class="lineNum">     120 </span><span class="lineCov">          1 :       temp=Position;</span>
+<span class="lineNum">     121 </span><span class="lineCov">          1 :       break;</span>
+<span class="lineNum">     122 </span>            :     case SPOT_DIRECTION:
+<span class="lineNum">     123 </span><span class="lineCov">          1 :       Changed[4]=true;</span>
+<span class="lineNum">     124 </span><span class="lineCov">          1 :       temp=SpotDirection;</span>
+<span class="lineNum">     125 </span><span class="lineCov">          1 :       break;</span>
+<span class="lineNum">     126 </span>            :     default:
+<span class="lineNum">     127 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">     128 </span>            :     }
+<span class="lineNum">     129 </span><span class="lineCov">          8 :   for(i=0; i&lt;3; i++)</span>
+<span class="lineNum">     130 </span><span class="lineCov">          6 :     temp[i]=Value[i];</span>
+<span class="lineNum">     131 </span>            : 
+<span class="lineNum">     132 </span><span class="lineCov">          2 :   if(pname!=SPOT_DIRECTION)</span>
+<span class="lineNum">     133 </span><span class="lineCov">          1 :       temp[3]=Value[3];</span>
+<span class="lineNum">     134 </span><span class="lineCov">          2 : }</span>
+<a name="135"><span class="lineNum">     135 </span>            : </a>
+<span class="lineNum">     136 </span>            : inline void 
+<span class="lineNum">     137 </span><span class="lineCov">          1 : Light::SetValue(Enum pname, float v1, float v2, float v3, float v4)</span>
+<span class="lineNum">     138 </span>            : {
+<span class="lineNum">     139 </span><span class="lineCov">          1 :   float temp[]={v1, v2, v3, v4};</span>
+<span class="lineNum">     140 </span><span class="lineCov">          1 :   SetValuev(pname, temp);</span>
+<span class="lineNum">     141 </span><span class="lineCov">          1 : }</span>
+<a name="142"><span class="lineNum">     142 </span>            : </a>
+<span class="lineNum">     143 </span>            : inline void 
+<span class="lineNum">     144 </span><span class="lineCov">          1 : Light::SetValue(Enum pname, float v1, float v2, float v3)</span>
+<span class="lineNum">     145 </span>            : {
+<span class="lineNum">     146 </span><span class="lineCov">          1 :   float temp[]={v1, v2, v3};</span>
+<span class="lineNum">     147 </span><span class="lineCov">          1 :   SetValuev(pname, temp);</span>
+<span class="lineNum">     148 </span><span class="lineCov">          1 : }</span>
+<a name="149"><span class="lineNum">     149 </span>            : </a>
+<span class="lineNum">     150 </span>            : inline void 
+<span class="lineNum">     151 </span><span class="lineCov">          1 : Light::SetValue(Enum pname, float f)</span>
+<span class="lineNum">     152 </span>            : {
+<span class="lineNum">     153 </span><span class="lineCov">          1 :   switch(pname)</span>
+<span class="lineNum">     154 </span>            :     {
+<span class="lineNum">     155 </span>            :     case DROPOFFRATE:
+<span class="lineNum">     156 </span><span class="lineNoCov">          0 :       Changed[5]=true;</span>
+<span class="lineNum">     157 </span><span class="lineNoCov">          0 :       DropOffRate=f;</span>
+<span class="lineNum">     158 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">     159 </span>            :     case CUTOFFANGLE:
+<span class="lineNum">     160 </span><span class="lineCov">          1 :       Changed[6]=true;</span>
+<span class="lineNum">     161 </span><span class="lineCov">          1 :       CutOffAngle=f;</span>
+<span class="lineNum">     162 </span><span class="lineCov">          1 :       break;</span>
+<span class="lineNum">     163 </span>            :     default:
+<span class="lineNum">     164 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">     165 </span>            :     }
+<span class="lineNum">     166 </span><span class="lineCov">          1 : }</span>
+<a name="167"><span class="lineNum">     167 </span>            : </a>
+<span class="lineNum">     168 </span>            : inline void 
+<span class="lineNum">     169 </span><span class="lineCov">          1 : Light::Render()</span>
+<span class="lineNum">     170 </span>            : {
+<span class="lineNum">     171 </span><span class="lineCov">          1 :   printf(&quot;%s *name:%s\n&quot;,(char*)nodespace.c_str(),(char*)nodename.c_str());</span>
+<span class="lineNum">     172 </span><span class="lineCov">          1 :   if(On)</span>
+<span class="lineNum">     173 </span>            :     {
+<span class="lineNum">     174 </span><span class="lineCov">          1 :       grawLib-&gt;glEnable(GL_LIGHTING);</span>
+<span class="lineNum">     175 </span><span class="lineCov">          1 :       grawLib-&gt;glEnable(LightName);</span>
+<span class="lineNum">     176 </span>            :     }
+<span class="lineNum">     177 </span>            :   else
+<span class="lineNum">     178 </span>            :     {
+<span class="lineNum">     179 </span><span class="lineNoCov">          0 :       grawLib-&gt;glDisable(GL_LIGHTING);</span>
+<span class="lineNum">     180 </span><span class="lineNoCov">          0 :       grawLib-&gt;glDisable(LightName);</span>
+<span class="lineNum">     181 </span>            :     }
+<span class="lineNum">     182 </span>            : 
+<span class="lineNum">     183 </span><span class="lineCov">          1 :   if(Changed[0])</span>
+<span class="lineNum">     184 </span><span class="lineNoCov">          0 :     grawLib-&gt;glLightfv(LightName, GL_AMBIENT, Ambient);</span>
+<span class="lineNum">     185 </span><span class="lineCov">          1 :   if(Changed[1])</span>
+<span class="lineNum">     186 </span><span class="lineNoCov">          0 :     grawLib-&gt;glLightfv(LightName, GL_DIFFUSE, Diffuse);</span>
+<span class="lineNum">     187 </span><span class="lineCov">          1 :   if(Changed[2])</span>
+<span class="lineNum">     188 </span><span class="lineNoCov">          0 :     grawLib-&gt;glLightfv(LightName, GL_SPECULAR, Specular);</span>
+<span class="lineNum">     189 </span><span class="lineCov">          1 :   if(Changed[3])</span>
+<span class="lineNum">     190 </span><span class="lineCov">          1 :     grawLib-&gt;glLightfv(LightName, GL_POSITION, Position);</span>
+<span class="lineNum">     191 </span><span class="lineCov">          1 :   if(Changed[4])</span>
+<span class="lineNum">     192 </span><span class="lineCov">          1 :     grawLib-&gt;glLightfv(LightName, GL_SPOT_DIRECTION, SpotDirection);</span>
+<span class="lineNum">     193 </span><span class="lineCov">          1 :   if(Changed[6])</span>
+<span class="lineNum">     194 </span><span class="lineCov">          1 :     grawLib-&gt;glLightfv(LightName, GL_SPOT_CUTOFF, &amp;CutOffAngle);</span>
+<span class="lineNum">     195 </span><span class="lineCov">          1 : }</span>
+<span class="lineNum">     196 </span>            : 
+<span class="lineNum">     197 </span>            : #endif
 </pre>
       </td>
     </tr>

@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">40</td>
+            <td class="headerCovTableEntry">38</td>
             <td class="headerCovTableEntry">85</td>
-            <td class="headerCovTableEntryLo">47.1 %</td>
+            <td class="headerCovTableEntryLo">44.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-01-07 18:01:02</td>
+            <td class="headerValue">2019-01-08 10:58:27</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -104,12 +104,12 @@
 <span class="lineNum">      42 </span>            :   }
 <a name="43"><span class="lineNum">      43 </span><span class="lineCov">          2 : }</span></a>
 <span class="lineNum">      44 </span>            : 
-<span class="lineNum">      45 </span><span class="lineCov">         10 : void glopEnableDisable(GLContext *c,GLParam *p)</span>
+<span class="lineNum">      45 </span><span class="lineCov">          8 : void glopEnableDisable(GLContext *c,GLParam *p)</span>
 <span class="lineNum">      46 </span>            : {
-<span class="lineNum">      47 </span><span class="lineCov">         10 :   int code=p[1].i;</span>
-<span class="lineNum">      48 </span><span class="lineCov">         10 :   int v=p[2].i;</span>
+<span class="lineNum">      47 </span><span class="lineCov">          8 :   int code=p[1].i;</span>
+<span class="lineNum">      48 </span><span class="lineCov">          8 :   int v=p[2].i;</span>
 <span class="lineNum">      49 </span>            : 
-<span class="lineNum">      50 </span><span class="lineCov">         10 :   switch(code) {</span>
+<span class="lineNum">      50 </span><span class="lineCov">          8 :   switch(code) {</span>
 <span class="lineNum">      51 </span>            :   case GL_CULL_FACE:
 <span class="lineNum">      52 </span><span class="lineCov">          1 :     c-&gt;cull_face_enabled=v;</span>
 <span class="lineNum">      53 </span><span class="lineCov">          1 :     break;</span>
@@ -120,8 +120,8 @@
 <span class="lineNum">      58 </span><span class="lineNoCov">          0 :     c-&gt;color_material_enabled=v;</span>
 <span class="lineNum">      59 </span><span class="lineNoCov">          0 :       break;</span>
 <span class="lineNum">      60 </span>            :   case GL_TEXTURE_2D:
-<span class="lineNum">      61 </span><span class="lineCov">          2 :     c-&gt;texture_2d_enabled=v;</span>
-<span class="lineNum">      62 </span><span class="lineCov">          2 :     break;</span>
+<span class="lineNum">      61 </span><span class="lineNoCov">          0 :     c-&gt;texture_2d_enabled=v;</span>
+<span class="lineNum">      62 </span><span class="lineNoCov">          0 :     break;</span>
 <span class="lineNum">      63 </span>            :   case GL_NORMALIZE:
 <span class="lineNum">      64 </span><span class="lineCov">          1 :     c-&gt;normalize_enabled=v;</span>
 <span class="lineNum">      65 </span><span class="lineCov">          1 :     break;</span>
@@ -150,7 +150,7 @@
 <span class="lineNum">      88 </span>            :     }
 <span class="lineNum">      89 </span><span class="lineCov">          2 :     break;</span>
 <span class="lineNum">      90 </span>            :   }
-<a name="91"><span class="lineNum">      91 </span><span class="lineCov">         10 : }</span></a>
+<a name="91"><span class="lineNum">      91 </span><span class="lineCov">          8 : }</span></a>
 <span class="lineNum">      92 </span>            : 
 <span class="lineNum">      93 </span><span class="lineNoCov">          0 : void glopShadeModel(GLContext *c,GLParam *p)</span>
 <span class="lineNum">      94 </span>            : {

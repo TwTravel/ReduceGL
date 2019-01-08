@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-01-07 17:12:43</td>
+            <td class="headerValue">2019-01-08 10:56:52</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -80,18 +80,19 @@
 <span class="lineNum">      18 </span>            : inline TurnOff::TurnOff(Light *L)
 <span class="lineNum">      19 </span>            : {
 <span class="lineNum">      20 </span>            :   LightName=L-&gt;LightName;
-<span class="lineNum">      21 </span>            : }
-<a name="22"><span class="lineNum">      22 </span>            : </a>
-<span class="lineNum">      23 </span>            : inline void
-<span class="lineNum">      24 </span><span class="lineNoCov">          0 : TurnOff::Render()</span>
-<span class="lineNum">      25 </span>            : {
-<span class="lineNum">      26 </span><span class="lineNoCov">          0 :   grawLib-&gt;glDisable(GL_LIGHTING);</span>
-<span class="lineNum">      27 </span><span class="lineNoCov">          0 :   grawLib-&gt;glDisable(LightName);</span>
-<span class="lineNum">      28 </span><span class="lineNoCov">          0 : }</span>
-<span class="lineNum">      29 </span>            : 
+<span class="lineNum">      21 </span>            :   LeftChild = RightSibling =NULL;
+<span class="lineNum">      22 </span>            : }
+<a name="23"><span class="lineNum">      23 </span>            : </a>
+<span class="lineNum">      24 </span>            : inline void
+<span class="lineNum">      25 </span><span class="lineNoCov">          0 : TurnOff::Render()</span>
+<span class="lineNum">      26 </span>            : {
+<span class="lineNum">      27 </span><span class="lineNoCov">          0 :   grawLib-&gt;glDisable(GL_LIGHTING);</span>
+<span class="lineNum">      28 </span><span class="lineNoCov">          0 :   grawLib-&gt;glDisable(LightName);</span>
+<span class="lineNum">      29 </span><span class="lineNoCov">          0 : }</span>
 <span class="lineNum">      30 </span>            : 
 <span class="lineNum">      31 </span>            : 
-<span class="lineNum">      32 </span>            : #endif
+<span class="lineNum">      32 </span>            : 
+<span class="lineNum">      33 </span>            : #endif
 </pre>
       </td>
     </tr>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-01-07 17:12:43</td>
+            <td class="headerValue">2019-01-08 10:56:52</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -158,57 +158,57 @@
 <span class="lineNum">      96 </span>            :     // temporary floating point variable
 <span class="lineNum">      97 </span>            :     float temp_float_var;
 <span class="lineNum">      98 </span>            : 
-<span class="lineNum">      99 </span><span class="lineCov">      69452 :     for(int count=0;count&lt;numberOfTriangles;count++)</span>
+<span class="lineNum">      99 </span><span class="lineCov">         13 :     for(int count=0;count&lt;numberOfTriangles;count++)</span>
 <span class="lineNum">     100 </span>            :     {
 <span class="lineNum">     101 </span>            :         // read the three components of the normal vector
-<span class="lineNum">     102 </span><span class="lineCov">      69451 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.normal.x = (double) temp_float_var;</span>
-<span class="lineNum">     103 </span><span class="lineCov">      69451 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.normal.y = (double) temp_float_var;</span>
-<span class="lineNum">     104 </span><span class="lineCov">      69451 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.normal.z = (double) temp_float_var;</span>
+<span class="lineNum">     102 </span><span class="lineCov">         12 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.normal.x = (double) temp_float_var;</span>
+<span class="lineNum">     103 </span><span class="lineCov">         12 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.normal.y = (double) temp_float_var;</span>
+<span class="lineNum">     104 </span><span class="lineCov">         12 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.normal.z = (double) temp_float_var;</span>
 <span class="lineNum">     105 </span>            : 
 <span class="lineNum">     106 </span>            :         // read the three coordinates of vertex 1 
-<span class="lineNum">     107 </span><span class="lineCov">      69451 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[0].x = (double) temp_float_var;</span>
-<span class="lineNum">     108 </span><span class="lineCov">      69451 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[0].y = (double) temp_float_var;</span>
-<span class="lineNum">     109 </span><span class="lineCov">      69451 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[0].z = (double) temp_float_var;</span>
+<span class="lineNum">     107 </span><span class="lineCov">         12 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[0].x = (double) temp_float_var;</span>
+<span class="lineNum">     108 </span><span class="lineCov">         12 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[0].y = (double) temp_float_var;</span>
+<span class="lineNum">     109 </span><span class="lineCov">         12 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[0].z = (double) temp_float_var;</span>
 <span class="lineNum">     110 </span>            : 
 <span class="lineNum">     111 </span>            :         // read the three coordinates of vertex 2 
-<span class="lineNum">     112 </span><span class="lineCov">      69451 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[1].x = (double) temp_float_var;</span>
-<span class="lineNum">     113 </span><span class="lineCov">      69451 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[1].y = (double) temp_float_var;</span>
-<span class="lineNum">     114 </span><span class="lineCov">      69451 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[1].z = (double) temp_float_var;</span>
+<span class="lineNum">     112 </span><span class="lineCov">         12 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[1].x = (double) temp_float_var;</span>
+<span class="lineNum">     113 </span><span class="lineCov">         12 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[1].y = (double) temp_float_var;</span>
+<span class="lineNum">     114 </span><span class="lineCov">         12 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[1].z = (double) temp_float_var;</span>
 <span class="lineNum">     115 </span>            : 
 <span class="lineNum">     116 </span>            :         // read the three coordinates of vertex 3
-<span class="lineNum">     117 </span><span class="lineCov">      69451 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[2].x = (double) temp_float_var;</span>
-<span class="lineNum">     118 </span><span class="lineCov">      69451 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[2].y = (double) temp_float_var;</span>
-<span class="lineNum">     119 </span><span class="lineCov">      69451 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[2].z = (double) temp_float_var;</span>
+<span class="lineNum">     117 </span><span class="lineCov">         12 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[2].x = (double) temp_float_var;</span>
+<span class="lineNum">     118 </span><span class="lineCov">         12 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[2].y = (double) temp_float_var;</span>
+<span class="lineNum">     119 </span><span class="lineCov">         12 :         binaryInputFile.read((char*)&amp;temp_float_var,4); tri.point[2].z = (double) temp_float_var;</span>
 <span class="lineNum">     120 </span>            : 
 <span class="lineNum">     121 </span>            :         // read the 2 unused bytes
-<span class="lineNum">     122 </span><span class="lineCov">      69451 :         binaryInputFile.read(unused_bytes,2);</span>
+<span class="lineNum">     122 </span><span class="lineCov">         12 :         binaryInputFile.read(unused_bytes,2);</span>
 <span class="lineNum">     123 </span>            : 
 <span class="lineNum">     124 </span>            :         // update geometry extents along X, Y and Z based on vertex 1 of this triangle
-<span class="lineNum">     125 </span><span class="lineCov">      69451 :         if (tri.point[0].x &lt; x_min) x_min = tri.point[0].x;</span>
-<span class="lineNum">     126 </span><span class="lineCov">      69451 :         if (tri.point[0].x &gt; x_max) x_max = tri.point[0].x;</span>
-<span class="lineNum">     127 </span><span class="lineCov">      69451 :         if (tri.point[0].y &lt; y_min) y_min = tri.point[0].y;</span>
-<span class="lineNum">     128 </span><span class="lineCov">      69451 :         if (tri.point[0].y &gt; y_max) y_max = tri.point[0].y;</span>
-<span class="lineNum">     129 </span><span class="lineCov">      69451 :         if (tri.point[0].z &lt; z_min) z_min = tri.point[0].z;</span>
-<span class="lineNum">     130 </span><span class="lineCov">      69451 :         if (tri.point[0].z &gt; z_max) z_max = tri.point[0].z;</span>
+<span class="lineNum">     125 </span><span class="lineCov">         12 :         if (tri.point[0].x &lt; x_min) x_min = tri.point[0].x;</span>
+<span class="lineNum">     126 </span><span class="lineCov">         12 :         if (tri.point[0].x &gt; x_max) x_max = tri.point[0].x;</span>
+<span class="lineNum">     127 </span><span class="lineCov">         12 :         if (tri.point[0].y &lt; y_min) y_min = tri.point[0].y;</span>
+<span class="lineNum">     128 </span><span class="lineCov">         12 :         if (tri.point[0].y &gt; y_max) y_max = tri.point[0].y;</span>
+<span class="lineNum">     129 </span><span class="lineCov">         12 :         if (tri.point[0].z &lt; z_min) z_min = tri.point[0].z;</span>
+<span class="lineNum">     130 </span><span class="lineCov">         12 :         if (tri.point[0].z &gt; z_max) z_max = tri.point[0].z;</span>
 <span class="lineNum">     131 </span>            : 
 <span class="lineNum">     132 </span>            :         // update geometry extents along X, Y and Z based on vertex 2 of this triangle
-<span class="lineNum">     133 </span><span class="lineCov">      69451 :         if (tri.point[1].x &lt; x_min) x_min = tri.point[1].x;</span>
-<span class="lineNum">     134 </span><span class="lineCov">      69451 :         if (tri.point[1].x &gt; x_max) x_max = tri.point[1].x;</span>
-<span class="lineNum">     135 </span><span class="lineCov">      69451 :         if (tri.point[1].y &lt; y_min) y_min = tri.point[1].y;</span>
-<span class="lineNum">     136 </span><span class="lineCov">      69451 :         if (tri.point[1].y &gt; y_max) y_max = tri.point[1].y;</span>
-<span class="lineNum">     137 </span><span class="lineCov">      69451 :         if (tri.point[1].z &lt; z_min) z_min = tri.point[1].z;</span>
-<span class="lineNum">     138 </span><span class="lineCov">      69451 :         if (tri.point[1].z &gt; z_max) z_max = tri.point[1].z;</span>
+<span class="lineNum">     133 </span><span class="lineCov">         12 :         if (tri.point[1].x &lt; x_min) x_min = tri.point[1].x;</span>
+<span class="lineNum">     134 </span><span class="lineCov">         12 :         if (tri.point[1].x &gt; x_max) x_max = tri.point[1].x;</span>
+<span class="lineNum">     135 </span><span class="lineCov">         12 :         if (tri.point[1].y &lt; y_min) y_min = tri.point[1].y;</span>
+<span class="lineNum">     136 </span><span class="lineCov">         12 :         if (tri.point[1].y &gt; y_max) y_max = tri.point[1].y;</span>
+<span class="lineNum">     137 </span><span class="lineCov">         12 :         if (tri.point[1].z &lt; z_min) z_min = tri.point[1].z;</span>
+<span class="lineNum">     138 </span><span class="lineCov">         12 :         if (tri.point[1].z &gt; z_max) z_max = tri.point[1].z;</span>
 <span class="lineNum">     139 </span>            : 
 <span class="lineNum">     140 </span>            :         // update geometry extents along X, Y and Z based on vertex 3 of this triangle
-<span class="lineNum">     141 </span><span class="lineCov">      69451 :         if (tri.point[2].x &lt; x_min) x_min = tri.point[2].x;</span>
-<span class="lineNum">     142 </span><span class="lineCov">      69451 :         if (tri.point[2].x &gt; x_max) x_max = tri.point[2].x;</span>
-<span class="lineNum">     143 </span><span class="lineCov">      69451 :         if (tri.point[2].y &lt; y_min) y_min = tri.point[2].y;</span>
-<span class="lineNum">     144 </span><span class="lineCov">      69451 :         if (tri.point[2].y &gt; y_max) y_max = tri.point[2].y;</span>
-<span class="lineNum">     145 </span><span class="lineCov">      69451 :         if (tri.point[2].z &lt; z_min) z_min = tri.point[2].z;</span>
-<span class="lineNum">     146 </span><span class="lineCov">      69451 :         if (tri.point[2].z &gt; z_max) z_max = tri.point[2].z;</span>
+<span class="lineNum">     141 </span><span class="lineCov">         12 :         if (tri.point[2].x &lt; x_min) x_min = tri.point[2].x;</span>
+<span class="lineNum">     142 </span><span class="lineCov">         12 :         if (tri.point[2].x &gt; x_max) x_max = tri.point[2].x;</span>
+<span class="lineNum">     143 </span><span class="lineCov">         12 :         if (tri.point[2].y &lt; y_min) y_min = tri.point[2].y;</span>
+<span class="lineNum">     144 </span><span class="lineCov">         12 :         if (tri.point[2].y &gt; y_max) y_max = tri.point[2].y;</span>
+<span class="lineNum">     145 </span><span class="lineCov">         12 :         if (tri.point[2].z &lt; z_min) z_min = tri.point[2].z;</span>
+<span class="lineNum">     146 </span><span class="lineCov">         12 :         if (tri.point[2].z &gt; z_max) z_max = tri.point[2].z;</span>
 <span class="lineNum">     147 </span>            : 
 <span class="lineNum">     148 </span>            :         // add data for this triangle to the &quot;facet&quot; vector
-<span class="lineNum">     149 </span><span class="lineCov">      69451 :         facet.push_back(tri);</span>
+<span class="lineNum">     149 </span><span class="lineCov">         12 :         facet.push_back(tri);</span>
 <span class="lineNum">     150 </span>            :     }
 <span class="lineNum">     151 </span>            : 
 <span class="lineNum">     152 </span>            :     // explicitly close the connection to the input STL file
@@ -364,7 +364,7 @@
 <span class="lineNum">     302 </span>            :     {
 <span class="lineNum">     303 </span><span class="lineCov">        256 :         if ( (*ptr &gt;= 0x20 &amp;&amp; *ptr &lt;=0x7F) || *ptr == '\n' || *ptr == '\r' || *ptr == '\t')</span>
 <span class="lineNum">     304 </span>            :         {
-<span class="lineNum">     305 </span><span class="lineCov">         99 :             text_count++;  // Yay! we have an ASCII character!</span>
+<span class="lineNum">     305 </span><span class="lineCov">         60 :             text_count++;  // Yay! we have an ASCII character!</span>
 <span class="lineNum">     306 </span>            :         }
 <span class="lineNum">     307 </span><span class="lineCov">        256 :         ptr++;    // move on to the next &quot;byte&quot;</span>
 <span class="lineNum">     308 </span>            :     }

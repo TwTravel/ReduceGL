@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-01-07 18:01:02</td>
+            <td class="headerValue">2019-01-08 10:58:27</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -420,17 +420,17 @@
 <span class="lineNum">     358 </span>            : 
 <a name="359"><span class="lineNum">     359 </span>            : #define CLIP_EPSILON (1E-5)</a>
 <span class="lineNum">     360 </span>            : 
-<span class="lineNum">     361 </span><span class="lineCov">     208397 : static inline int gl_clipcode(float x,float y,float z,float w1)</span>
+<span class="lineNum">     361 </span><span class="lineCov">         36 : static inline int gl_clipcode(float x,float y,float z,float w1)</span>
 <span class="lineNum">     362 </span>            : {
 <span class="lineNum">     363 </span>            :   float w;
 <span class="lineNum">     364 </span>            : 
-<span class="lineNum">     365 </span><span class="lineCov">     208397 :   w=w1 * (1.0 + CLIP_EPSILON);</span>
-<span class="lineNum">     366 </span><span class="lineCov">     416794 :   return (x&lt;-w) |</span>
-<span class="lineNum">     367 </span><span class="lineCov">     416794 :     ((x&gt;w)&lt;&lt;1) |</span>
-<span class="lineNum">     368 </span><span class="lineCov">     416794 :     ((y&lt;-w)&lt;&lt;2) |</span>
-<span class="lineNum">     369 </span><span class="lineCov">     416794 :     ((y&gt;w)&lt;&lt;3) |</span>
-<span class="lineNum">     370 </span><span class="lineCov">     208397 :     ((z&lt;-w)&lt;&lt;4) | </span>
-<span class="lineNum">     371 </span><span class="lineCov">     208397 :     ((z&gt;w)&lt;&lt;5) ;</span>
+<span class="lineNum">     365 </span><span class="lineCov">         36 :   w=w1 * (1.0 + CLIP_EPSILON);</span>
+<span class="lineNum">     366 </span><span class="lineCov">         72 :   return (x&lt;-w) |</span>
+<span class="lineNum">     367 </span><span class="lineCov">         72 :     ((x&gt;w)&lt;&lt;1) |</span>
+<span class="lineNum">     368 </span><span class="lineCov">         72 :     ((y&lt;-w)&lt;&lt;2) |</span>
+<span class="lineNum">     369 </span><span class="lineCov">         72 :     ((y&gt;w)&lt;&lt;3) |</span>
+<span class="lineNum">     370 </span><span class="lineCov">         36 :     ((z&lt;-w)&lt;&lt;4) | </span>
+<span class="lineNum">     371 </span><span class="lineCov">         36 :     ((z&gt;w)&lt;&lt;5) ;</span>
 <span class="lineNum">     372 </span>            : }
 <span class="lineNum">     373 </span>            : 
 <span class="lineNum">     374 </span>            : 

@@ -264,9 +264,9 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 	   printf( "%s\n", trim(lines[i]).c_str() );
    }
   
-  world_model.Light1->AddChild( world_model.AxisXX);
-  world_model.Light1->AddChild( world_model.AxisYY);
-  world_model.Light1->AddChild( world_model.AxisZZ);
+  //world_model.Light1->AddChild( world_model.AxisXX);
+  //world_model.Light1->AddChild( world_model.AxisYY);
+  //world_model.Light1->AddChild( world_model.AxisZZ);
   //world_model.Light1->AddChild( world_model.groundface);
    
   
@@ -302,7 +302,7 @@ int main(int argc, char *argv[])
  // ui_loop(argc, argv, "models");
   graphLib.InitDrawLib(1600,1600);
   reshape(1600, 1600);
-
+  init( &graphLib);
   ReadModelFile( argc,  argv );
   world_model.MyViewer->Init(argc, argv);
   world_model.MyViewer->SetValue(BACKCOLOR, GREY);

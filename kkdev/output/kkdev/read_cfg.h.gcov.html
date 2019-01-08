@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-01-07 17:12:43</td>
+            <td class="headerValue">2019-01-08 10:56:52</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -91,33 +91,33 @@
 <span class="lineNum">      29 </span>            :         }
 <span class="lineNum">      30 </span><span class="lineCov">          1 :         const int LINE_LENGTH = 100000;</span>
 <span class="lineNum">      31 </span>            :         char str[LINE_LENGTH];
-<span class="lineNum">      32 </span><span class="lineCov">         11 :         while(fin.getline(str,LINE_LENGTH)) {</span>
-<span class="lineNum">      33 </span><span class="lineCov">          5 :                 content.append(str);</span>
-<span class="lineNum">      34 </span><span class="lineCov">          5 :                 content.append(&quot;\n&quot;);</span>
+<span class="lineNum">      32 </span><span class="lineCov">          9 :         while(fin.getline(str,LINE_LENGTH)) {</span>
+<span class="lineNum">      33 </span><span class="lineCov">          4 :                 content.append(str);</span>
+<span class="lineNum">      34 </span><span class="lineCov">          4 :                 content.append(&quot;\n&quot;);</span>
 <span class="lineNum">      35 </span>            :         }
 <span class="lineNum">      36 </span><span class="lineCov">          1 :         return true;</span>
 <a name="37"><span class="lineNum">      37 </span>            : }</a>
 <span class="lineNum">      38 </span>            : 
-<span class="lineNum">      39 </span><span class="lineCov">          6 : void inline splitString(const std::string&amp; s, std::vector&lt;std::string&gt;&amp; v, const std::string&amp; c)</span>
+<span class="lineNum">      39 </span><span class="lineCov">          5 : void inline splitString(const std::string&amp; s, std::vector&lt;std::string&gt;&amp; v, const std::string&amp; c)</span>
 <span class="lineNum">      40 </span>            : {
 <span class="lineNum">      41 </span>            :         std::string::size_type pos1, pos2;
-<span class="lineNum">      42 </span><span class="lineCov">          6 :         pos2 = s.find(c);</span>
-<span class="lineNum">      43 </span><span class="lineCov">          6 :         pos1 = 0;</span>
-<span class="lineNum">      44 </span><span class="lineCov">         94 :         while(std::string::npos != pos2) {</span>
-<span class="lineNum">      45 </span><span class="lineCov">         88 :                 string item = s.substr(pos1, pos2-pos1);</span>
+<span class="lineNum">      42 </span><span class="lineCov">          5 :         pos2 = s.find(c);</span>
+<span class="lineNum">      43 </span><span class="lineCov">          5 :         pos1 = 0;</span>
+<span class="lineNum">      44 </span><span class="lineCov">         67 :         while(std::string::npos != pos2) {</span>
+<span class="lineNum">      45 </span><span class="lineCov">         62 :                 string item = s.substr(pos1, pos2-pos1);</span>
 <span class="lineNum">      46 </span>            : 
-<span class="lineNum">      47 </span><span class="lineCov">         44 :                 if( item.size()&gt;1&amp;&amp; item[item.length()-1] == '\r')</span>
-<span class="lineNum">      48 </span><span class="lineCov">          4 :                         item = item.substr(0, item.length()-1);</span>
+<span class="lineNum">      47 </span><span class="lineCov">         31 :                 if( item.size()&gt;1&amp;&amp; item[item.length()-1] == '\r')</span>
+<span class="lineNum">      48 </span><span class="lineCov">          3 :                         item = item.substr(0, item.length()-1);</span>
 <span class="lineNum">      49 </span>            : 
-<span class="lineNum">      50 </span><span class="lineCov">         44 :                 if(item.size()&gt;0)</span>
-<span class="lineNum">      51 </span><span class="lineCov">         44 :                         v.push_back(item);</span>
-<span class="lineNum">      52 </span><span class="lineCov">         44 :                 pos1 = pos2 + c.size();</span>
-<span class="lineNum">      53 </span><span class="lineCov">         44 :                 pos2 = s.find(c, pos1);</span>
+<span class="lineNum">      50 </span><span class="lineCov">         31 :                 if(item.size()&gt;0)</span>
+<span class="lineNum">      51 </span><span class="lineCov">         31 :                         v.push_back(item);</span>
+<span class="lineNum">      52 </span><span class="lineCov">         31 :                 pos1 = pos2 + c.size();</span>
+<span class="lineNum">      53 </span><span class="lineCov">         31 :                 pos2 = s.find(c, pos1);</span>
 <span class="lineNum">      54 </span>            :         }
-<span class="lineNum">      55 </span><span class="lineCov">          6 :         if (pos1 != s.length()) {</span>
-<span class="lineNum">      56 </span><span class="lineCov">          5 :                 v.push_back(s.substr(pos1));</span>
+<span class="lineNum">      55 </span><span class="lineCov">          5 :         if (pos1 != s.length()) {</span>
+<span class="lineNum">      56 </span><span class="lineCov">          4 :                 v.push_back(s.substr(pos1));</span>
 <span class="lineNum">      57 </span>            :         }
-<span class="lineNum">      58 </span><span class="lineCov">          6 : }</span>
+<span class="lineNum">      58 </span><span class="lineCov">          5 : }</span>
 <span class="lineNum">      59 </span>            : 
 <span class="lineNum">      60 </span>            : string inline getpathfilename(string fname)
 <span class="lineNum">      61 </span>            : {

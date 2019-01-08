@@ -35,10 +35,10 @@ inline Material::Material(GraphDrawLib *gLib)
       Changed[i]=false;
     }
 
-    memset(Diffuse,0, 4*4);
-  memset(Specular,0,4*4);
-  memset(Ambient,0,4*4);
-  memset(Emission,0,4*4);
+  memset(Diffuse, 0, 4*4);
+  memset(Specular,0, 4*4);
+  memset(Ambient, 0, 4*4);
+  memset(Emission,0, 4*4);
  
 }
 

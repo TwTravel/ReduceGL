@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-01-07 18:01:02</td>
+            <td class="headerValue">2019-01-08 10:58:27</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">17</td>
@@ -158,22 +158,22 @@
 <span class="lineNum">      96 </span>            :       // NB: __n is permitted to be 0.  The C++ standard says nothing
 <a name="97"><span class="lineNum">      97 </span>            :       // about what the return value is when __n == 0.</a>
 <span class="lineNum">      98 </span>            :       pointer
-<span class="lineNum">      99 </span><span class="lineCov">         29 :       allocate(size_type __n, const void* = 0)</span>
+<span class="lineNum">      99 </span><span class="lineCov">         15 :       allocate(size_type __n, const void* = 0)</span>
 <span class="lineNum">     100 </span>            :       { 
-<span class="lineNum">     101 </span><span class="lineCov">         29 :         if (__n &gt; this-&gt;max_size())</span>
+<span class="lineNum">     101 </span><span class="lineCov">         15 :         if (__n &gt; this-&gt;max_size())</span>
 <span class="lineNum">     102 </span><span class="lineNoCov">          0 :           std::__throw_bad_alloc();</span>
 <span class="lineNum">     103 </span>            : 
-<span class="lineNum">     104 </span><span class="lineCov">         29 :         return static_cast&lt;_Tp*&gt;(::operator new(__n * sizeof(_Tp)));</span>
+<span class="lineNum">     104 </span><span class="lineCov">         15 :         return static_cast&lt;_Tp*&gt;(::operator new(__n * sizeof(_Tp)));</span>
 <span class="lineNum">     105 </span>            :       }
 <span class="lineNum">     106 </span>            : 
 <a name="107"><span class="lineNum">     107 </span>            :       // __p is not permitted to be a null pointer.</a>
 <span class="lineNum">     108 </span>            :       void
-<span class="lineNum">     109 </span><span class="lineCov">         26 :       deallocate(pointer __p, size_type)</span>
-<span class="lineNum">     110 </span><span class="lineCov">         26 :       { ::operator delete(__p); }</span>
+<span class="lineNum">     109 </span><span class="lineCov">         12 :       deallocate(pointer __p, size_type)</span>
+<span class="lineNum">     110 </span><span class="lineCov">         12 :       { ::operator delete(__p); }</span>
 <a name="111"><span class="lineNum">     111 </span>            : </a>
 <span class="lineNum">     112 </span>            :       size_type
-<span class="lineNum">     113 </span><span class="lineCov">         87 :       max_size() const _GLIBCXX_USE_NOEXCEPT</span>
-<span class="lineNum">     114 </span><span class="lineCov">         87 :       { return size_t(-1) / sizeof(_Tp); }</span>
+<span class="lineNum">     113 </span><span class="lineCov">         45 :       max_size() const _GLIBCXX_USE_NOEXCEPT</span>
+<span class="lineNum">     114 </span><span class="lineCov">         45 :       { return size_t(-1) / sizeof(_Tp); }</span>
 <span class="lineNum">     115 </span>            : 
 <span class="lineNum">     116 </span>            : #if __cplusplus &gt;= 201103L
 <span class="lineNum">     117 </span>            :       template&lt;typename _Up, typename... _Args&gt;
@@ -188,8 +188,8 @@
 <span class="lineNum">     126 </span>            :       // _GLIBCXX_RESOLVE_LIB_DEFECTS
 <a name="127"><span class="lineNum">     127 </span>            :       // 402. wrong new expression in [some_] allocator::construct</a>
 <span class="lineNum">     128 </span>            :       void 
-<span class="lineNum">     129 </span><span class="lineCov">      69500 :       construct(pointer __p, const _Tp&amp; __val) </span>
-<span class="lineNum">     130 </span><span class="lineCov">      69500 :       { ::new((void *)__p) _Tp(__val); }</span>
+<span class="lineNum">     129 </span><span class="lineCov">         47 :       construct(pointer __p, const _Tp&amp; __val) </span>
+<span class="lineNum">     130 </span><span class="lineCov">         47 :       { ::new((void *)__p) _Tp(__val); }</span>
 <a name="131"><span class="lineNum">     131 </span>            : </a>
 <span class="lineNum">     132 </span>            :       void 
 <span class="lineNum">     133 </span><span class="lineNoCov">          0 :       destroy(pointer __p) { __p-&gt;~_Tp(); }</span>
