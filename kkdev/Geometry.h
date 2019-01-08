@@ -573,30 +573,25 @@ StlShape::Render()
   if(TransNode)
     TransNode->Render();
  
-
+  float xxx,yyy,zzz;
   printf("%s name draw GL_POLYGONs2:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
 
- /*
- class triangle
-{
-public:
-    /// 3 components of the normal vector to the triangle
-    vec3d normal;
-    /// 3 coordinates of the three vertices of the triangle
-    vec3d point[3];
-};
- */
-  //glScalef(4, 4, 4);
+ 
   grawLib->glBegin(GL_TRIANGLES);
   for(int i = 0; i < facet.size(); i++)
-  {
-        // 遍历三角形的所有点
+  {    // 遍历三角形的所有点
       for(int whichVertex = 0; whichVertex < 3; whichVertex++ )
        {
-        // 给出法向量
+      // 给出法向量
+      
+	  //xxx = facet[i].normal.x;
+	  //yyy = facet[i].normal.y;
+	  //zzz = facet[i].normal.z;
       grawLib->glNormal3f(facet[i].normal.x, facet[i].normal.y, facet[i].normal.z);
         // 如果对象具有纹理
-        grawLib->glVertex3f( facet[i].point[whichVertex].x , 
+      int aa(0);
+	  aa++;
+	  grawLib->glVertex3f( facet[i].point[whichVertex].x , 
 		            facet[i].point[whichVertex].y , 
 				    facet[i].point[whichVertex].z ); /* */
 		/*glNormal3f(facet[i].normal.z,facet[i].normal.x, facet[i].normal.y);
