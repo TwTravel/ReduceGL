@@ -254,7 +254,7 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 	   if(rot_angle!=0)
 	   world_model.StlTrans[i]->SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 0);
 	   world_model.StlTrans[i]->SetValue(TRANSLATION , obj_x ,    obj_y,  obj_z  , 1);
-	   //world_model.StlTrans[i]->SetValue(SCALE       , obj_scale, obj_scale, obj_scale,2); 
+	   world_model.StlTrans[i]->SetValue(SCALE       , obj_scale, obj_scale, obj_scale,2); 
 	   
 	   world_model.StlElements[i]->SetTransform( world_model.StlTrans[i]);
        world_model.StlElements[i]->LoadStl((char*)trim(fname).c_str());
