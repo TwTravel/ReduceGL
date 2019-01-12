@@ -1,0 +1,230 @@
+﻿Build started 2019/1/13 星期日 3:06:30.
+Project "F:\tzwang\graphics\ReduceGL\kkdevr2\kkdev.vcxproj" on node 2 (rebuild target(s)).
+_PrepareForClean:
+  Deleting file "Debug\kkdev.lastbuildstate".
+InitializeBuildStatus:
+  Touching "Debug\kkdev.unsuccessfulbuild".
+ClCompile:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Model3dRender.cpp
+  Model3dRender.cpp
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(210): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(210): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(210): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(210): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(211): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(211): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(211): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(211): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(212): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(212): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(212): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(212): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(213): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(213): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(213): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(213): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(405): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(406): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(409): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(409): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(416): warning C4244: '=' : conversion from 'double' to 'BYTE', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(417): warning C4244: '=' : conversion from 'double' to 'BYTE', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(418): warning C4244: '=' : conversion from 'double' to 'BYTE', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(426): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(427): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(430): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(430): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(509): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h(521): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\kkdevr2\c256bitmap.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\tzwang\graphics\reducegl\kkdevr2\c256bitmap.h(96): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\kkdevr2\c256bitmap.h(107): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\kkdevr2\read_cfg.h(86): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\kkdevr2\read_cfg.h(104): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\tzwang\graphics\reducegl\kkdevr2\c256bitmap.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(242): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(243): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(245): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(246): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(251): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(259): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(260): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(264): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(265): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(269): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(270): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(274): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(275): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(532): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(533): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(535): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(536): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(541): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(549): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(550): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(690): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(706): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(500): warning C4101: 'drdy' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(506): warning C4101: 'dtdl_min' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(505): warning C4101: 'dsdy' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(501): warning C4101: 'dgdx' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(506): warning C4101: 'dtdy' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(500): warning C4101: 'r1' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(501): warning C4101: 'dgdy' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(505): warning C4101: 'dsdl_max' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(500): warning C4101: 'drdl_min' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(501): warning C4101: 'dgdl_min' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(505): warning C4101: 'dsdl_min' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(502): warning C4101: 'dbdl_min' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(502): warning C4101: 'dbdx' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(501): warning C4101: 'dgdl_max' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(506): warning C4101: 'dtdl_max' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(505): warning C4101: 's1' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(502): warning C4101: 'dbdl_max' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(501): warning C4101: 'g1' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(506): warning C4101: 't1' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(500): warning C4101: 'drdx' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(505): warning C4101: 'dsdx' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(502): warning C4101: 'dbdy' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(506): warning C4101: 'dtdx' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(500): warning C4101: 'drdl_max' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\zbuffer.h(502): warning C4101: 'b1' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(311): warning C4099: 'GLTexture' : type name first seen using 'class' now seen using 'struct'
+          f:\tzwang\graphics\reducegl\kkdevr2\gl.h(306) : see declaration of 'GLTexture'
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(542): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(542): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(542): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(551): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(551): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(551): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(552): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(552): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(552): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(943): warning C4244: '=' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(944): warning C4244: '=' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(945): warning C4244: '=' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(947): warning C4244: '=' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(948): warning C4244: '=' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(949): warning C4244: '=' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(974): warning C4244: 'argument' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(974): warning C4244: 'argument' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(974): warning C4244: 'argument' : conversion from 'GLdouble' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(992): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(996): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(997): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(998): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1000): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1001): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1002): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1010): warning C4101: 'i' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1329): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1396): warning C4101: 'm' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1413): warning C4101: 'm' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1477): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1478): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1479): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1480): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1481): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1482): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1527): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1626): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1693): warning C4101: 'p' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1722): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(1736): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\gl.h(2198): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\node.h(160): warning C4305: '=' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\node.h(160): warning C4305: '=' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\node.h(160): warning C4305: '=' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\node.h(131): warning C4101: 'i' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\tzwang\graphics\reducegl\kkdevr2\readstl.h(282): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(524): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(524): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(524): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(525): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(525): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(525): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(581): warning C4018: '<' : signed/unsigned mismatch
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(589): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(589): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(589): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(595): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(595): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(595): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(565): warning C4101: 'i' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(576): warning C4101: 'zzz' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(576): warning C4101: 'yyy' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(576): warning C4101: 'xxx' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\c24bitmap.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\tzwang\graphics\reducegl\kkdevr2\geometry.h(645): warning C4101: 'i' : unreferenced local variable
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(26): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(26): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(27): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(27): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(28): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(28): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(117): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(117): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(118): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(118): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(120): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(120): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(123): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(123): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(124): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(124): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(144): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(144): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(144): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(148): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(150): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(167): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(167): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(167): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(167): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(168): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(168): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(168): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(184): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(185): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(255): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(255): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(255): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(255): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(256): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(256): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(256): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(257): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(257): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(257): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(337): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(337): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(337): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(338): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(338): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(338): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(377): error C2065: 'Mat' : undeclared identifier
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(377): error C2146: syntax error : missing ';' before identifier 'image'
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(377): error C2065: 'image' : undeclared identifier
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(377): error C2065: 'imageCopy' : undeclared identifier
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(380): error C2065: 'imageCopy' : undeclared identifier
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(380): error C3861: 'imshow': identifier not found
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(381): error C2065: 'waitTime' : undeclared identifier
+f:\tzwang\graphics\reducegl\kkdevr2\model3drender.cpp(381): error C3861: 'waitKey': identifier not found
+Done Building Project "F:\tzwang\graphics\ReduceGL\kkdevr2\kkdev.vcxproj" (rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.68
