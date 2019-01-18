@@ -1,0 +1,17 @@
+﻿Build started 2019/1/8 星期二 14:37:06.
+Project "F:\tzwang\graphics\ReduceGL\kkdev\kkdev.vcxproj" on node 2 (build target(s)).
+InitializeBuildStatus:
+  Creating "Debug\kkdev.unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  All outputs are up-to-date.
+Link:
+  All outputs are up-to-date.
+  kkdev.vcxproj -> F:\tzwang\graphics\ReduceGL\kkdev\Debug\kkdev.exe
+FinalizeBuildStatus:
+  Deleting file "Debug\kkdev.unsuccessfulbuild".
+  Touching "Debug\kkdev.lastbuildstate".
+Done Building Project "F:\tzwang\graphics\ReduceGL\kkdev\kkdev.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.08
