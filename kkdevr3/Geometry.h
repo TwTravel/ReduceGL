@@ -665,7 +665,7 @@ TextureSurface::Render()
   grawLib->glTexImage2D(GL_TEXTURE_2D, 0, 3, Pic.Width, Pic.Height, 0, GL_RGB, GL_UNSIGNED_BYTE, Pic.Buffer);
   grawLib->glEnable(GL_TEXTURE_2D);
   
-  grawLib->glBegin(GL_POLYGON);
+  grawLib->glBegin(GL_QUADS);//GL_POLYGON);
   
   grawLib->glTexCoord2f(0.0f, 0.0f); grawLib->glVertex3fv(Vertices[0]);	// Bottom Left Of The Texture and Quad
   grawLib->glTexCoord2f(1.0f, 0.0f); grawLib->glVertex3fv(Vertices[1]);	// Bottom Right Of The Texture and Quad

@@ -1039,7 +1039,8 @@ inline void GraphDrawLib::glVertex4f(float x,float y,float z,float w)
 	    n = 0;
 	}
 	break;
-  
+	//case GL_POLYGON:
+
     case GL_QUADS:
 	if (n == 4) {
 	    c->vertex[2].edge_flag = 0;

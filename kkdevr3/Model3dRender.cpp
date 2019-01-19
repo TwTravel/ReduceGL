@@ -276,6 +276,7 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
    
   world_model.Light1->AddChild( world_model.groundface);
   double offsetx(0), offsety(0), offsetz(0);
+  rot_angle = rot_x = rot_y = rot_z = 0;
   world_model.groundface->SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0 ,&graphLib));
   world_model.texsurface_trs->SetValue(TRANSLATION , offsetx, offsety, offsetz , 1);
   world_model.texsurface_trs->SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 0);
@@ -307,6 +308,8 @@ void reshape(int width, int height)
 	graphLib.glMatrixMode(GL_MODELVIEW);						
 	graphLib.glLoadIdentity();									
 }
+
+
 int main(int argc, char *argv[])
 {
  // ui_loop(argc, argv, "models");
