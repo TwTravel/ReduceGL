@@ -253,12 +253,12 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 	   rot_y     =  atof(trim(strvec[ 9+1]).c_str());
 	   rot_z     =  atof(trim(strvec[10+1]).c_str());
 	   obj_scale =  atof(trim(strvec[11+1]).c_str()); 
-	   
+	   //STL  , bunny.stl, 80.0, 1.0, 1.0, 0.0,-0.0, 0, 0, 0, 0, 0, 3.2 , #OBJ(color3)(pos3)(rot4)(scale1) 
 	   printf("##########################trans: %.2f,  %.2f,  %.2f\n", obj_x ,    obj_y,  obj_z);
 	   if(rot_angle!=0)
-	   world_model.StlTrans[stlIdx]->SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 0);
-	   world_model.StlTrans[stlIdx]->SetValue(TRANSLATION , obj_x ,    obj_y,  obj_z  , 1);
-	   world_model.StlTrans[stlIdx]->SetValue(SCALE       , obj_scale, obj_scale, obj_scale,2); 
+	   world_model.StlTrans[stlIdx]->SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 1);
+	   world_model.StlTrans[stlIdx]->SetValue(TRANSLATION , obj_x ,    obj_y,  obj_z   ,  2);
+	   world_model.StlTrans[stlIdx]->SetValue(SCALE       , obj_scale, obj_scale, obj_scale, 0); 
 	   
 	   world_model.StlElements[stlIdx]->SetTransform( world_model.StlTrans[stlIdx]);
        world_model.StlElements[stlIdx]->LoadStl((char*)trim(fname).c_str());
@@ -288,10 +288,11 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
    }
   
    
-
-   world_model.SysTrans->AddChild(world_model.StlElements[0]);
-    for( i = 0; i <  (element_num-1); i++ )
-	  world_model.StlElements[i]->AddChild(world_model.StlElements[i+1]);
+   for( i = 0; i <  world_model.StlElements.size(); i++ )
+   world_model.SysTrans->AddChild(world_model.StlElements[i]);
+   
+//for( i = 0; i <  (element_num-1); i++ )
+//  world_model.StlElements[i]->AddChild(world_model.StlElements[i+1]);
   
   world_model.SysTrans->AddChild( world_model.AxisXX);
   world_model.SysTrans->AddChild( world_model.AxisYY);
