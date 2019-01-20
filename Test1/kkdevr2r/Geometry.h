@@ -9,6 +9,8 @@
 
 #include "readstl.h"
 #include "c24bitmap.h"
+#include "3DS.h"
+
 
 class Geometry: public Node
 {
