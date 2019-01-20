@@ -1,15 +1,12 @@
-﻿Build started 2019/1/21 星期一 2:28:40.
+﻿Build started 2019/1/21 星期一 4:51:16.
 Project "F:\tzwang\graphics\ReduceGL\Test1\test3ds\audicar\testMdl\testMdl.vcxproj" on node 2 (build target(s)).
 InitializeBuildStatus:
   Creating "Debug\testMdl.unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
   All outputs are up-to-date.
 Link:
-  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\tzwang\graphics\ReduceGL\Test1\test3ds\audicar\testMdl\Debug\testMdl.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\testMdl.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\tzwang\graphics\ReduceGL\Test1\test3ds\audicar\testMdl\Debug\testMdl.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\tzwang\graphics\ReduceGL\Test1\test3ds\audicar\testMdl\Debug\testMdl.lib" /MACHINE:X86 Debug\main.obj
-  LINK : F:\tzwang\graphics\ReduceGL\Test1\test3ds\audicar\testMdl\Debug\testMdl.exe not found or not built by the last incremental link; performing full link
+  All outputs are up-to-date.
   testMdl.vcxproj -> F:\tzwang\graphics\ReduceGL\Test1\test3ds\audicar\testMdl\Debug\testMdl.exe
-Manifest:
-  c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"F:\tzwang\graphics\ReduceGL\Test1\test3ds\audicar\testMdl\Debug\testMdl.exe;#1" /manifest Debug\testMdl.exe.intermediate.manifest
 FinalizeBuildStatus:
   Deleting file "Debug\testMdl.unsuccessfulbuild".
   Touching "Debug\testMdl.lastbuildstate".
@@ -17,4 +14,4 @@ Done Building Project "F:\tzwang\graphics\ReduceGL\Test1\test3ds\audicar\testMdl
 
 Build succeeded.
 
-Time Elapsed 00:00:01.78
+Time Elapsed 00:00:00.33

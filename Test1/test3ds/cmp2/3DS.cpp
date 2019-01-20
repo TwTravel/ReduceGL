@@ -1,251 +1,22 @@
-#ifndef _3DS_H
-#define _3DS_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <vector>
+//#include "main.h"
 #include <string.h>
 #include <math.h>
+#include "3DS.h"
 
-using namespace std;
-
-typedef unsigned char byte;
-typedef unsigned char BYTE;
-
-
-#define MAX_TEXTURES 100								// 最大的纹理数目
-// 下面的宏定义计算一个矢量的长度
-#define Mag(Normal) (sqrt(Normal.x*Normal.x + Normal.y*Normal.y + Normal.z*Normal.z))
-
-
-// 定义3D点的类，用于保存模型中的顶点
-class CVector3 
-{
-public:
-	CVector3(){x=y=z=0;}
-	float x, y, z;
-};
-
-// 下面的函数规范化矢量
-CVector3 Normalize(CVector3 vNormal)
-{
-	double Magnitude;							
-
-	Magnitude = Mag(vNormal);					// 获得矢量的长度
-
-	vNormal.x /= (float)Magnitude;				
-	vNormal.y /= (float)Magnitude;				
-	vNormal.z /= (float)Magnitude;				
-
-	return vNormal;								
-}
-
-// 下面的函数两个矢量相加
-CVector3 AddVector(CVector3 vVector1, CVector3 vVector2, double ratio )
-{
-	CVector3 vResult;							
-
-	vResult.x = vVector2.x * ratio + vVector1.x;		
-	vResult.y = vVector2.y * ratio + vVector1.y;		
-	vResult.z = vVector2.z * ratio + vVector1.z;		
-
-	return vResult;								
-}/**/
-
-// 下面的函数求两点决定的矢量
-CVector3 Vector(CVector3 vPoint1, CVector3 vPoint2)
-{
-	CVector3 vVector;							
-
-	vVector.x = vPoint1.x - vPoint2.x;			
-	vVector.y = vPoint1.y - vPoint2.y;			
-	vVector.z = vPoint1.z - vPoint2.z;			
-
-	return vVector;								
-}
-
-double angle( CVector3 a, CVector3 b, CVector3 c )
-{
-	CVector3 tempvector[2];
-	tempvector[0] = Vector( a, b );
-	tempvector[1] = Vector( a, c );
-	tempvector[0] = Normalize(tempvector[0]);
-	tempvector[1] = Normalize(tempvector[1]);
-	double dotproduct = tempvector[0].x*tempvector[1].x + tempvector[0].y*tempvector[1].y + tempvector[0].z*tempvector[1].z;
-	double result = acos( dotproduct );
-	if( result >= 0 )
-		return result;
-	else return result + 360;
-}
-// 定义2D点类，用于保存模型的UV纹理坐标
-class CVector2 
-{
-public:
-	CVector2(){x= y=0;}
-	float x, y;
-};
-
-//  面的结构定义
-struct tFace
-{
-	int vertIndex[3];			// 顶点索引
-	int coordIndex[3];			// 纹理坐标索引
-};
-
-//  材质信息结构体
-struct tMaterialInfo
-{
-	char  strName[255];			// 纹理名称
-	char  strFile[255];			// 如果存在纹理映射，则表示纹理文件名称
-	BYTE  color[3];				// 对象的RGB颜色
-	int   texureId;				// 纹理ID
-	float uTile;				// u 重复
-	float vTile;				// v 重复
-	float uOffset;			    // u 纹理偏移
-	float vOffset;				// v 纹理偏移
-} ;
-
-//  对象信息结构体
-class t3DObject 
-{public:
-	t3DObject()
-	{//pVerts   =NULL;
-	 //pNormals =NULL;
-	 //pTexVerts=NULL;
-	 //pFaces   =NULL;
-	 numOfVerts = numOfFaces  = numTexVertex =
-	 materialID = bHasTexture = 0; 
-	 };
-	~t3DObject()
-	{  }
-	int  numOfVerts;			// 模型中顶点的数目
-	int  numOfFaces;			// 模型中面的数目
-	int  numTexVertex;			// 模型中纹理坐标的数目
-	int  materialID;			// 纹理ID
-	bool bHasTexture;			// 是否具有纹理映射
-	char strName[255];			// 对象的名称
-	vector<CVector3 >pVerts;			// 对象的顶点
-	vector<CVector3 >pNormals;		// 对象的法向量
-	vector<CVector2 >pTexVerts;		// 纹理UV坐标
-	vector<tFace >   pFaces;		// 对象的面信息
-};
-
-//  模型信息结构体
-class t3DModel 
-{public:
-	t3DModel(){numOfObjects= numOfMaterials=0;m_glCommandBuffer=NULL;};
-    ~t3DModel(){}; 	
-	int numOfObjects;					// 模型中对象的数目
-	int numOfMaterials;					// 模型中材质的数目
-	int	*m_glCommandBuffer;	
-	vector<tMaterialInfo> pMaterials;	// 材质链表信息
-	vector<t3DObject> pObject;			// 模型中对象链表信息
-};
-
-
-
-//#################################################################
-//#################################################################
-//#################################################################
-//  基本块(Primary Chunk)，位于文件的开始
-#define PRIMARY       0x4D4D
-
-//  主块(Main Chunks)
-#define OBJECTINFO    0x3D3D				// 网格对象的版本号
-#define VERSION       0x0002				// .3ds文件的版本
-#define EDITKEYFRAME  0xB000				// 所有关键帧信息的头部
-
-//  对象的次级定义(包括对象的材质和对象）
-#define MATERIAL	  0xAFFF				// 保存纹理信息
-#define OBJECT		  0x4000				// 保存对象的面、顶点等信息
-
-//  材质的次级定义
-#define MATNAME       0xA000				// 保存材质名称
-#define MATDIFFUSE    0xA020				// 对象/材质的颜色
-#define MATMAP        0xA200				// 新材质的头部
-#define MATMAPFILE    0xA300				// 保存纹理的文件名
-
-#define OBJECT_MESH   0x4100				// 新的网格对象
-
-//  OBJECT_MESH的次级定义
-#define OBJECT_VERTICES     0x4110			// 对象顶点
-#define OBJECT_FACES		0x4120			// 对象的面
-#define OBJECT_MATERIAL		0x4130			// 对象的材质
-#define OBJECT_UV			0x4140			// 对象的UV纹理坐标
-
-struct tIndices 
-{							
-	unsigned short a, b, c, bVisible;	
-};
-
-// 保存块信息的结构
-struct tChunk
-{
-	unsigned short int ID;					// 块的ID		
-	unsigned int length;					// 块的长度
-	unsigned int bytesRead;					// 需要读的块数据的字节数
-};
-
-// CLoad3DS类处理所有的装入代码
-class CLoad3DS
-{
-public:
-	CLoad3DS() ;								// 初始化数据成员
-	~CLoad3DS();
-	// 装入3ds文件到模型结构中
-	bool Import3DS(t3DModel *pModel, char *strFileName);
-
-private:
-	// 读一个字符串
-	int GetString(char *);
-	// 读下一个块
-	void ReadChunk(tChunk *);
-	// 读下一个块
-	void ProcessNextChunk(t3DModel *pModel, tChunk *);
-	// 读下一个对象块
-	void ProcessNextObjectChunk(t3DModel *pModel, t3DObject *pObject, tChunk *);
-	// 读下一个材质块
-	void ProcessNextMaterialChunk(t3DModel *pModel, tChunk *);
-	// 读对象颜色的RGB值
-	void ReadColorChunk(tMaterialInfo *pMaterial, tChunk *pChunk);
-	// 读对象的顶点
-	void ReadVertices(t3DObject *pObject, tChunk *);
-	// 读对象的面信息
-	void ReadVertexIndices(t3DObject *pObject, tChunk *);
-	// 读对象的纹理坐标
-	void ReadUVCoordinates(t3DObject *pObject, tChunk *);
-	// 读赋予对象的材质名称
-	void ReadObjectMaterial(t3DModel *pModel, t3DObject *pObject, tChunk *pPreviousChunk);
-	// 计算对象顶点的法向量
-	void ComputeNormals(t3DModel *pModel);
-	// 关闭文件，释放内存空间
-	void CleanUp();
-	// 文件指针
-	FILE *m_FilePointer;
-    int  ChunkIdx;
-	tChunk *m_CurrentChunk;
-	tChunk *m_TempChunk;
-};
- 
 void inline empty_chunk(tChunk* m_CurrentChunk)
 {
 	m_CurrentChunk->ID = m_CurrentChunk->length= m_CurrentChunk->bytesRead = 0;
 }
 //  构造函数的功能是初始化tChunk数据
-inline CLoad3DS::CLoad3DS()
-{   ChunkIdx=0;
+CLoad3DS::CLoad3DS()
+{
 	m_CurrentChunk = new tChunk;empty_chunk(m_CurrentChunk);				// 初始化并为当前的块分配空间
 	m_TempChunk = new tChunk;	empty_chunk(m_TempChunk);				// 初始化一个临时块并分配空间
 }
 
-inline CLoad3DS::~CLoad3DS()
-{
-	delete m_CurrentChunk; m_CurrentChunk =NULL;
-	delete m_TempChunk; m_TempChunk=NULL;
-}
-
 //  打开一个3ds文件，读出其中的内容，并释放内存
-bool inline CLoad3DS::Import3DS(t3DModel *pModel, char *strFileName)
+bool CLoad3DS::Import3DS(t3DModel *pModel, char *strFileName)
 {
 	char strMessage[255] = {0};
 
@@ -290,22 +61,20 @@ bool inline CLoad3DS::Import3DS(t3DModel *pModel, char *strFileName)
 
 
 //  下面的函数释放所有的内存空间，并关闭文件
-void inline CLoad3DS::CleanUp()
+void CLoad3DS::CleanUp()
 {
 
 	fclose(m_FilePointer);						// 关闭当前的文件指针
-	delete m_CurrentChunk;	m_CurrentChunk=NULL;	 // 释放当前块
-	delete m_TempChunk;		m_TempChunk = NULL; // 释放临时块
+	delete m_CurrentChunk;						// 释放当前块
+	delete m_TempChunk;							// 释放临时块
 }
 
 
 
 //  下面的函数读出3ds文件的主要部分
-void inline CLoad3DS::ProcessNextChunk(t3DModel *pModel, tChunk *pPreviousChunk)
+void CLoad3DS::ProcessNextChunk(t3DModel *pModel, tChunk *pPreviousChunk)
 {
-	ChunkIdx ++;
-	printf("ChunkIdx Index is %i\n", ChunkIdx);
-	t3DObject newObject  ;//= {0};					// 用来添加到对象链表
+	t3DObject newObject ;//= {0};					// 用来添加到对象链表
 	tMaterialInfo newTexture = {0};				// 用来添加到材质链表
 	unsigned int version = 0;					// 保存文件版本
 	int buffer[50000] = {0};					// 用来跳过不需要的数据
@@ -319,14 +88,6 @@ void inline CLoad3DS::ProcessNextChunk(t3DModel *pModel, tChunk *pPreviousChunk)
 	// 继续读入子块，直到达到预定的长度
 	while (pPreviousChunk->bytesRead < pPreviousChunk->length)
 	{
-		
-		printf("%i,%i\n",pPreviousChunk->bytesRead,pPreviousChunk->length);
-		if(pPreviousChunk->bytesRead==832329||pPreviousChunk->bytesRead==2962)
-		{
-			int aa;
-			aa =0;
-			aa++;
-		}
 		// 读入下一个块
 		ReadChunk(m_CurrentChunk);
 
@@ -410,13 +171,13 @@ void inline CLoad3DS::ProcessNextChunk(t3DModel *pModel, tChunk *pPreviousChunk)
 	}
 
 	// 释放当前块的内存空间
-	delete m_CurrentChunk;m_CurrentChunk =NULL;
+	delete m_CurrentChunk;
 	m_CurrentChunk = pPreviousChunk;
 }
 
 
 //  下面的函数处理所有的文件中对象的信息
-void inline CLoad3DS::ProcessNextObjectChunk(t3DModel *pModel, t3DObject *pObject, tChunk *pPreviousChunk)
+void CLoad3DS::ProcessNextObjectChunk(t3DModel *pModel, t3DObject *pObject, tChunk *pPreviousChunk)
 {
 	int buffer[50000] = {0};					// 用于读入不需要的数据
 
@@ -473,12 +234,12 @@ void inline CLoad3DS::ProcessNextObjectChunk(t3DModel *pModel, t3DObject *pObjec
 	}
 
 	// 释放当前块的内存空间，并把当前块设置为前面块
-	delete m_CurrentChunk;m_CurrentChunk=NULL;
+	delete m_CurrentChunk;
 	m_CurrentChunk = pPreviousChunk;
 }
 
 //  下面的函数处理所有的材质信息
-void inline CLoad3DS::ProcessNextMaterialChunk(t3DModel *pModel, tChunk *pPreviousChunk)
+void CLoad3DS::ProcessNextMaterialChunk(t3DModel *pModel, tChunk *pPreviousChunk)
 {
 	int buffer[50000] = {0};					// 用于读入不需要的数据
 
@@ -497,8 +258,9 @@ void inline CLoad3DS::ProcessNextMaterialChunk(t3DModel *pModel, tChunk *pPrevio
 		case MATNAME:							// 材质的名称
 			
 			// 读入材质的名称
+			printf("name size:%i\n",m_CurrentChunk->length - m_CurrentChunk->bytesRead);
 			m_CurrentChunk->bytesRead += fread(pModel->pMaterials[pModel->numOfMaterials - 1].strName, 1, m_CurrentChunk->length - m_CurrentChunk->bytesRead, m_FilePointer);
-			printf("matname: %s\n",pModel->pMaterials[pModel->numOfMaterials - 1].strName);
+			printf("matname:%s\n", pModel->pMaterials[pModel->numOfMaterials - 1].strName);
 			break;
 
 		case MATDIFFUSE:						// 对象的R G B颜色
@@ -515,7 +277,6 @@ void inline CLoad3DS::ProcessNextMaterialChunk(t3DModel *pModel, tChunk *pPrevio
 
 			// 读入材质的文件名称
 			m_CurrentChunk->bytesRead += fread(pModel->pMaterials[pModel->numOfMaterials - 1].strFile, 1, m_CurrentChunk->length - m_CurrentChunk->bytesRead, m_FilePointer);
-			printf("filename:%s",pModel->pMaterials[pModel->numOfMaterials - 1].strFile);
 			break;
 		
 		default:  
@@ -530,12 +291,12 @@ void inline CLoad3DS::ProcessNextMaterialChunk(t3DModel *pModel, tChunk *pPrevio
 	}
 
 	// 删除当前块，并将当前块设置为前面的块
-	delete m_CurrentChunk;m_CurrentChunk=NULL;
+	delete m_CurrentChunk;
 	m_CurrentChunk = pPreviousChunk;
 }
 
 //  下面函数读入块的ID号和它的字节长度
-void inline CLoad3DS::ReadChunk(tChunk *pChunk)
+void CLoad3DS::ReadChunk(tChunk *pChunk)
 {
 	// 读入块的ID号，占用了2个字节。块的ID号象OBJECT或MATERIAL一样，说明了在块中所包含的内容
 	pChunk->bytesRead = fread(&pChunk->ID, 1, 2, m_FilePointer);
@@ -545,7 +306,7 @@ void inline CLoad3DS::ReadChunk(tChunk *pChunk)
 }
 
 //  下面的函数读入一个字符串
-int inline CLoad3DS::GetString(char *pBuffer)
+int CLoad3DS::GetString(char *pBuffer)
 {
 	int index = 0;
 
@@ -565,7 +326,7 @@ int inline CLoad3DS::GetString(char *pBuffer)
 
 
 //  下面的函数读入RGB颜色
-void inline CLoad3DS::ReadColorChunk(tMaterialInfo *pMaterial, tChunk *pChunk)
+void CLoad3DS::ReadColorChunk(tMaterialInfo *pMaterial, tChunk *pChunk)
 {
 	// 读入颜色块信息
 	ReadChunk(m_TempChunk);
@@ -578,7 +339,7 @@ void inline CLoad3DS::ReadColorChunk(tMaterialInfo *pMaterial, tChunk *pChunk)
 }
 
 //  下面的函数读入顶点索引
-void inline CLoad3DS::ReadVertexIndices(t3DObject *pObject, tChunk *pPreviousChunk)
+void CLoad3DS::ReadVertexIndices(t3DObject *pObject, tChunk *pPreviousChunk)
 {
 	unsigned short index = 0;					// 用于读入当前面的索引
 
@@ -586,8 +347,8 @@ void inline CLoad3DS::ReadVertexIndices(t3DObject *pObject, tChunk *pPreviousChu
 	pPreviousChunk->bytesRead += fread(&pObject->numOfFaces, 1, 2, m_FilePointer);
 
 	// 分配所有面的存储空间，并初始化结构
-	pObject->pFaces.resize(pObject->numOfFaces);
-	memset(&pObject->pFaces[0], 0, sizeof(tFace) * pObject->numOfFaces);
+	pObject->pFaces = new tFace [pObject->numOfFaces];
+	memset(pObject->pFaces, 0, sizeof(tFace) * pObject->numOfFaces);
 
 	// 遍历对象中所有的面
 	for(int i = 0; i < pObject->numOfFaces; i++)
@@ -608,7 +369,7 @@ void inline CLoad3DS::ReadVertexIndices(t3DObject *pObject, tChunk *pPreviousChu
 
 
 //  下面的函数读入对象的UV坐标
-void inline CLoad3DS::ReadUVCoordinates(t3DObject *pObject, tChunk *pPreviousChunk)
+void CLoad3DS::ReadUVCoordinates(t3DObject *pObject, tChunk *pPreviousChunk)
 {
 	// 为了读入对象的UV坐标，首先需要读入UV坐标的数量，然后才读入具体的数据
 
@@ -616,15 +377,14 @@ void inline CLoad3DS::ReadUVCoordinates(t3DObject *pObject, tChunk *pPreviousChu
 	pPreviousChunk->bytesRead += fread(&pObject->numTexVertex, 1, 2, m_FilePointer);
 
 	// 分配保存UV坐标的内存空间
-	pObject->pTexVerts.resize(pObject->numTexVertex);
+	pObject->pTexVerts = new CVector2 [pObject->numTexVertex];
 
 	// 读入纹理坐标
-	pPreviousChunk->bytesRead += 
-	fread(&pObject->pTexVerts[0], 1, pPreviousChunk->length - pPreviousChunk->bytesRead, m_FilePointer);
+	pPreviousChunk->bytesRead += fread(pObject->pTexVerts, 1, pPreviousChunk->length - pPreviousChunk->bytesRead, m_FilePointer);
 }
 
 //  读入对象的顶点
-void inline CLoad3DS::ReadVertices(t3DObject *pObject, tChunk *pPreviousChunk)
+void CLoad3DS::ReadVertices(t3DObject *pObject, tChunk *pPreviousChunk)
 {
 	// 在读入实际的顶点之前，首先必须确定需要读入多少个顶点。
 	
@@ -632,11 +392,11 @@ void inline CLoad3DS::ReadVertices(t3DObject *pObject, tChunk *pPreviousChunk)
 	pPreviousChunk->bytesRead += fread(&(pObject->numOfVerts), 1, 2, m_FilePointer);
 
 	// 分配顶点的存储空间，然后初始化结构体
-	pObject->pVerts.resize(pObject->numOfVerts);
-	memset(&pObject->pVerts[0], 0, sizeof(CVector3) * pObject->numOfVerts);
+	pObject->pVerts = new CVector3 [pObject->numOfVerts];
+	memset(pObject->pVerts, 0, sizeof(CVector3) * pObject->numOfVerts);
 
 	// 读入顶点序列
-	pPreviousChunk->bytesRead += fread(&pObject->pVerts[0], 1, pPreviousChunk->length - pPreviousChunk->bytesRead, m_FilePointer);
+	pPreviousChunk->bytesRead += fread(pObject->pVerts, 1, pPreviousChunk->length - pPreviousChunk->bytesRead, m_FilePointer);
 
 	// 现在已经读入了所有的顶点。
 	// 因为3D Studio Max的模型的Z轴是指向上的，因此需要将y轴和z轴翻转过来。
@@ -658,7 +418,7 @@ void inline CLoad3DS::ReadVertices(t3DObject *pObject, tChunk *pPreviousChunk)
 
 
 //  下面的函数读入对象的材质名称
-void inline CLoad3DS::ReadObjectMaterial(t3DModel *pModel, t3DObject *pObject, tChunk *pPreviousChunk)
+void CLoad3DS::ReadObjectMaterial(t3DModel *pModel, t3DObject *pObject, tChunk *pPreviousChunk)
 {
 	char strMaterial[255] = {0};			// 用来保存对象的材质名称
 	int buffer[50000] = {0};				// 用来读入不需要的数据
@@ -698,10 +458,11 @@ void inline CLoad3DS::ReadObjectMaterial(t3DModel *pModel, t3DObject *pObject, t
 
 
 //  下面的这些函数主要用来计算顶点的法向量，顶点的法向量主要用来计算光照
-
+// 下面的宏定义计算一个矢量的长度
+#define Mag(Normal) (sqrt(Normal.x*Normal.x + Normal.y*Normal.y + Normal.z*Normal.z))
 
 // 下面的函数求两点决定的矢量
-/*CVector3 Vector(CVector3 vPoint1, CVector3 vPoint2)
+CVector3 Vector(CVector3 vPoint1, CVector3 vPoint2)
 {
 	CVector3 vVector;							
 
@@ -710,10 +471,10 @@ void inline CLoad3DS::ReadObjectMaterial(t3DModel *pModel, t3DObject *pObject, t
 	vVector.z = vPoint1.z - vPoint2.z;			
 
 	return vVector;								
-}*/
+}
 
 // 下面的函数两个矢量相加
-/*CVector3 AddVector(CVector3 vVector1, CVector3 vVector2)
+CVector3 AddVector(CVector3 vVector1, CVector3 vVector2)
 {
 	CVector3 vResult;							
 	
@@ -722,7 +483,7 @@ void inline CLoad3DS::ReadObjectMaterial(t3DModel *pModel, t3DObject *pObject, t
 	vResult.z = vVector2.z + vVector1.z;		
 
 	return vResult;								
-}*/
+}
 
 // 下面的函数处理矢量的缩放
 CVector3 DivideVectorByScaler(CVector3 vVector1, float Scaler)
@@ -751,7 +512,7 @@ CVector3 Cross(CVector3 vVector1, CVector3 vVector2)
 }
 
 // 下面的函数规范化矢量
-/*CVector3 Normalize(CVector3 vNormal)
+CVector3 Normalize(CVector3 vNormal)
 {
 	double Magnitude;							
 
@@ -762,10 +523,10 @@ CVector3 Cross(CVector3 vVector1, CVector3 vVector2)
 	vNormal.z /= (float)Magnitude;				
 
 	return vNormal;								
-}*/
+}
 
 //  下面的函数用于计算对象的法向量
-void inline CLoad3DS::ComputeNormals(t3DModel *pModel)
+void CLoad3DS::ComputeNormals(t3DModel *pModel)
 {
 	CVector3 vVector1, vVector2, vNormal, vPoly[3];
 
@@ -782,7 +543,7 @@ void inline CLoad3DS::ComputeNormals(t3DModel *pModel)
 		// 分配需要的存储空间
 		CVector3 *pNormals		= new CVector3 [pObject->numOfFaces];
 		CVector3 *pTempNormals	= new CVector3 [pObject->numOfFaces];
-		pObject->pNormals.resize(pObject->numOfVerts);
+		pObject->pNormals		= new CVector3 [pObject->numOfVerts];
 
 		// 遍历对象的所有面
 		for(int i=0; i < pObject->numOfFaces; i++)
@@ -804,9 +565,9 @@ void inline CLoad3DS::ComputeNormals(t3DModel *pModel)
 		}
 
 		//  下面求顶点法向量
-		CVector3 vSum ;//= {0.0, 0.0, 0.0};
+		CVector3 vSum = {0.0, 0.0, 0.0};
 		CVector3 vZero = vSum;
-		double shared=0;
+		int shared=0;
 		// 遍历所有的顶点
 		for (int i = 0; i < pObject->numOfVerts; i++)			
 		{
@@ -816,23 +577,12 @@ void inline CLoad3DS::ComputeNormals(t3DModel *pModel)
 					pObject->pFaces[j].vertIndex[1] == i || 
 					pObject->pFaces[j].vertIndex[2] == i)
 				{
-					double ratio = 0;
-					vPoly[0] = pObject->pVerts[pObject->pFaces[j].vertIndex[0]];
-					vPoly[1] = pObject->pVerts[pObject->pFaces[j].vertIndex[1]];
-					vPoly[2] = pObject->pVerts[pObject->pFaces[j].vertIndex[2]];
-					if( pObject->pFaces[j].vertIndex[0] == i )
-						ratio = angle( vPoly[0], vPoly[1], vPoly[2] );
-					else if( pObject->pFaces[j].vertIndex[1] == i )
-						ratio = angle( vPoly[1], vPoly[0], vPoly[2] );
-					else if( pObject->pFaces[j].vertIndex[2] == i )
-						ratio = angle( vPoly[2], vPoly[1], vPoly[0] );
-					vSum = AddVector(vSum, pNormals[j], -ratio );	
-					shared += ratio;
+					vSum = AddVector(vSum, pTempNormals[j]);
+					shared++;								
 				}
 			}      
-
-			pObject->pNormals[i] = DivideVectorByScaler(vSum, float(shared));
-			//pObject->pNormals[i] = vSum;
+			
+			pObject->pNormals[i] = DivideVectorByScaler(vSum, float(-shared));
 
 			// 规范化最后的顶点法向
 			pObject->pNormals[i] = Normalize(pObject->pNormals[i]);	
@@ -856,7 +606,3 @@ void inline CLoad3DS::ComputeNormals(t3DModel *pModel)
 块的长度表示的是紧跟在该块后续的数据的长度。它占用了四个字节。
 
 */
-
-#endif
-
-
