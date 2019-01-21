@@ -619,7 +619,8 @@ StlShape::Render()
 class TextureSurface: public Geometry
 {
  public:
-  TextureSurface(){Pic.Load("timg.bmp");};
+  TextureSurface(){};
+  TextureSurface(char*filename){Pic.Load(filename);};
   void SetVerticesv(float v[][3], int);
   void Render();
 

@@ -63,6 +63,7 @@ class VWordModel
   Transformation *SysTrans  ;
   vector< Light *> Lights; 
   vector< StlShape *      > StlElements;// = new StlShape[ element_num ];
+  vector< StlShape *      > StlElements;
   vector< Transformation *> StlTrans;//    = new Transformation[ element_num ];
   Polygon  *AxisXX  ;                              
   Polygon  *AxisYY  ;                              
@@ -219,10 +220,10 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 		vground[i][2] = atof(trim(strvec[2+3*i]).c_str()) ;//+ offsetz;;
 	}
    */
-     float vground[4][3] ={{0, 0, 0},{  0, 0 , 0.8},
-                           {0.8 , 0 ,0.8}, { 0.8 ,  0,  0}};
+     float vground[4][3] ={{0, 0, 0},{ 0.8 ,  0,  0},
+                           {0.8 , 0 ,0.8},{  0.8, 0 , 0.8} };
    //float vground[4][3] ={{0, 0, 0},{ 0.8 ,  0,  0},
-    //                    {0.8 , 0.8 , 0},{  0,  0.8 , 0} };
+   //                     {0.8 , 0.8 , 0},{  0,  0.8 , 0} };
    world_model.groundface->SetVerticesv(vground,4);
    // groundface->SetVerticesv(vx, 4);
    world_model.groundface->SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0 ,&graphLib));
