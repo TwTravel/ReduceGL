@@ -1,4 +1,4 @@
-﻿Build started 2019/1/21 星期一 7:42:20.
+﻿Build started 2019/1/21 星期一 7:56:50.
 Project "F:\tzwang\graphics\ReduceGL\Test1\test3ds\cmp2\testMdl.vcxproj" on node 2 (build target(s)).
 InitializeBuildStatus:
   Creating "Debug\testMdl.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -14,4 +14,4 @@ Done Building Project "F:\tzwang\graphics\ReduceGL\Test1\test3ds\cmp2\testMdl.vc
 
 Build succeeded.
 
-Time Elapsed 00:00:00.12
+Time Elapsed 00:00:00.09

@@ -218,14 +218,19 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 		vground[i][1] = atof(trim(strvec[1+3*i]).c_str()) ;//+ offsety;;
 		vground[i][2] = atof(trim(strvec[2+3*i]).c_str()) ;//+ offsetz;;
 	}
-   
+   */
+     float vground[4][3] ={{0, 0, 0},{  0, 0 , 0.8},
+                           {0.8 , 0 ,0.8}, { 0.8 ,  0,  0}};
+   //float vground[4][3] ={{0, 0, 0},{ 0.8 ,  0,  0},
+    //                    {0.8 , 0.8 , 0},{  0,  0.8 , 0} };
    world_model.groundface->SetVerticesv(vground,4);
    // groundface->SetVerticesv(vx, 4);
    world_model.groundface->SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0 ,&graphLib));
-   
+   double offsetx, offsety, offsetz;
+   offsetx = offsety = offsetz = rot_angle = rot_x = rot_y = rot_z =0;
    world_model.texsurface_trs->SetValue(TRANSLATION , offsetx, offsety, offsetz , 1);
    world_model.texsurface_trs->SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 0);
-   world_model.groundface->SetTransform( world_model.texsurface_trs);*/
+   world_model.groundface->SetTransform( world_model.texsurface_trs);
    //world_model.StlTrans[i]->SetValue(SCALE       , obj_scale, obj_scale, obj_scale,2); 
    //====================================================================================
    int stlIdx =0;
