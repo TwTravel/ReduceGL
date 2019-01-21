@@ -62,9 +62,9 @@ class VWordModel
   Camera *Camera1 ;
   Transformation *SysTrans  ;
   vector< Light *> Lights; 
-  vector< StlShape *      > StlElements;// = new StlShape[ element_num ];
-  vector< StlShape *      > StlElements;
-  vector< Transformation *> StlTrans;//    = new Transformation[ element_num ];
+  vector< StlShape *       > StlElements;// = new StlShape[ element_num ];
+  vector< TextureSurface * > TextQuad;
+  vector< Transformation *>  StlTrans;//    = new Transformation[ element_num ];
   Polygon  *AxisXX  ;                              
   Polygon  *AxisYY  ;                              
   Polygon  *AxisZZ  ;                              
@@ -172,14 +172,14 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 //##################################################################
 //##################################################################  
    int element_num = lines.size() - 3 ;
-   world_model.StlElements.resize(element_num); 
-   Loopi(element_num) { world_model.StlElements[i] = new StlShape(&graphLib);
+   //world_model.StlElements.resize(element_num); 
+   //Loopi(element_num) { world_model.StlElements[i] = new StlShape(&graphLib);
                         //world_model.StlElements[i]->grawLib=&graphLib;
-                        }
-   world_model.StlTrans.resize(element_num);    
-   Loopi(element_num) {world_model.StlTrans[i]    = new Transformation(&graphLib);
+                      //  }
+   //world_model.StlTrans.resize(element_num);    
+   //Loopi(element_num) {world_model.StlTrans[i]    = new Transformation(&graphLib); new StlShape(&graphLib);
                        //world_model.StlTrans[i]->grawLib=&graphLib;
-                      }
+                     // }
      //StlShape       *StlElements = new StlShape[ element_num ];
   //Transformation *StlTrans    = new Transformation[ element_num ];
    
@@ -220,10 +220,10 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 		vground[i][2] = atof(trim(strvec[2+3*i]).c_str()) ;//+ offsetz;;
 	}
    */
-     float vground[4][3] ={{0, 0, 0},{ 0.8 ,  0,  0},
-                           {0.8 , 0 ,0.8},{  0.8, 0 , 0.8} };
-   //float vground[4][3] ={{0, 0, 0},{ 0.8 ,  0,  0},
-   //                     {0.8 , 0.8 , 0},{  0,  0.8 , 0} };
+     //float vground[4][3] ={{0, 0, 0},{ 0.8 ,  0,  0},
+       //                    {0.8 , 0 ,0.8},{  0.8, 0 , 0.8} };
+   float vground[4][3] ={{0, 0, 0},{ 0.8 ,  0,  0},
+                        {0.8 , 0.8 , 0},{  0,  0.8 , 0} };
    world_model.groundface->SetVerticesv(vground,4);
    // groundface->SetVerticesv(vx, 4);
    world_model.groundface->SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0 ,&graphLib));
@@ -260,6 +260,9 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 	   rot_z     =  atof(trim(strvec[10+1]).c_str());
 	   obj_scale =  atof(trim(strvec[11+1]).c_str()); 
 	   //STL  , bunny.stl, 80.0, 1.0, 1.0, 0.0,-0.0, 0, 0, 0, 0, 0, 3.2 , #OBJ(color3)(pos3)(rot4)(scale1) 
+	   Transformation *Trs = new Transformation(&graphLib); StlShape *  Shape  = new StlShape(&graphLib);
+	   world_model.StlTrans.push_back(Trs);
+	   world_model.StlElements.push_back(Shape);
 	   printf("##########################trans: %.2f,  %.2f,  %.2f\n", obj_x ,    obj_y,  obj_z);
 	   if(rot_angle!=0)
 	   world_model.StlTrans[stlIdx]->SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 1);
@@ -291,11 +294,35 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
 		   world_model.Lights.push_back(Light1);
 		   world_model.LightIdx ++;
 	   }
+	   if( trim(strvec[0])=="QUAD")
+	   {
+		   TextureSurface* surface = new TextureSurface;
+		   surface->grawLib=&graphLib;
+		   surface->Pic.Load((char*)trim(strvec[1]).c_str());
+
+		   float tempvtx[4][3] ={{0, 0, 0},{ 0,  0,  0},
+                                 {0, 0 , 0},{ 0, 0 , 0} };
+		   for(int ii=0; ii < 4 ; ii++)
+			   for(int jj=0; jj < 3; jj++)
+			   { tempvtx[ii][jj] = atof((char*)trim(strvec[2+ii*3+jj]).c_str());
+			   }
+           surface->SetVerticesv(tempvtx,4);
+		   surface->SetMaterial(GetColorMat(360*0.0/8.0, 1.0, 1.0 ,&graphLib));
+          double offsetx, offsety, offsetz;
+          offsetx = offsety = offsetz = rot_angle = rot_x = rot_y = rot_z =0;
+		  Transformation *Trs = new Transformation(&graphLib);
+          Trs->SetValue(TRANSLATION , offsetx, offsety, offsetz , 1);
+          Trs->SetValue(ROTATION    , rot_angle, rot_x,  rot_y, rot_z, 0);
+		  surface->SetTransform( Trs);
+		   world_model.TextQuad.push_back(surface); 
+	   }
    }
-  
+
+    for( i = 0; i <  world_model.TextQuad.size(); i++ )
+	    world_model.SysTrans->AddChild(world_model.TextQuad[i]);
    
    for( i = 0; i <  world_model.StlElements.size(); i++ )
-   world_model.SysTrans->AddChild(world_model.StlElements[i]);
+     world_model.SysTrans->AddChild(world_model.StlElements[i]);
    
 //for( i = 0; i <  (element_num-1); i++ )
 //  world_model.StlElements[i]->AddChild(world_model.StlElements[i+1]);
@@ -303,7 +330,7 @@ bunny.stl, 50.0, 1.0, 1.0, 10, 0, 0, 0, 0, 0,  0,  3,#OBJ(color3)(pos3)(rot4)(sc
   world_model.SysTrans->AddChild( world_model.AxisXX);
   world_model.SysTrans->AddChild( world_model.AxisYY);
   world_model.SysTrans->AddChild( world_model.AxisZZ);
-  world_model.SysTrans->AddChild( world_model.groundface);
+ // world_model.SysTrans->AddChild( world_model.groundface);
    
   
   

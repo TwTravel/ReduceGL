@@ -1,7 +1,5 @@
-﻿Build started 2019/1/21 星期一 8:46:32.
-Project "F:\tzwang\graphics\ReduceGL\Test1\kkdevr2r\kkdev.vcxproj" on node 2 (rebuild target(s)).
-_PrepareForClean:
-  Deleting file "Debug\kkdev.lastbuildstate".
+﻿Build started 2019/1/22 星期二 4:51:30.
+Project "F:\tzwang\graphics\ReduceGL\Test1\kkdevr2r\kkdev.vcxproj" on node 2 (build target(s)).
 InitializeBuildStatus:
   Creating "Debug\kkdev.unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
@@ -172,78 +170,88 @@ f:\tzwang\graphics\reducegl\test1\kkdevr2r\geometry.h(578): warning C4101: 'zzz'
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\geometry.h(578): warning C4101: 'yyy' : unreferenced local variable
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\geometry.h(578): warning C4101: 'xxx' : unreferenced local variable
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\c24bitmap.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\geometry.h(647): warning C4101: 'i' : unreferenced local variable
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\geometry.h(648): warning C4101: 'i' : unreferenced local variable
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(26): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(26): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(27): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(27): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(28): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(28): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(119): warning C4305: 'initializing' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(119): warning C4305: 'initializing' : truncation from 'double' to 'float'
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(120): warning C4305: 'initializing' : truncation from 'double' to 'float'
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(120): warning C4305: 'initializing' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(122): warning C4305: 'initializing' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(122): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(123): warning C4305: 'initializing' : truncation from 'double' to 'float'
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(123): warning C4305: 'initializing' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(125): warning C4305: 'initializing' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(125): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(124): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(124): warning C4305: 'initializing' : truncation from 'double' to 'float'
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(126): warning C4305: 'initializing' : truncation from 'double' to 'float'
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(126): warning C4305: 'initializing' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(146): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(146): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(146): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(150): warning C4305: 'argument' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(152): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(169): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(169): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(169): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(169): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(127): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(127): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(147): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(147): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(147): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(151): warning C4305: 'argument' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(153): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(170): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(170): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
 f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(170): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(222): warning C4305: 'initializing' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(223): warning C4305: 'initializing' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(223): warning C4305: 'initializing' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(223): warning C4305: 'initializing' : truncation from 'double' to 'float'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(229): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(229): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(229): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(230): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(230): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(230): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(230): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(262): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(262): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(262): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(262): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(263): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(263): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(263): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(264): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(264): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(264): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(283): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(283): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(283): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(284): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(284): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(284): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(287): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(170): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(171): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(171): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(171): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(225): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(226): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(226): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(226): warning C4305: 'initializing' : truncation from 'double' to 'float'
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(232): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(232): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(232): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(233): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(233): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(233): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(233): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(268): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(268): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(268): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(268): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(269): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(269): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(269): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(270): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(270): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(270): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(289): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(289): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(289): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(290): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(290): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(290): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(293): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
           c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(294): warning C4018: '<' : signed/unsigned mismatch
-f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(310): warning C4018: '<' : signed/unsigned mismatch
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(306): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(313): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(313): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(313): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(314): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(314): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(314): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(314): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(320): warning C4018: '<' : signed/unsigned mismatch
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(323): warning C4018: '<' : signed/unsigned mismatch
+f:\tzwang\graphics\reducegl\test1\kkdevr2r\model3drender.cpp(339): warning C4018: '<' : signed/unsigned mismatch
 Link:
   c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\tzwang\graphics\ReduceGL\Test1\kkdevr2r\Debug\kkdev.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\kkdev.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\tzwang\graphics\ReduceGL\Test1\kkdevr2r\Debug\kkdev.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\tzwang\graphics\ReduceGL\Test1\kkdevr2r\Debug\kkdev.lib" /MACHINE:X86 Debug\Model3dRender.obj
+  LINK : F:\tzwang\graphics\ReduceGL\Test1\kkdevr2r\Debug\kkdev.exe not found or not built by the last incremental link; performing full link
   kkdev.vcxproj -> F:\tzwang\graphics\ReduceGL\Test1\kkdevr2r\Debug\kkdev.exe
 Manifest:
   c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"F:\tzwang\graphics\ReduceGL\Test1\kkdevr2r\Debug\kkdev.exe;#1" /manifest Debug\kkdev.exe.intermediate.manifest
 FinalizeBuildStatus:
   Deleting file "Debug\kkdev.unsuccessfulbuild".
   Touching "Debug\kkdev.lastbuildstate".
-Done Building Project "F:\tzwang\graphics\ReduceGL\Test1\kkdevr2r\kkdev.vcxproj" (rebuild target(s)).
+Done Building Project "F:\tzwang\graphics\ReduceGL\Test1\kkdevr2r\kkdev.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.50
+Time Elapsed 00:00:02.65

@@ -619,12 +619,12 @@ StlShape::Render()
 class TextureSurface: public Geometry
 {
  public:
-  TextureSurface(){};
+  TextureSurface(){Pic.Load("timg0.bmp");};
   TextureSurface(char*filename){Pic.Load(filename);};
   void SetVerticesv(float v[][3], int);
   void Render();
 
- private:
+ //private:
   C24BitMap Pic;
   float Vertices[1000][3];
   int Size;
@@ -647,7 +647,7 @@ inline void
 TextureSurface::Render()
 {
   int i;
-  printf("%s name:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
+  printf("texture: %s name:%s\n",(char*)nodespace.c_str(),(char*)nodename.c_str());
   //glPushAttrib KH(GL_ALL_ATTRIB_BITS);
   grawLib->glPushMatrix();
   
