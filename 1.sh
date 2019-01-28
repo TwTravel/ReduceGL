@@ -1,0 +1,17 @@
+ls -l ./FloatRender/imgok.bmp
+ls -l ./back/kkdev/imgok.bmp
+ls -l ./back/DEVV2/imgok.bmp
+ls -l ./back/DevR1/imgok.bmp
+ls -l ./back/DevR4/imgok.bmp
+ls -l ./back/DevR3/imgok.bmp
+ls -l ./kkdevr1/imgok.bmp
+ls -l ./Test1/kkdevr2r/imgok.bmp
+ls -l ./Test1/DevR4/imgok.bmp
+ls -l ./Bk/kkdev/imgok.bmp
+ls -l ./Bk/DEVV2/imgok.bmp
+ls -l ./Bk/DevR1/imgok.bmp
+ls -l ./Bk/DevR4/imgok.bmp
+ls -l ./Bk/DevR3/imgok.bmp
+ls -l ./kkdevr2/imgok.bmp
+ls -l ./kkdev01/imgok.bmp
+ls -l ./kkdevr3/imgok.bmp
