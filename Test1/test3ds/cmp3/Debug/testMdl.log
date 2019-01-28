@@ -1,0 +1,17 @@
+﻿Build started 2019/1/21 星期一 7:42:20.
+Project "F:\tzwang\graphics\ReduceGL\Test1\test3ds\cmp2\testMdl.vcxproj" on node 2 (build target(s)).
+InitializeBuildStatus:
+  Creating "Debug\testMdl.unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  All outputs are up-to-date.
+Link:
+  All outputs are up-to-date.
+  testMdl.vcxproj -> F:\tzwang\graphics\ReduceGL\Test1\test3ds\cmp2\Debug\testMdl.exe
+FinalizeBuildStatus:
+  Deleting file "Debug\testMdl.unsuccessfulbuild".
+  Touching "Debug\testMdl.lastbuildstate".
+Done Building Project "F:\tzwang\graphics\ReduceGL\Test1\test3ds\cmp2\testMdl.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.12

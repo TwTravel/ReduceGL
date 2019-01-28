@@ -1,0 +1,847 @@
+# 3ds Max Wavefront OBJ Exporter v0.94b - (c)2007 guruware
+# File Created: 14.12.2018 12:21:04
+
+newmtl caliper
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\nod_LOD0.jpg
+	map_Kd D:\New folder 2\111\nod_LOD0.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl window
+	Ns 20.0000
+	Ni 1.5000
+	d 0.7000
+	Tr 0.7000
+	Tf 0.7000 0.7000 0.7000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.7059 0.7647 0.8784
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl black
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl chrome_2
+	Ns 66.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.5000 0.5000 0.5000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_refl D:\New folder 2\111\skyxn.jpg
+
+newmtl detail_glass_clear
+	Ns 20.0000
+	Ni 1.5000
+	d 0.6000
+	Tr 0.6000
+	Tf 0.6000 0.6000 0.6000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl frame
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\nod_LOD0.jpg
+	map_Kd D:\New folder 2\111\nod_LOD0.jpg
+	map_Ks D:\New folder 2\111\nod_LOD0.jpg
+
+newmtl hidhead
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\skyxn.jpg
+
+newmtl textured_reflector
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\skyxn.jpg
+
+newmtl body
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\nod_LOD0.jpg
+	map_Kd D:\New folder 2\nod_LOD0.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl mirrorLeft
+	Ns 66.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_refl D:\New folder 2\111\skyxn.jpg
+
+newmtl plastic2
+	Ns 51.2928
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\nod_LOD0.jpg
+	map_Kd D:\New folder 2\111\nod_LOD0.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl mirrorRight
+	Ns 66.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_refl D:\New folder 2\111\skyxn.jpg
+
+newmtl black_glass
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.2353 0.2353 0.2353
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl body_2
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\nod_LOD0.jpg
+	map_Kd D:\New folder 2\111\nod_LOD0.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl defrost_lines
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0000 1.0000 1.0000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\nod_LOD0.jpg
+	map_Kd D:\New folder 2\111\nod_LOD0.jpg
+	map_d D:\New folder 2\111\noLOD0_a.jpg
+
+newmtl emblem
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\nod_LOD0.jpg
+	map_Kd D:\New folder 2\111\nod_LOD0.jpg
+	map_d D:\New folder 2\111\noLOD0_a.jpg
+	map_refl D:\New folder 2\111\skyxn.jpg
+
+newmtl misc
+	Ns 66.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\nod_LOD0.jpg
+	map_Kd D:\New folder 2\111\nod_LOD0.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl reflector
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl rubber_trim
+	Ns 46.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.2800 0.2800 0.2800
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\nod_LOD0.jpg
+	map_Kd D:\New folder 2\111\nod_LOD0.jpg
+
+newmtl tail_light_lod0
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl weatherstrip
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\nod_LOD0.jpg
+	map_Kd D:\New folder 2\111\nod_LOD0.jpg
+
+newmtl carbon_fiber
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\carbonFi.jpg
+	map_Kd D:\New folder 2\111\carbonFi.jpg
+	map_Ks D:\New folder 2\111\carbon_a.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl chrome
+	Ns 66.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_refl D:\New folder 2\111\skyxn.jpg
+
+newmtl drlwhiteswitch
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\skyxn.jpg
+
+newmtl glass
+	Ns 20.0000
+	Ni 1.5000
+	d 0.5000
+	Tr 0.5000
+	Tf 0.5000 0.5000 0.5000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.7843 0.7843 0.7843
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_refl D:\New folder 2\111\skyxn.jpg
+
+newmtl slorange
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl bottom
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\nod_LOD0.jpg
+	map_Kd D:\New folder 2\111\nod_LOD0.jpg
+
+newmtl detail_glass_red
+	Ns 20.0000
+	Ni 1.5000
+	d 0.9200
+	Tr 0.9200
+	Tf 0.9200 0.9200 0.9200 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 0.5000 0.5000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl reverse_light_lod0
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\skyxn.jpg
+
+newmtl detail_glass_amber
+	Ns 20.0000
+	Ni 1.5000
+	d 0.9200
+	Tr 0.9200
+	Tf 0.9200 0.9200 0.9200 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 0.5000 0.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl taillight2S
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl taillightst
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\skyxn.jpg
+
+newmtl numplate
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\lights_L.jpg
+	map_Kd D:\New folder 2\111\lights_L.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl undercarriage
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\undercar.jpg
+	map_Kd D:\New folder 2\111\undercar.jpg
+	map_Ks D:\New folder 2\111\undercar.jpg
+
+newmtl brake
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\nod_LOD0.jpg
+	map_Kd D:\New folder 2\111\nod_LOD0.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl hub
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\nod_LOD0.jpg
+	map_Kd D:\New folder 2\111\nod_LOD0.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl gauge_emissive
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\inte_LO.jpg
+	map_Kd D:\New folder 2\111\inte_LO.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl badge_cp
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\interior.jpg
+	map_Kd D:\New folder 2\interior.jpg
+	map_d D:\New folder 2\interi_a.jpg
+
+newmtl bump_leather2
+	Ns 51.2928
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\interior.jpg
+	map_Kd D:\New folder 2\111\interior.jpg
+
+newmtl bump_leather3
+	Ns 51.2928
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\interior.jpg
+	map_Kd D:\New folder 2\111\interior.jpg
+
+newmtl bump_plastic
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\interior.jpg
+	map_Kd D:\New folder 2\111\interior.jpg
+
+newmtl bump_plastic3
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\interior.jpg
+	map_Kd D:\New folder 2\111\interior.jpg
+
+newmtl bump_stitching
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\interior.jpg
+	map_Kd D:\New folder 2\111\interior.jpg
+
+newmtl cloth
+	Ns 0.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.1200 0.1200 0.1200
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\interior.jpg
+	map_Kd D:\New folder 2\111\interior.jpg
+
+newmtl digital_gauge
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0500 0.0700 0.0500
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl headliner
+	Ns 0.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.1200 0.1200 0.1200
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\inte_LO.jpg
+	map_Kd D:\New folder 2\111\inte_LO.jpg
+
+newmtl leather
+	Ns 46.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\inte_LO.jpg
+	map_Kd D:\New folder 2\111\inte_LO.jpg
+
+newmtl metal
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\inte_LO.jpg
+	map_Kd D:\New folder 2\111\inte_LO.jpg
+
+newmtl mirrorMiddle
+	Ns 66.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_refl D:\New folder 2\111\skyxn.jpg
+
+newmtl mottled
+	Ns 33.2193
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.1200 0.1200 0.1200
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\inte_LO.jpg
+	map_Kd D:\New folder 2\111\inte_LO.jpg
+
+newmtl plastic
+	Ns 62.2882
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\inte_LO.jpg
+	map_Kd D:\New folder 2\111\inte_LO.jpg
+
+newmtl rubber
+	Ns 46.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.2800 0.2800 0.2800
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\inte_LO.jpg
+	map_Kd D:\New folder 2\111\inte_LO.jpg
+
+newmtl solid
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl st_wood
+	Ns 70.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.9922 0.9804 0.8941
+	Ks 0.6300 0.6300 0.6300
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\for houses\sl wood1.jpg
+	map_Kd D:\New folder 2\for houses\sl wood1.jpg
+
+newmtl z_gauge_emissive_alpha
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\inte_LO.jpg
+	map_Kd D:\New folder 2\111\inte_LO.jpg
+	map_d D:\New folder 2\111\int_LO_a.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl bump_leather
+	Ns 51.2928
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\interior.jpg
+	map_Kd D:\New folder 2\111\interior.jpg
+
+newmtl tire
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\tireA0.jpg
+	map_Kd D:\New folder 2\111\tireA0.jpg
+
+newmtl inner_rim
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\wheel.jpg
+	map_Kd D:\New folder 2\111\wheel.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg
+
+newmtl rim
+	Ns 56.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\111\wheel.jpg
+	map_Kd D:\New folder 2\111\wheel.jpg
+	map_refl D:\New folder 2\111\darkrefl.jpg

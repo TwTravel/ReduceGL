@@ -1,0 +1,29 @@
+﻿Build started 2019/1/21 星期一 5:56:39.
+Project "F:\tzwang\graphics\ReduceGL\Test1\test3ds\cmp\testMdl.vcxproj" on node 2 (rebuild target(s)).
+_PrepareForClean:
+  Deleting file "Debug\testMdl.lastbuildstate".
+InitializeBuildStatus:
+  Touching "Debug\testMdl.unsuccessfulbuild".
+ClCompile:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt 3DS.cpp main.cpp
+  main.cpp
+  3DS.cpp
+f:\tzwang\graphics\reducegl\test1\test3ds\cmp\3ds.cpp(24): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+f:\tzwang\graphics\reducegl\test1\test3ds\cmp\3ds.cpp(29): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+f:\tzwang\graphics\reducegl\test1\test3ds\cmp\3ds.cpp(43): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+f:\tzwang\graphics\reducegl\test1\test3ds\cmp\3ds.cpp(150): error C2228: left of '.strName' must have class/struct/union
+          type is 't3DObject *'
+          did you intend to use '->' instead?
+f:\tzwang\graphics\reducegl\test1\test3ds\cmp\3ds.cpp(153): error C2664: 'CLoad3DS::ProcessNextObjectChunk' : cannot convert parameter 2 from 't3DObject **' to 't3DObject *'
+          Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+f:\tzwang\graphics\reducegl\test1\test3ds\cmp\3ds.cpp(541): error C2440: 'initializing' : cannot convert from 't3DObject **' to 't3DObject *'
+          Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+  Generating Code...
+Done Building Project "F:\tzwang\graphics\ReduceGL\Test1\test3ds\cmp\testMdl.vcxproj" (rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.76
