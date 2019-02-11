@@ -28,7 +28,7 @@ class Node
 {
  public:
   GraphDrawLib *grawLib;
-  Node(){LeftChild = RightSibling = NULL;};
+  Node(){LeftChild = RightSibling = NULL;KeepMatrix=0;};
   Node(GraphDrawLib *gLib);
   virtual ~Node();
   virtual void Render();
