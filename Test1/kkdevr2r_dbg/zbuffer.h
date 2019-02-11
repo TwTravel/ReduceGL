@@ -474,7 +474,7 @@ void inline ZBuffer::ZB_fillTriangleMappingPerspective(
 
   
 
-#define NB_INTERP 8
+#define NB_INTERP 1
 
 
  
@@ -595,7 +595,7 @@ ZBufferPoint *t,*pr1,*pr2,*l1,*l2;
   
   
   //===================================
-  for(part=0;part<1;part++) {
+  for(part=0;part<2;part++) {
     if (part == 0) {
       if (fz > 0) {
 	update_left=1;
@@ -706,13 +706,13 @@ ZBufferPoint *t,*pr1,*pr2,*l1,*l2;
       zinv=1.0 / fz; 
     } 
     PUT_PIXEL_TEX(0, texture,  z, zz, pp, pz, s,t, dsdx, dtdx, dzdx	);						    
-    PUT_PIXEL_TEX(1, texture,  z, zz, pp, pz, s,t, dsdx, dtdx, dzdx	);								    
+    /*PUT_PIXEL_TEX(1, texture,  z, zz, pp, pz, s,t, dsdx, dtdx, dzdx	);								    
     PUT_PIXEL_TEX(2, texture,  z, zz, pp, pz, s,t, dsdx, dtdx, dzdx	);								    
     PUT_PIXEL_TEX(3, texture,  z, zz, pp, pz, s,t, dsdx, dtdx, dzdx	);								    
     PUT_PIXEL_TEX(4, texture,  z, zz, pp, pz, s,t, dsdx, dtdx, dzdx	);								    
     PUT_PIXEL_TEX(5, texture,  z, zz, pp, pz, s,t, dsdx, dtdx, dzdx	);								    
     PUT_PIXEL_TEX(6, texture,  z, zz, pp, pz, s,t, dsdx, dtdx, dzdx	);								    
-    PUT_PIXEL_TEX(7, texture,  z, zz, pp, pz, s,t, dsdx, dtdx, dzdx	);								    
+    PUT_PIXEL_TEX(7, texture,  z, zz, pp, pz, s,t, dsdx, dtdx, dzdx	);*/								    
     pz+=NB_INTERP;							    
     pp=(PIXEL *)((char *)pp + NB_INTERP * PSZB); 
     n-=NB_INTERP;							    

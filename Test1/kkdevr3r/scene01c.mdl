@@ -1,0 +1,12 @@
+ CAMERA_POS, 2.2, 0.9, 3, 50 , #posx posy posz angle
+SYSROTATION, 20,  1, 0 , 0, 0
+SYSTRANSLTN, 0,  0, 0 , 0, 0
+LIGHT, 2, -1,  1.8, 180.0,
+STL  , ppstl.stl, 20.0,  1.0, 1.0, 1.0, 0, 0, 0, 0, 0, 0,  0.03 , #OBJ(color3)(pos3)(rot4)(scale1)
+STL  , ppstl.stl, 120.0, 1.0, 1.0, 0.0, 1.0, 0, 0, 0, 0, 0, 0.03 , #OBJ(color3)(pos3)(rot4)(scale1)
+STL  , ppstl.stl, 240.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0, 0, 0, 0, 0.03 , #OBJ(color3)(pos3)(rot4)(scale1)
+STL  , bunny.stl, 80.0 , 1.0, 1.0, 0.0,-0.0, 0, 0, 0, 0, 0, 3.2 , #OBJ(color3)(pos3)(rot4)(scale1)
+3DS, FACE.3DS, FACE.BMP
+QUAD, timg.bmp,   0, 0, 0,    0, 0,0.8,      0.8,0,0.8,     0.8,0,0.0,
+QUAD, timg0.bmp,  0, 0, 0,    0.8, 0,0,      0.8,0.8, 0,    0,0.8,0, 
+QUAD, timg1.bmp,  0, 0, 0,    0.0, 0.8,0,    0.0,0.8,0.8,  0.0,0,0.8,
