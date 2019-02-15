@@ -1618,9 +1618,49 @@ inline void GraphDrawLib::glLightfv(int light,int type,float *val)
 }
 
 
- 
-/* textures */
 inline void GraphDrawLib::glTexImage2D( int target, int level, int components,
+                   int width, int height, int border,
+                   int format, int type, void *pixels)
+{
+  GLContext *c=&gl_ctx;; 
+  
+ 
+  GLImage *im;
+  unsigned char *pixels1;
+  int do_free;
+
+  if (!(target == GL_TEXTURE_2D && level == 0 && components == 3 && 
+        border == 0 && format == GL_RGB &&
+        type == GL_UNSIGNED_BYTE)) {
+    exit(0);//gl_fatal_error("glTexImage2D: combinaison of parameters not handled");
+  }
+  
+  do_free=0;
+  if (width != 512 || height != 512) {
+    pixels1 = (unsigned char*)gl_malloc(512 * 512 * 3);
+    // no interpolation is done here to respect the original image aliasing ! 
+    gl_resizeImageNoInterpolate(pixels1,512,512,(unsigned char*)pixels,width,height);
+    do_free=1;
+    width=512;
+    height=512;
+  } else {
+    pixels1=(unsigned char*)pixels;
+  }
+
+  im=&c->current_texture->images[level];
+  im->xsize=width;
+  im->ysize=height;
+ 
+  im->pixmap.resize(width*height*3);
+  
+  memcpy(&im->pixmap[0],pixels1,width*height*3);
+ 
+  if (do_free) gl_free(pixels1);
+}
+
+  
+/* textures */
+/*inline void GraphDrawLib::glTexImage2D( int target, int level, int components,
                    int width, int height, int border,
                    int format, int type, void *pixels)
 {
@@ -1640,7 +1680,7 @@ inline void GraphDrawLib::glTexImage2D( int target, int level, int components,
   do_free=0;
   if (width != 256 || height != 256) {
     pixels1 = (unsigned char*)gl_malloc(256 * 256 * 3);
-    /* no interpolation is done here to respect the original image aliasing ! */
+    // no interpolation is done here to respect the original image aliasing ! 
     gl_resizeImageNoInterpolate(pixels1,256,256,(unsigned char*)pixels,width,height);
     do_free=1;
     width=256;
@@ -1660,7 +1700,7 @@ inline void GraphDrawLib::glTexImage2D( int target, int level, int components,
   if (do_free) gl_free(pixels1);
 }
 
- 
+ */
  
 
 

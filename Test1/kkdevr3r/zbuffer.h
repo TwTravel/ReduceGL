@@ -444,7 +444,12 @@ ZBufferPoint *t,*pr1,*pr2,*l1,*l2;
  * TODO: pipeline the division
  */
  
-
+/*
+#define ZB_POINT_S_MIN ( (1<<13) )
+#define ZB_POINT_S_MAX ( (1<<22)-(1<<13) )
+#define ZB_POINT_T_MIN ( (1<<21) )
+#define ZB_POINT_T_MAX ( (1<<30)-(1<<21) )
+*/
  void inline PUT_PIXEL_TEX(int _a, PIXEL *texture, double &z,
  double  &zz, register PIXEL *pp,double  *pz,
    register unsigned int&s, register unsigned int&t,
@@ -452,8 +457,14 @@ ZBufferPoint *t,*pr1,*pr2,*l1,*l2;
 {						 
    unsigned char *ptr; 
    zz = z /16384;//>> ZB_POINT_Z_FRAC_BITS;		 
-     if (ZCMP(zz,pz[_a])) {				 
-       ptr = texture + (((t & 0x3FC00000) | (s & 0x003FC000)) >> 14) * 3; 
+     if (ZCMP(zz,pz[_a])) {		
+	   double s_ = (s - ZB_POINT_S_MIN)/double(ZB_POINT_S_MAX - ZB_POINT_S_MIN);
+	   double t_ = (t - ZB_POINT_T_MIN)/double(ZB_POINT_T_MAX - ZB_POINT_T_MIN);
+	   t_ *= 512; t_ = int(t_); if(t_>=511) t_ = 511;
+	   s_ *= 512; s_ = int(s_); if(s_>=511) s_ = 511;
+	   int offset = ( t_ * 512 + s_ ) * 3;//((t_ + s_)  >> 14)*3; 
+       //ptr = texture + (((t & 0x3FC00000) | (s & 0x003FC000)) >> 14) * 3; 
+	   ptr = texture + offset;
        pp[3 * _a]= ptr[0]; 
        pp[3 * _a + 1]= ptr[1]; 
        pp[3 * _a + 2]= ptr[2]; 
